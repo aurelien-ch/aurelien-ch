@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState, useRef, useEffect } from "react";
+// @ts-ignore
+import WAVES from "vanta/dist/vanta.waves.min";
+import * as THREE from "three";
+import "./app.css";
 
-function App() {
+const App = () => {
+  const [vantaEffect, setVantaEffect] = useState(0);
+  const vantaRef = useRef(null);
+
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        WAVES({
+          el: vantaRef.current,
+          THREE: THREE,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0x162831,
+          shininess: 60.00,
+          waveHeight: 12.00,
+          waveSpeed: 0.80,
+          zoom: 1.10,
+        })
+      );
+    }
+  }, [vantaEffect]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="scroll-container">
+      <div className="scroll-section" ref={vantaRef}>A</div>
+      <div className="scroll-section">B</div>
+      <div className="scroll-section">C</div>
     </div>
-  );
-}
+  )
+};
 
 export default App;
