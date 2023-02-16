@@ -1,42 +1,36 @@
-import { useState, useRef, useEffect } from "react";
-// @ts-ignore
-import WAVES from "vanta/dist/vanta.waves.min";
-import * as THREE from "three";
-import "./app.css";
+import styled from "styled-components";
+
+import First from "./pages/first";
 
 const App = () => {
-  const [vantaEffect, setVantaEffect] = useState(0);
-  const vantaRef = useRef(null);
-
-  useEffect(() => {
-    if (!vantaEffect) {
-      setVantaEffect(
-        WAVES({
-          el: vantaRef.current,
-          THREE: THREE,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          scaleMobile: 1.00,
-          color: 0x162831,
-          shininess: 60.00,
-          waveHeight: 12.00,
-          waveSpeed: 0.80,
-          zoom: 1.10,
-        })
-      );
-    }
-  }, [vantaEffect]);
   return (
-    <div className="scroll-container">
-      <div className="scroll-section" ref={vantaRef}>A</div>
-      <div className="scroll-section">B</div>
-      <div className="scroll-section">C</div>
-    </div>
+    <ScrollContainer>
+      <ScrollSection>
+        <First />
+      </ScrollSection>
+      <ScrollSection>
+        B
+      </ScrollSection>
+      <ScrollSection>
+        C
+      </ScrollSection>
+    </ScrollContainer>
   )
 };
 
 export default App;
+
+const ScrollContainer = styled.div`
+  overflow: scroll;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  background: #1c1c1c;
+  background: linear-gradient(135deg, rgba(24, 65, 134, 1) 0%, rgba(48, 31, 96, 1) 33%, rgba(24, 48, 65, 1) 66%, rgba(12, 70, 82, 1) 100%);
+`;
+
+const ScrollSection = styled.div`
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  height: 100vh;
+`;

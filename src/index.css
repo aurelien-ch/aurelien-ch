@@ -8,3 +8,13 @@ body {
   font-family: "OpenSans";
   src: local("OpenSans"), url("./assets/fonts/open-sans.ttf") format("truetype");
 }
+
+* {
+  font-family: "Calibre",
+    "Inter",
+    "San Francisco",
+    "SF Pro Text",
+    -apple-system,
+    system-ui,
+    sans-serif;
+}
