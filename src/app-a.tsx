@@ -9,10 +9,10 @@ const App = () => {
         <First />
       </ScrollSection>
       <ScrollSection>
-        B
+        <First />
       </ScrollSection>
       <ScrollSection>
-        C
+        <First />
       </ScrollSection>
     </ScrollContainer>
   )
