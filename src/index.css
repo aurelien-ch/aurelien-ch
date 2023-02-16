@@ -4,11 +4,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@font-face {
-  font-family: "OpenSans";
-  src: local("OpenSans"), url("./assets/fonts/open-sans.ttf") format("truetype");
-}
-
 * {
   font-family: "Calibre",
     "Inter",
