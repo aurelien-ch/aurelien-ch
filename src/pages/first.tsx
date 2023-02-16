@@ -55,16 +55,16 @@ const ProfessionContainer = styled.div`
   span {
     font-weight: normal;
     font-size: 3vw;
-    transform: translateY(-0.6vw);
+    transform: translateY(-.6vw);
 
     &:first-child {
       color: rgba(77, 132, 208, 1);
-      margin-right: 0.6vw;
+      margin-right: .6vw;
     }
 
     &:last-child {
       color: rgba(156, 38, 113, 1);
-      margin-left: 0.4vw;
+      margin-left: .4vw;
     }
   }
 `;
