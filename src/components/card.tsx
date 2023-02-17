@@ -8,30 +8,31 @@ const Card = () => {
   return (
     <TiltContainer>
       <Tilt
-        scale={1.07}
+        scale={1.075}
         transitionSpeed={1000}
         glareEnable={true}
-        glareMaxOpacity={.8}
+        glareMaxOpacity={.6}
         glareColor="lightblue"
         glarePosition="all"
       >
         <CardContainer>
           <BackgroundShape />
+          <ProfileImageShadow />
           <ProfileImage src={Image} />
           <CardLine>
-            <span>🧑🏻</span><DotSeparator />Aurélien
+            <span>🧑🏻</span><DotSeparator /><span>Aurélien</span>
           </CardLine>
           <CardLine>
-            <span>💻</span><DotSeparator />Dev Web
+            <span>💻</span><DotSeparator /><span>Dev Web</span>
           </CardLine>
           <CardLine>
-            <span>📱</span><DotSeparator />Dev Mobile
+            <span>📱</span><DotSeparator /><span>Dev Mobile</span>
           </CardLine>
           <CardLine>
-            <span>🎓</span><DotSeparator />Epitech
+            <span>🎓</span><DotSeparator /><span>Epitech</span>
           </CardLine>
           <CardLine>
-            <span>📍</span><DotSeparator />Paris
+            <span>📍</span><DotSeparator /><span>Paris</span>
           </CardLine>
         </CardContainer>
       </Tilt>
@@ -73,7 +74,18 @@ const BackgroundShape = styled.div`
   background: radial-gradient(120% 16.8vw at 50% 0, rgba(255, 255, 255, .1) 100%, transparent);
 `;
 
+const ProfileImageShadow = styled.div`
+  position: absolute;
+  top: 0;
+  width: 80%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, black 0%, transparent 60%);
+  transition: .3s;
+`;
+
 const ProfileImage = styled.img`
+  background-color: #81609c;
   display: block;
   width: 60%;
   aspect-ratio: 1;
@@ -89,12 +101,16 @@ const CardLine = styled.div`
   justify-content: space-between;
   width: 85%;
   margin-top: 1.2vw;
-  font-family: monospace;
   color: white;
   font-size: 1vw;
 
-  span {
-    transform: scale(1.2);
+  span{
+    font-family: monospace;
+    transform: translateZ(.5vw);
+
+    &:first-of-type {
+      transform: translateZ(.5vw) scale(1.2) translateY(-.1vw);
+    }
   }
 `;
 
