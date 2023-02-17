@@ -55,13 +55,18 @@ const TiltContainer = styled.div`
 const CardContainer = styled.div`
   height: 32vw;
   width: 22vw;
-  background: linear-gradient(135deg, #9c388e 0%, #559be6 100%);
-  border-radius: 1.5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 1.5vw;
   box-shadow: .4vw .4vw 3vw .2vw #5e4a63;
+  user-select: none;
+  background: linear-gradient(
+    135deg,
+    #9c388e 0%,
+    #559be6 100%
+  );
 `;
 
 const BackgroundShape = styled.div`
@@ -71,7 +76,11 @@ const BackgroundShape = styled.div`
   width: 100%;
   background-color: rgba(255, 255, 255, .2);
   border-radius: 1.5vw;
-  background: radial-gradient(120% 16.8vw at 50% 0, rgba(255, 255, 255, .1) 100%, transparent);
+  background: radial-gradient(
+    120% 16.8vw at 50% 0,
+    rgba(255, 255, 255, .1) 100%,
+    transparent
+  );
 `;
 
 const ProfileImageShadow = styled.div`
@@ -79,9 +88,12 @@ const ProfileImageShadow = styled.div`
   top: 0;
   width: 80%;
   aspect-ratio: 1;
-  border-radius: 50%;
   background: radial-gradient(circle, black 0%, transparent 60%);
-  transition: .3s;
+  background: radial-gradient(
+    circle,
+    black 0%,
+    transparent 60%
+  );
 `;
 
 const ProfileImage = styled.img`
@@ -109,7 +121,10 @@ const CardLine = styled.div`
     transform: translateZ(.5vw);
 
     &:first-of-type {
-      transform: translateZ(.5vw) scale(1.2) translateY(-.1vw);
+      transform:
+        translateZ(.5vw)
+        scale(1.2)
+        translateY(-.1vw);
     }
   }
 `;
