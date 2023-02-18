@@ -1,13 +1,13 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import styled from "styled-components";
 
+import useCurrentSection from "./hooks/use-current-section";
 import SectionIndex from "./components/section-index";
 import Presentation from "./pages/presentation";
 
 const App = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
-  const [currentSection, setCurrentSection] = useState<number>(0);
-  const [currentSectionScrollPercentage, setCurrentSectionScrollPercentage] = useState<number>(0);
+  const currentSection = useCurrentSection(scrollContainerRef);
 
   const sections: JSX.Element[] = [
     <Presentation />,
@@ -17,46 +17,12 @@ const App = () => {
     <Presentation />,
   ];
 
-  useEffect(() => {
-    const scrollContainer: HTMLElement | null = scrollContainerRef.current;
-
-    const handleScroll = () => {
-      const scrollContainer: HTMLElement | null = scrollContainerRef.current;
-
-      if (scrollContainer) {
-        const sections = document.querySelectorAll("section");
-        const scrollPosition = scrollContainer.scrollTop;
-
-        for (let i = 0; i < sections.length; i++) {
-          const sectionTop = sections[i].offsetTop;
-          const sectionBottom = sectionTop + sections[i].offsetHeight;
-
-          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-            const sectionHeight = sectionBottom - sectionTop;
-            const distanceFromTop = scrollPosition - sectionTop;
-            const scrollPercentage = (distanceFromTop / sectionHeight) * 100;
-
-            setCurrentSection(i);
-            setCurrentSectionScrollPercentage(scrollPercentage);
-            break;
-          }
-        }
-      }
-    };
-
-    scrollContainer?.addEventListener("scroll", handleScroll);
-
-    return () => {
-      scrollContainer?.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <>
       <SectionIndex
-        index={currentSection}
+        index={currentSection.index}
         steps={sections.length}
-        stepScrollPercentage={currentSectionScrollPercentage}
+        scrollPercentage={currentSection.scrollPercentage}
         containerRef={scrollContainerRef}
       />
       <ScrollContainer ref={scrollContainerRef}>

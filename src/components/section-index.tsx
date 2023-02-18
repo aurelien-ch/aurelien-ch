@@ -3,7 +3,7 @@ import styled from "styled-components";
 interface Props {
   index: number;
   steps: number;
-  stepScrollPercentage: number;
+  scrollPercentage: number;
   containerRef: React.MutableRefObject<HTMLDivElement | null>;
 }
 
@@ -17,9 +17,10 @@ const SectionIndex = (p: Props) => {
               active={step <= p.index}
               current={step === p.index}
               onClick={() => {
-                console.log(window.innerHeight * (step));
-
-                p.containerRef.current?.scrollTo({ top: window.innerHeight * (step), behavior: "smooth" })
+                p.containerRef.current?.scrollTo({
+                  top: window.innerHeight * (step),
+                  behavior: "smooth",
+                });
               }}
             >
               <span>{step + 1}</span>
@@ -31,7 +32,7 @@ const SectionIndex = (p: Props) => {
                   <ProgressLine
                     filled={step < p.index}
                     progressing={step === p.index}
-                    progress={p.stepScrollPercentage}
+                    progress={p.scrollPercentage}
                   />
                 </TrackLine>
               ) : null
