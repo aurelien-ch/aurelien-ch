@@ -4,6 +4,7 @@ import Tilt from "react-parallax-tilt";
 import Image from "../assets/card-image.jpeg";
 
 const Card = () => {
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
   return (
     <TiltContainer>
@@ -19,19 +20,19 @@ const Card = () => {
           <BackgroundShape />
           <ProfileImageShadow />
           <ProfileImage src={Image} />
-          <CardLine>
+          <CardLine isSafari={isSafari}>
             <span>🧑🏻</span><DotSeparator /><span>Aurélien</span>
           </CardLine>
-          <CardLine>
+          <CardLine isSafari={isSafari}>
             <span>💻</span><DotSeparator /><span>Dev Web</span>
           </CardLine>
-          <CardLine>
+          <CardLine isSafari={isSafari}>
             <span>📱</span><DotSeparator /><span>Dev Mobile</span>
           </CardLine>
-          <CardLine>
+          <CardLine isSafari={isSafari}>
             <span>🎓</span><DotSeparator /><span>Epitech</span>
           </CardLine>
-          <CardLine>
+          <CardLine isSafari={isSafari}>
             <span>📍</span><DotSeparator /><span>Paris</span>
           </CardLine>
         </CardContainer>
@@ -88,7 +89,6 @@ const ProfileImageShadow = styled.div`
   top: 0;
   width: 80%;
   aspect-ratio: 1;
-  background: radial-gradient(circle, black 0%, transparent 60%);
   background: radial-gradient(
     circle,
     black 0%,
@@ -108,7 +108,7 @@ const ProfileImage = styled.img`
   margin-bottom: 1.4vw;
 `;
 
-const CardLine = styled.div`
+const CardLine = styled.div<any>`
   display: flex;
   justify-content: space-between;
   width: 85%;
@@ -117,14 +117,11 @@ const CardLine = styled.div`
   font-size: 1vw;
 
   span{
-    font-family: monospace;
-    transform: translateZ(.5vw);
+    font-family: CourierPrime;
+    transform: translate3d(0, ${p => p.isSafari ? ".45vw" : ".2vw"}, .5vw);
 
     &:first-of-type {
-      transform:
-        translateZ(.5vw)
-        scale(1.2)
-        translateY(-.1vw);
+      transform: translate3d(0, 0, .5vw) scale(${p => p.isSafari ? 1 : 1.2});
     }
   }
 `;
