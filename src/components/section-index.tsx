@@ -22,7 +22,7 @@ const SectionIndex = (p: Props) => {
                 p.containerRef.current?.scrollTo({ top: window.innerHeight * (step), behavior: "smooth" })
               }}
             >
-              {step + 1}
+              <span>{step + 1}</span>
             </Step>
 
             {
@@ -59,24 +59,29 @@ const Step = styled.div<any>`
   height:1.7vw;
   width: 1.7vw;
   border-radius: 100%;
-  background-color: #704b93;
+  background-color: rgb(125, 88, 161);
   opacity: ${p => p.active ? 1 : .4};
-  transform: scale(${p => p.current ? 1.15 : 1});
   transition: .3s;
   color: white;
   font-size: 0.8vw;
+  transform: scale(${p => p.current ? 1.15 : 1});
   cursor: pointer;
   transition: .3s;
 
   &:hover {
     transform: scale(1.15);
   }
+
+  span {
+    font-family: CourierPrime;
+    transform: translateY(.08vw);
+  }
 `;
 
 const TrackLine = styled.div`
   height: 1.7vw;
   width: 0.1vw;
-  background-color: rgba(112, 75, 147, .3);
+  background-color: rgba(125, 88, 161, .3);
   transform: translateX(calc(1.7vw / 2 - 50%));
 `;
 
@@ -84,5 +89,5 @@ const ProgressLine = styled.div<any>`
   position: absolute;
   height: ${p => p.filled ? 100 : p.progressing ? p.progress : 0}%;
   width: 0.15vw;
-  background-color: #704b93;
+  background-color: rgb(125, 88, 161);
 `;
