@@ -64,7 +64,7 @@ const Step = styled.div<any>`
   opacity: ${p => p.active ? 1 : .4};
   transition: .3s;
   color: white;
-  font-size: 0.8vw;
+  font-size: .8vw;
   transform: scale(${p => p.current ? 1.15 : 1});
   cursor: pointer;
   transition: .3s;
@@ -81,7 +81,7 @@ const Step = styled.div<any>`
 
 const TrackLine = styled.div`
   height: 1.7vw;
-  width: 0.1vw;
+  width: .1vw;
   background-color: rgba(125, 88, 161, .3);
   transform: translateX(calc(1.7vw / 2 - 50%));
 `;
@@ -89,6 +89,6 @@ const TrackLine = styled.div`
 const ProgressLine = styled.div<any>`
   position: absolute;
   height: ${p => p.filled ? 100 : p.progressing ? p.progress : 0}%;
-  width: 0.15vw;
+  width: .15vw;
   background-color: rgb(125, 88, 161);
 `;

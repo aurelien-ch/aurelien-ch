@@ -3,53 +3,57 @@ import { Fade } from "react-awesome-reveal";
 
 import TypeWriter from "../components/type-writer";
 import Card from "../components/card";
+import ScrollDown from "../components/scroll-down";
 
 const Presentation = () => {
   return (
-    <Container>
-      <Headlines>
-        <MyNameIs>
-          <TypeWriter text={"Bonjour ! Je m'appelle"} />
-        </MyNameIs>
-        <Fade
-          triggerOnce
-          cascade
-          damping={.2}
-          direction="left"
-        >
-          <FirstName>
-            Aurélien
-          </FirstName>
-          <LastName>
-            Charpilienne
-          </LastName>
+    <>
+      <Container>
+        <Headlines>
+          <Fade triggerOnce>
+            <MyNameIs>
+              <TypeWriter text={"Bonjour ! Je m'appelle"} />
+            </MyNameIs>
+          </Fade>
+          <Fade
+            triggerOnce
+            cascade
+            damping={.2}
+            direction="left"
+          >
+            <FirstName>
+              Aurélien
+            </FirstName>
+            <LastName>
+              Charpilienne
+            </LastName>
+          </Fade>
+          <Fade triggerOnce delay={1000}>
+            <MyJobIs>
+              <TypeWriter
+                text={"Et je suis"}
+                delay={1000}
+              />
+            </MyJobIs>
+          </Fade>
+          <Fade triggerOnce delay={1250}>
+            <ProfessionContainer>
+              <span>&#123;</span>
+              <Profession>
+                Développeur Web & Mobile Fullstack
+              </Profession>
+              <span>&#125;</span>
+            </ProfessionContainer>
+          </Fade>
+        </Headlines>
+        <Fade triggerOnce direction="up">
+          <Card />
         </Fade>
-        <MyJobIs>
-          <TypeWriter
-            text={"Et je suis"}
-            delay={1000}
-          />
-        </MyJobIs>
-        <Fade
-          triggerOnce
-          delay={1250}
-        >
-          <ProfessionContainer>
-            <span>&#123;</span>
-            <Profession>
-              Développeur Web & Mobile Fullstack
-            </Profession>
-            <span>&#125;</span>
-          </ProfessionContainer>
-        </Fade>
-      </Headlines>
-      <Fade
-        triggerOnce
-        direction="up"
-      >
-        <Card />
+      </Container>
+      <Fade triggerOnce delay={1750}>
+        <ScrollDown />
       </Fade>
-    </Container>
+    </>
   );
 };
 
@@ -69,7 +73,7 @@ const Headlines = styled.div`
 const ContextLine = styled.div`
   font-size: 1.2vw;
   font-weight: normal;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, .5);
   margin-left: 1vw;
 `;
 
@@ -88,7 +92,7 @@ const FirstName = styled.div`
 
 const LastName = styled.div`
   font-size: 7vw;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, .4);
   transform: translateY(-.5vw);
   margin-bottom: 3vw;
 `;
@@ -103,12 +107,12 @@ const ProfessionContainer = styled.div`
 
     &:first-child {
       color: rgba(77, 132, 208, 1);
-      margin-right: .6vw;
+      margin-right: .8vw;
     }
 
     &:last-child {
       color: rgba(156, 38, 113, 1);
-      margin-left: .4vw;
+      margin-left: .6vw;
     }
   }
 `;
