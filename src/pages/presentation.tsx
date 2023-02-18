@@ -4,7 +4,7 @@ import { Fade } from "react-awesome-reveal";
 import TypeWriter from "../components/type-writer";
 import Card from "../components/card";
 
-const First = () => {
+const Presentation = () => {
   return (
     <Container>
       <Headlines>
@@ -53,7 +53,7 @@ const First = () => {
   );
 };
 
-export default First;
+export default Presentation;
 
 const Container = styled.div`
   height: 100%;
@@ -99,7 +99,7 @@ const ProfessionContainer = styled.div`
   span {
     font-weight: normal;
     font-size: 3vw;
-    transform: translateY(-.6vw);
+    transform: translateY(-.7vw);
 
     &:first-child {
       color: rgba(77, 132, 208, 1);
@@ -114,7 +114,7 @@ const ProfessionContainer = styled.div`
 `;
 
 const Profession = styled.div`
-  font-size: 2.3vw;
+  font-size: 2.2vw;
   background: linear-gradient(
     135deg,
     rgba(69, 151, 226, 1) 0%,

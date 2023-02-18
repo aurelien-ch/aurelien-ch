@@ -2,14 +2,20 @@ import { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 
 import SectionIndex from "./components/section-index";
-import First from "./pages/first";
+import Presentation from "./pages/presentation";
 
 const App = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const [currentSection, setCurrentSection] = useState<number>(0);
   const [currentSectionScrollPercentage, setCurrentSectionScrollPercentage] = useState<number>(0);
 
-  const sections: JSX.Element[] = [<First />, <First />, <First />, <First />, <First />];
+  const sections: JSX.Element[] = [
+    <Presentation />,
+    <Presentation />,
+    <Presentation />,
+    <Presentation />,
+    <Presentation />,
+  ];
 
   useEffect(() => {
     const scrollContainer: HTMLElement | null = scrollContainerRef.current;
