@@ -9,7 +9,7 @@ const App = () => {
   const [currentSection, setCurrentSection] = useState<number>(0);
   const [currentSectionScrollPercentage, setCurrentSectionScrollPercentage] = useState<number>(0);
 
-  const sections: JSX.Element[] = [<First />, <First />, <First />, <First />];
+  const sections: JSX.Element[] = [<First />, <First />, <First />, <First />, <First />];
 
   useEffect(() => {
     const scrollContainer: HTMLElement | null = scrollContainerRef.current;

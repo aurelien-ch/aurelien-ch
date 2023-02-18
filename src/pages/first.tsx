@@ -1,30 +1,47 @@
 import styled from "styled-components";
+import { Fade } from "react-awesome-reveal";
 
+import TypeWriter from "../components/type-writer";
 import Card from "../components/card";
 
 const First = () => {
   return (
     <Container>
       <Headlines>
-        <ContextLine>
-          Bonjour ! Je m'appelle
-        </ContextLine>
-        <FirstName>
-          Aurélien
-        </FirstName>
-        <LastName>
-          Charpilienne
-        </LastName>
-        <ContextLine>
-          Et je suis
-        </ContextLine>
-        <ProfessionContainer>
-          <span>&#123;</span>
-          <Profession>
-            Développeur Web & Mobile Fullstack
-          </Profession>
-          <span>&#125;</span>
-        </ProfessionContainer>
+        <MyNameIs>
+          <TypeWriter text={"Bonjour ! Je m'appelle"} />
+        </MyNameIs>
+        <Fade
+          triggerOnce
+          cascade
+          damping={.2}
+          direction="left"
+        >
+          <FirstName>
+            Aurélien
+          </FirstName>
+          <LastName>
+            Charpilienne
+          </LastName>
+        </Fade>
+        <MyJobIs>
+          <TypeWriter
+            text={"Et je suis"}
+            delay={1000}
+          />
+        </MyJobIs>
+        <Fade
+          triggerOnce
+          delay={1250}
+        >
+          <ProfessionContainer>
+            <span>&#123;</span>
+            <Profession>
+              Développeur Web & Mobile Fullstack
+            </Profession>
+            <span>&#125;</span>
+          </ProfessionContainer>
+        </Fade>
       </Headlines>
       <Card />
     </Container>
@@ -45,16 +62,18 @@ const Headlines = styled.div`
 `;
 
 const ContextLine = styled.div`
-  font-family: monospace;
-  font-weight: normal;
-  color: rgba(255, 255, 255, 0.8);
   font-size: 1.2vw;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.5);
   margin-left: 1vw;
-  margin-bottom: 1.5vw;
+`;
 
-  &:first-of-type {
-    margin-bottom: 1vw;
-  }
+const MyNameIs = styled(ContextLine)`
+  margin-bottom: 1vw;
+`;
+
+const MyJobIs = styled(ContextLine)`
+  margin-bottom: 1.5vw;
 `;
 
 const FirstName = styled.div`

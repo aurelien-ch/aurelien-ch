@@ -23,7 +23,7 @@ const SectionIndex = (p: Props) => {
               step < p.steps - 1 ? (
                 <TrackLine>
                   <ProgressLine
-                    fill={step < p.index}
+                    filled={step < p.index}
                     progressing={step === p.index}
                     progress={p.stepScrollPercentage}
                   />
@@ -69,7 +69,7 @@ const TrackLine = styled.div`
 
 const ProgressLine = styled.div<any>`
   position: absolute;
-  height: ${p => p.fill ? 100 : p.progressing ? p.progress : 0}%;
+  height: ${p => p.filled ? 100 : p.progressing ? p.progress : 0}%;
   width: 0.15vw;
   background-color: #704b93;
 `;
