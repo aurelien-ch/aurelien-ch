@@ -43,7 +43,12 @@ const First = () => {
           </ProfessionContainer>
         </Fade>
       </Headlines>
-      <Card />
+      <Fade
+        triggerOnce
+        direction="right"
+      >
+        <Card />
+      </Fade>
     </Container>
   );
 };
