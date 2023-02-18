@@ -4,6 +4,7 @@ interface Props {
   index: number;
   steps: number;
   stepScrollPercentage: number;
+  containerRef: React.MutableRefObject<HTMLDivElement | null>;
 }
 
 const SectionIndex = (p: Props) => {
@@ -15,6 +16,11 @@ const SectionIndex = (p: Props) => {
             <Step
               active={step <= p.index}
               current={step === p.index}
+              onClick={() => {
+                console.log(window.innerHeight * (step));
+
+                p.containerRef.current?.scrollTo({ top: window.innerHeight * (step), behavior: "smooth" })
+              }}
             >
               {step + 1}
             </Step>
@@ -43,14 +49,15 @@ const Container = styled.div`
   position: absolute;
   top: 1.5vw;
   left: 1.5vw;
+  z-index: 1;
 `;
 
 const Step = styled.div<any>`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2vw;
-  width: 2vw;
+  height:1.7vw;
+  width: 1.7vw;
   border-radius: 100%;
   background-color: #704b93;
   opacity: ${p => p.active ? 1 : .4};
@@ -58,13 +65,19 @@ const Step = styled.div<any>`
   transition: .3s;
   color: white;
   font-size: 0.8vw;
+  cursor: pointer;
+  transition: .3s;
+
+  &:hover {
+    transform: scale(1.15);
+  }
 `;
 
 const TrackLine = styled.div`
-  height: 2vw;
-  width: 0.15vw;
+  height: 1.7vw;
+  width: 0.1vw;
   background-color: rgba(112, 75, 147, .3);
-  transform: translateX(calc(2vw / 2 - 50%));
+  transform: translateX(calc(1.7vw / 2 - 50%));
 `;
 
 const ProgressLine = styled.div<any>`

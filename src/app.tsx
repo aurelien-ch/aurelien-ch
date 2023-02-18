@@ -51,6 +51,7 @@ const App = () => {
         index={currentSection}
         steps={sections.length}
         stepScrollPercentage={currentSectionScrollPercentage}
+        containerRef={scrollContainerRef}
       />
       <ScrollContainer ref={scrollContainerRef}>
         {
