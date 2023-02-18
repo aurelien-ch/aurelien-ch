@@ -3,18 +3,18 @@ import styled from "styled-components";
 
 import useCurrentSection from "./hooks/use-current-section";
 import SectionIndex from "./components/section-index";
-import Presentation from "./pages/presentation";
+import First from "./pages/first";
 
 const App = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const currentSection = useCurrentSection(scrollContainerRef);
 
   const sections: JSX.Element[] = [
-    <Presentation />,
-    <Presentation />,
-    <Presentation />,
-    <Presentation />,
-    <Presentation />,
+    <First />,
+    <First />,
+    <First />,
+    <First />,
+    <First />,
   ];
 
   return (
