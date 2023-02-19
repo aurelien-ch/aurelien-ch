@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import SkillIcon from "./skill-icon";
+
 import Html from "../assets/skills-icons/html.png"
 import Css from "../assets/skills-icons/css.png"
 import Js from "../assets/skills-icons/js.png"
@@ -123,18 +125,24 @@ const Badge = styled.div`
   display: flex;
   align-items: center;
   gap: .6vw;
-  background-color: rgba(255, 255, 255, .2);
+  background-color: rgba(255, 255, 255, .1);
   padding: .5vw 1vw;
   border-radius: 2vw;
-`;
+  cursor: default;
+  transition: .4s;
 
-const SkillIcon = styled.img`
-  height: 1.8vw;
+  &:hover {
+    transform: scale(1.05);
+
+    img:not(:first-of-type) {
+      opacity: 1;
+    }
+  }
 `;
 
 const BadgeLabel = styled.div`
-  font-weight: bold;
-  font-size: .8vw;
+  font-weight: 600;
+  font-size: .9vw;
   color: white;
   margin-right: .2vw
 `;

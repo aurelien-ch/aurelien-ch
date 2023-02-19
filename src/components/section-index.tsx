@@ -60,14 +60,12 @@ const Step = styled.div<any>`
   height:1.7vw;
   width: 1.7vw;
   border-radius: 100%;
-  background-color: rgb(125, 88, 161);
-  opacity: ${p => p.active ? 1 : .4};
-  transition: .3s;
-  color: white;
+  background-color: ${p => p.active ? "rgb(125, 88, 161)" : "rgb(70, 71, 140)"};
+  color: rgba(255, 255, 255, ${p => p.active ? 1 : .4});
   font-size: .8vw;
   transform: scale(${p => p.current ? 1.15 : 1});
   cursor: pointer;
-  transition: .3s;
+  transition: .4s;
 
   &:hover {
     transform: scale(1.15);

@@ -87,12 +87,12 @@ const ProfessionContainer = styled.div`
     transform: translateY(-.7vw);
 
     &:first-child {
-      color: rgba(77, 132, 208, 1);
+      color: #559be6;
       margin-right: .8vw;
     }
 
     &:last-child {
-      color: rgba(156, 38, 113, 1);
+      color: #9c388e;
       margin-left: .6vw;
     }
   }
@@ -102,8 +102,8 @@ const Profession = styled.div`
   font-size: 2.2vw;
   background: linear-gradient(
     135deg,
-    rgba(69, 151, 226, 1) 0%,
-    rgba(185, 46, 134, 1) 100%
+    #559be6 0%,
+    #9c388e 100%
   );
   -webkit-background-clip: text;
   color: transparent;
