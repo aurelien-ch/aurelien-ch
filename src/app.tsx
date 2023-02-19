@@ -52,7 +52,7 @@ const ScrollContainer = styled.div`
     rgba(24, 48, 65, 1) 66%,
     rgba(12, 70, 82, 1) 100%
   );
-  padding: 9vw;
+  padding: 0 9vw;
 `;
 
 const ScrollSection = styled.section`
