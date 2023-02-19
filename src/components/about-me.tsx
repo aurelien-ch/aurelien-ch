@@ -38,21 +38,14 @@ const Container = styled.div`
 
 const Title = styled.div`
   font-weight: bold;
-  font-size: 2.5vw;
-  background: linear-gradient(
-    135deg,
-    #559be6 0%,
-    #9c388e 100%
-  );
-  -webkit-background-clip: text;
-  color: transparent;
-  width: fit-content;
+  font-size: 4vw;
+  color: rgba(255, 255, 255, .4);
   margin-bottom: 1.8vw;
 `;
 
 const Description = styled.div`
   font-weight: 500;
-  color: rgba(255, 255, 255, .8);
+  color: rgba(255, 255, 255, .6);
   font-size: 1.1vw;
 `;
 
@@ -61,6 +54,6 @@ const Sentence = styled.div`
 
   span {
     color: white;
-    font-weight: 700;
+    font-weight: 600;
   }
 `;
