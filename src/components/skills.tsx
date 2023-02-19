@@ -106,7 +106,7 @@ const Category = styled.div`
 
 const CategoryLabel = styled.div`
   font-weight: bold;
-  font-size: 1vw;
+  font-size: .9vw;
   color: rgba(255, 255, 255, .7);
   margin-left: .5vw;
   margin-bottom: .7vw;
@@ -115,7 +115,7 @@ const CategoryLabel = styled.div`
 const Badges = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 1vw;
+  gap: .8vw;
 `;
 
 const Badge = styled.div`
