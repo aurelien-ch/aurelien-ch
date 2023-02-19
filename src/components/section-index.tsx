@@ -87,6 +87,6 @@ const TrackLine = styled.div`
 const ProgressLine = styled.div<any>`
   position: absolute;
   height: ${p => p.filled ? 100 : p.progressing ? p.progress : 0}%;
-  width: .15vw;
+  width: .1vw;
   background-color: rgb(125, 88, 161);
 `;
