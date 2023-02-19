@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Fade } from "react-awesome-reveal";
 import Tilt from "react-parallax-tilt";
 
 import Image from "../assets/card-image.jpeg";
@@ -7,37 +8,42 @@ const Card = () => {
   const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
   return (
-    <TiltContainer>
-      <Tilt
-        scale={1.075}
-        transitionSpeed={1000}
-        glareEnable={true}
-        glareMaxOpacity={.6}
-        glareColor="lightblue"
-        glarePosition="all"
-      >
-        <CardContainer>
-          <BackgroundShape />
-          <ProfileImageShadow />
-          <ProfileImage src={Image} />
-          <CardLine isSafari={isSafari}>
-            <span>🧑🏻</span><DotSeparator /><span>Aurélien</span>
-          </CardLine>
-          <CardLine isSafari={isSafari}>
-            <span>💻</span><DotSeparator /><span>Dev Web</span>
-          </CardLine>
-          <CardLine isSafari={isSafari}>
-            <span>📱</span><DotSeparator /><span>Dev Mobile</span>
-          </CardLine>
-          <CardLine isSafari={isSafari}>
-            <span>🎓</span><DotSeparator /><span>Epitech</span>
-          </CardLine>
-          <CardLine isSafari={isSafari}>
-            <span>📍</span><DotSeparator /><span>Paris</span>
-          </CardLine>
-        </CardContainer>
-      </Tilt>
-    </TiltContainer>
+    <Fade
+      triggerOnce
+      direction="up"
+    >
+      <TiltContainer>
+        <Tilt
+          scale={1.075}
+          transitionSpeed={1000}
+          glareEnable={true}
+          glareMaxOpacity={.6}
+          glareColor="lightblue"
+          glarePosition="all"
+        >
+          <CardContainer>
+            <BackgroundShape />
+            <ProfileImageShadow />
+            <ProfileImage src={Image} />
+            <CardLine isSafari={isSafari}>
+              <span>🧑🏻</span><DotSeparator /><span>Aurélien</span>
+            </CardLine>
+            <CardLine isSafari={isSafari}>
+              <span>💻</span><DotSeparator /><span>Dev Web</span>
+            </CardLine>
+            <CardLine isSafari={isSafari}>
+              <span>📱</span><DotSeparator /><span>Dev Mobile</span>
+            </CardLine>
+            <CardLine isSafari={isSafari}>
+              <span>🎓</span><DotSeparator /><span>Epitech</span>
+            </CardLine>
+            <CardLine isSafari={isSafari}>
+              <span>📍</span><DotSeparator /><span>Paris</span>
+            </CardLine>
+          </CardContainer>
+        </Tilt>
+      </TiltContainer>
+    </Fade>
   );
 };
 

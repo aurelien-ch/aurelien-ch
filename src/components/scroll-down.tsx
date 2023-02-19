@@ -1,18 +1,24 @@
 import styled, { keyframes } from "styled-components";
+import { Fade } from "react-awesome-reveal";
 
 import TypeWriter from "../components/type-writer";
 
 const ScrollDown = () => {
   return (
-    <Container>
-      <Label>
-        <TypeWriter
-          text={"Scrollez vers le bas"}
-          delay={1750}
-        />
-      </Label>
-      <Arrow />
-    </Container>
+    <Fade
+      triggerOnce
+      delay={1750}
+    >
+      <Container>
+        <Label>
+          <TypeWriter
+            text={"Scrollez vers le bas"}
+            delay={1750}
+          />
+        </Label>
+        <Arrow />
+      </Container>
+    </Fade>
   );
 };
 

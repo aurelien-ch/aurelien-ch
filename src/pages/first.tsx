@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Fade } from "react-awesome-reveal";
 
 import Headlines from "../components/headlines";
 import Card from "../components/card";
@@ -8,22 +7,18 @@ import ScrollDown from "../components/scroll-down";
 const First = () => {
   return (
     <>
-      <Container>
+      <Center>
         <Headlines />
-        <Fade triggerOnce direction="up">
-          <Card />
-        </Fade>
-      </Container>
-      <Fade triggerOnce delay={1750}>
-        <ScrollDown />
-      </Fade>
+        <Card />
+      </Center>
+      <ScrollDown />
     </>
   );
 };
 
 export default First;
 
-const Container = styled.div`
+const Center = styled.div`
   height: 100%;
   display: flex;
   justify-content: space-around;
