@@ -124,17 +124,17 @@ const Badge = styled.div`
   align-items: center;
   gap: .6vw;
   background-color: rgba(255, 255, 255, .2);
-  padding: .6vw 1vw;
+  padding: .5vw 1vw;
   border-radius: 2vw;
 `;
 
 const SkillIcon = styled.img`
-  height: 2vw;
+  height: 1.8vw;
 `;
 
 const BadgeLabel = styled.div`
   font-weight: bold;
-  font-size: 1vw;
+  font-size: .8vw;
   color: white;
-  margin-right: .4vw
+  margin-right: .2vw
 `;
