@@ -54,7 +54,6 @@ const Label = styled.div`
   color: rgba(255, 255, 255, .4);
   font-size: 1vw;
   font-family: CourierPrime;
-  margin-bottom: .2vw;
 `;
 
 const Arrow = styled.div`
