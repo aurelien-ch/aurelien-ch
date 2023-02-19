@@ -53,7 +53,7 @@ const Title = styled.div`
 const Description = styled.div`
   font-weight: 500;
   color: rgba(255, 255, 255, .8);
-  font-size: 1.2vw;
+  font-size: 1.1vw;
 `;
 
 const Sentence = styled.div`
