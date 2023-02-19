@@ -23,7 +23,7 @@ const AboutMe = () => {
           <span>Afin de donner vie à votre projet</span>, je vous accompagnerai pour trouver avec vous les meilleures réponses techniques et ergonomiques.
         </Sentence>
         <Sentence>
-          Impatient de travailler avec vous, <span>n'hésitez pas à me contacter !</span> 😉
+          Impatient de travailler avec vous, <span>n'hésitez pas à me contacter !</span>
         </Sentence>
       </Description>
     </Container>
@@ -33,6 +33,7 @@ const AboutMe = () => {
 export default AboutMe;
 
 const Container = styled.div`
+  flex: 3;
 `;
 
 const Title = styled.div`

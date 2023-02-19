@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 import AboutMe from "../components/about-me";
+import Skills from "../components/skills";
 
 const Second = () => {
   return (
     <Container>
       <AboutMe />
+      <Skills />
     </Container>
   );
 };
@@ -17,4 +19,5 @@ const Container = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  gap: 5vw;
 `;

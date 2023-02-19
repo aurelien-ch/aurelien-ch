@@ -7,10 +7,10 @@ import ScrollDown from "../components/scroll-down";
 const First = () => {
   return (
     <>
-      <Center>
+      <Container>
         <Headlines />
         <Card />
-      </Center>
+      </Container>
       <ScrollDown />
     </>
   );
@@ -18,7 +18,7 @@ const First = () => {
 
 export default First;
 
-const Center = styled.div`
+const Container = styled.div`
   height: 100%;
   display: flex;
   justify-content: space-between;
