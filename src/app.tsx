@@ -4,6 +4,7 @@ import styled from "styled-components";
 import useCurrentSection from "./hooks/use-current-section";
 import SectionIndex from "./components/section-index";
 import First from "./pages/first";
+import Second from "./pages/second";
 
 const App = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
@@ -11,7 +12,7 @@ const App = () => {
 
   const sections: JSX.Element[] = [
     <First />,
-    <First />,
+    <Second />,
     <First />,
     <First />,
     <First />,
@@ -51,6 +52,7 @@ const ScrollContainer = styled.div`
     rgba(24, 48, 65, 1) 66%,
     rgba(12, 70, 82, 1) 100%
   );
+  padding: 9vw;
 `;
 
 const ScrollSection = styled.section`

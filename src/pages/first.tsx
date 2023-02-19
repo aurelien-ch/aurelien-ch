@@ -21,6 +21,6 @@ export default First;
 const Center = styled.div`
   height: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 `;
