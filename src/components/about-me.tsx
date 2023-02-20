@@ -33,14 +33,23 @@ const AboutMe = () => {
 export default AboutMe;
 
 const Container = styled.div`
-  flex: 3;
+  flex: 3.8;
 `;
 
 const Title = styled.div`
   font-weight: bold;
-  font-size: 4vw;
+  font-size: 3.5vw;
   color: rgba(255, 255, 255, .4);
   margin-bottom: 1.8vw;
+
+  width: fit-content;
+  background: linear-gradient(
+    135deg,
+    #559be6 0%,
+    #9c388e 100%
+  );
+  -webkit-background-clip: text;
+  color: transparent;
 `;
 
 const Description = styled.div`
