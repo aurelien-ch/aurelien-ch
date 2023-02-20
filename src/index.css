@@ -18,3 +18,7 @@ body {
     system-ui,
     sans-serif;
 }
+
+div[class^="css"] {
+  opacity: 0;
+}

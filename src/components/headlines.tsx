@@ -15,7 +15,7 @@ const Headlines = () => {
         triggerOnce
         cascade
         damping={.2}
-        direction="left"
+        direction={"left"}
       >
         <FirstName>
           Aurélien
@@ -24,7 +24,10 @@ const Headlines = () => {
           Charpilienne
         </LastName>
       </Fade>
-      <Fade triggerOnce delay={1000}>
+      <Fade
+        triggerOnce
+        delay={1000}
+      >
         <MyJobIs>
           <TypeWriter
             text={"Et je suis"}
@@ -32,7 +35,10 @@ const Headlines = () => {
           />
         </MyJobIs>
       </Fade>
-      <Fade triggerOnce delay={1250}>
+      <Fade
+        triggerOnce
+        delay={1250}
+      >
         <ProfessionContainer>
           <span>&#123;</span>
           <Profession>

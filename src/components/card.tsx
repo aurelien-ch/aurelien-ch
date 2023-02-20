@@ -10,7 +10,7 @@ const Card = () => {
   return (
     <Fade
       triggerOnce
-      direction="up"
+      direction={"up"}
     >
       <TiltContainer>
         <Tilt
@@ -18,8 +18,8 @@ const Card = () => {
           transitionSpeed={1000}
           glareEnable={true}
           glareMaxOpacity={.6}
-          glareColor="lightblue"
-          glarePosition="all"
+          glareColor={"lightblue"}
+          glarePosition={"all"}
         >
           <CardContainer>
             <BackgroundShape />

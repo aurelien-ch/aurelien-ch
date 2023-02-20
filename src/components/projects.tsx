@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
+import { Fade } from "react-awesome-reveal";
 import gsap from "gsap";
 
 import { Project as ProjectType } from "../types";
@@ -11,16 +12,16 @@ const Projects = () => {
 
   const projects: ProjectType[] = [
     {
-      name: "a",
+      name: "Usense",
     },
     {
-      name: "b",
+      name: "MyTelevision",
     },
     {
-      name: "c",
+      name: "Monuma",
     },
     {
-      name: "d",
+      name: "Sophrauto",
     },
   ];
 
@@ -46,14 +47,22 @@ const Projects = () => {
     <Container>
       {
         projects.map((p: ProjectType, index: number) => (
-          <Project
+          <GsapContainer
             key={index}
             ref={(e: any) => projectsRefs.current[index] = e}
             onClick={() => {
               expand(index);
               setActiveIndex(activeIndex === index ? null : index);
             }}
-          />
+          >
+            <Fade
+              triggerOnce
+              delay={200 + index * 150}
+              direction={"up"}
+            >
+              <Project />
+            </Fade>
+          </GsapContainer>
         ))
       }
     </Container>
@@ -64,12 +73,15 @@ export default Projects;
 
 const Container = styled.div`
   display: flex;
-  gap: 3vw;
+  gap: 2.5vw;
+`;
+
+const GsapContainer = styled.div`
+  flex: 1;
 `;
 
 const Project = styled.div<any>`
   height: 15vw;
-  flex: 1;
   background-color: rgba(255, 255, 255, .1);
   border-radius: 2.5vw;
   cursor: pointer;

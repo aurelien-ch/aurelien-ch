@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Fade } from "react-awesome-reveal";
 
 import SkillIcon from "./skill-icon";
 
@@ -23,24 +24,31 @@ const Skills = () => {
           FRONT-END
         </CategoryLabel>
         <Badges>
-          <Badge>
-            <SkillIcon src={Html} />
-            <SkillIcon src={Css} />
-            <SkillIcon src={Js} />
-            <SkillIcon src={Ts} />
-          </Badge>
-          <Badge>
-            <SkillIcon src={React} />
-            <BadgeLabel>
-              React
-            </BadgeLabel>
-          </Badge>
-          <Badge>
-            <SkillIcon src={Flutter} />
-            <BadgeLabel>
-              Flutter
-            </BadgeLabel>
-          </Badge>
+          <Fade
+            triggerOnce
+            cascade
+            damping={.1}
+            direction={"right"}
+          >
+            <Badge>
+              <SkillIcon src={Html} />
+              <SkillIcon src={Css} />
+              <SkillIcon src={Js} />
+              <SkillIcon src={Ts} />
+            </Badge>
+            <Badge>
+              <SkillIcon src={React} />
+              <BadgeLabel>
+                React
+              </BadgeLabel>
+            </Badge>
+            <Badge>
+              <SkillIcon src={Flutter} />
+              <BadgeLabel>
+                Flutter
+              </BadgeLabel>
+            </Badge>
+          </Fade>
         </Badges>
       </Category>
       <Category>
@@ -48,48 +56,64 @@ const Skills = () => {
           BACK-END
         </CategoryLabel>
         <Badges>
-          <Badge>
-            <SkillIcon src={Firebase} />
-            <BadgeLabel>
-              Firebase
-            </BadgeLabel>
-          </Badge>
-          <Badge>
-            <SkillIcon src={Node} />
-            <BadgeLabel>
-              Node
-            </BadgeLabel>
-          </Badge>
-          <Badge>
-            <SkillIcon src={MongoDB} />
-            <BadgeLabel>
-              MongoDB
-            </BadgeLabel>
-          </Badge>
-          <Badge>
-            <SkillIcon src={SQL} />
-            <BadgeLabel>
-              SQL
-            </BadgeLabel>
-          </Badge>
+          <Fade
+            triggerOnce
+            cascade
+            damping={.1}
+            delay={300}
+            direction={"right"}
+          >
+            <Badge>
+              <SkillIcon src={Firebase} />
+              <BadgeLabel>
+                Firebase
+              </BadgeLabel>
+            </Badge>
+            <Badge>
+              <SkillIcon src={Node} />
+              <BadgeLabel>
+                Node
+              </BadgeLabel>
+            </Badge>
+            <Badge>
+              <SkillIcon src={MongoDB} />
+              <BadgeLabel>
+                MongoDB
+              </BadgeLabel>
+            </Badge>
+            <Badge>
+              <SkillIcon src={SQL} />
+              <BadgeLabel>
+                SQL
+              </BadgeLabel>
+            </Badge>
+          </Fade>
         </Badges>
       </Category> <Category>
         <CategoryLabel>
           TOOLS
         </CategoryLabel>
         <Badges>
-          <Badge>
-            <SkillIcon src={Git} />
-            <BadgeLabel>
-              Git
-            </BadgeLabel>
-          </Badge>
-          <Badge>
-            <SkillIcon src={Stripe} />
-            <BadgeLabel>
-              Stripe
-            </BadgeLabel>
-          </Badge>
+          <Fade
+            triggerOnce
+            cascade
+            damping={.1}
+            delay={700}
+            direction={"right"}
+          >
+            <Badge>
+              <SkillIcon src={Git} />
+              <BadgeLabel>
+                Git
+              </BadgeLabel>
+            </Badge>
+            <Badge>
+              <SkillIcon src={Stripe} />
+              <BadgeLabel>
+                Stripe
+              </BadgeLabel>
+            </Badge>
+          </Fade>
         </Badges>
       </Category>
     </Container>
