@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 
+import { CurrentSection } from "../types";
+
 const useCurrentSection = (containerRef: React.MutableRefObject<HTMLDivElement | null>) => {
-  const [currentSection, setCurrentSection] = useState({ index: 0, scrollPercentage: 0 });
+  const [currentSection, setCurrentSection] = useState<CurrentSection>({ index: 0, scrollPercentage: 0 });
 
   useEffect(() => {
     const scrollContainer: HTMLElement | null = containerRef.current;
