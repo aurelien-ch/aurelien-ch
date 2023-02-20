@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
-import SkillIcon from "./skill-icon";
+import AnimatedIcon from "./animated-icon";
 
 import Html from "../assets/skills-icons/html.png"
 import Css from "../assets/skills-icons/css.png"
@@ -31,19 +31,19 @@ const Skills = () => {
             direction={"right"}
           >
             <Badge>
-              <SkillIcon src={Html} />
-              <SkillIcon src={Css} />
-              <SkillIcon src={Js} />
-              <SkillIcon src={Ts} />
+              <AnimatedIcon src={Html} />
+              <AnimatedIcon src={Css} />
+              <AnimatedIcon src={Js} />
+              <AnimatedIcon src={Ts} />
             </Badge>
             <Badge>
-              <SkillIcon src={React} />
+              <AnimatedIcon src={React} />
               <BadgeLabel>
                 React
               </BadgeLabel>
             </Badge>
             <Badge>
-              <SkillIcon src={Flutter} />
+              <AnimatedIcon src={Flutter} />
               <BadgeLabel>
                 Flutter
               </BadgeLabel>
@@ -64,25 +64,25 @@ const Skills = () => {
             direction={"right"}
           >
             <Badge>
-              <SkillIcon src={Firebase} />
+              <AnimatedIcon src={Firebase} />
               <BadgeLabel>
                 Firebase
               </BadgeLabel>
             </Badge>
             <Badge>
-              <SkillIcon src={Node} />
+              <AnimatedIcon src={Node} />
               <BadgeLabel>
                 Node
               </BadgeLabel>
             </Badge>
             <Badge>
-              <SkillIcon src={MongoDB} />
+              <AnimatedIcon src={MongoDB} />
               <BadgeLabel>
                 MongoDB
               </BadgeLabel>
             </Badge>
             <Badge>
-              <SkillIcon src={SQL} />
+              <AnimatedIcon src={SQL} />
               <BadgeLabel>
                 SQL
               </BadgeLabel>
@@ -102,13 +102,13 @@ const Skills = () => {
             direction={"right"}
           >
             <Badge>
-              <SkillIcon src={Git} />
+              <AnimatedIcon src={Git} />
               <BadgeLabel>
                 Git
               </BadgeLabel>
             </Badge>
             <Badge>
-              <SkillIcon src={Stripe} />
+              <AnimatedIcon src={Stripe} />
               <BadgeLabel>
                 Stripe
               </BadgeLabel>
@@ -145,7 +145,6 @@ const Badges = styled.div`
 `;
 
 const Badge = styled.div`
-  width: fit-content;
   display: flex;
   align-items: center;
   gap: .6vw;
@@ -154,6 +153,10 @@ const Badge = styled.div`
   border-radius: 2vw;
   cursor: default;
   transition: .4s;
+
+  img {
+    height: 1.8vw;
+  }
 
   &:hover {
     transform: scale(1.05);

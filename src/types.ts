@@ -5,4 +5,5 @@ export interface CurrentSection {
 
 export interface Project {
   name: string;
+  logo: string;
 };

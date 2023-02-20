@@ -3,7 +3,14 @@ import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 import gsap from "gsap";
 
+import AnimatedIcon from "./animated-icon";
 import { Project as ProjectType } from "../types";
+
+import Usense from "../assets/projects-icons/usense.png"
+import MyTelevision from "../assets/projects-icons/mytelevision.png"
+import Monuma from "../assets/projects-icons/monuma.png"
+import Sophrauto from "../assets/projects-icons/sophrauto.png"
+
 
 const Projects = () => {
   const projectsRefs = useRef<HTMLDivElement[]>([]);
@@ -13,15 +20,19 @@ const Projects = () => {
   const projects: ProjectType[] = [
     {
       name: "Usense",
+      logo: Usense,
     },
     {
       name: "MyTelevision",
+      logo: MyTelevision,
     },
     {
       name: "Monuma",
+      logo: Monuma,
     },
     {
       name: "Sophrauto",
+      logo: Sophrauto,
     },
   ];
 
@@ -60,7 +71,11 @@ const Projects = () => {
               delay={200 + index * 150}
               direction={"up"}
             >
-              <Project />
+              <Project>
+                <LogoContainer>
+                  <AnimatedIcon src={p.logo} />
+                </LogoContainer>
+              </Project>
             </Fade>
           </GsapContainer>
         ))
@@ -81,8 +96,29 @@ const GsapContainer = styled.div`
 `;
 
 const Project = styled.div<any>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 15vw;
   background-color: rgba(255, 255, 255, .1);
   border-radius: 2.5vw;
   cursor: pointer;
+  transition: .4s;
+
+  &:hover {
+    transform: scale(1.05);
+
+    img:not(:first-of-type) {
+      opacity: 1;
+    }
+  }
+`;
+
+const LogoContainer = styled.div`
+  img {
+    height: 5vw;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+  }
 `;

@@ -4,7 +4,7 @@ interface Props {
   src: string;
 }
 
-const SkillIcon = (p: Props) => {
+const AnimatedIcon = (p: Props) => {
   return (
     <Container>
       <FilteredIcon src={p.src} />
@@ -13,11 +13,12 @@ const SkillIcon = (p: Props) => {
   );
 };
 
-export default SkillIcon;
+export default AnimatedIcon;
 
 const Container = styled.div`
-  height: 1.8vw;
   position: relative;
+  display: flex;
+  align-items: center;
 `;
 
 const FilteredIcon = styled.img`
