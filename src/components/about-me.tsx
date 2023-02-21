@@ -41,7 +41,7 @@ const AboutMe = () => {
 export default AboutMe;
 
 const Container = styled.div`
-  flex: 3.8;
+  flex: 3.15;
 `;
 
 const Title = styled.div`
@@ -62,7 +62,7 @@ const Title = styled.div`
 const Description = styled.div`
   font-weight: 500;
   color: rgba(255, 255, 255, .6);
-  font-size: 1.05vw;
+  font-size: 1.07vw;
 `;
 
 const Sentence = styled.div`
