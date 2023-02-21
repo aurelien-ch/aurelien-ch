@@ -42,13 +42,12 @@ export default AboutMe;
 
 const Container = styled.div`
   flex: 3.15;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vw;
 `;
 
 const Title = styled.div`
-  font-weight: bold;
-  font-size: 3.5vw;
-  color: rgba(255, 255, 255, .4);
-  margin-bottom: 1.8vw;
   width: fit-content;
   background: linear-gradient(
     135deg,
@@ -57,6 +56,8 @@ const Title = styled.div`
   );
   -webkit-background-clip: text;
   color: transparent;
+  font-weight: bold;
+  font-size: 3.5vw;
 `;
 
 const Description = styled.div`

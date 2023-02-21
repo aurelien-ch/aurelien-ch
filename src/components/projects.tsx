@@ -14,7 +14,6 @@ import Sophrauto from "../assets/projects-icons/sophrauto.png"
 
 const Projects = () => {
   const projectsRefs = useRef<HTMLDivElement[]>([]);
-
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const projects: ProjectType[] = [
@@ -56,30 +55,40 @@ const Projects = () => {
 
   return (
     <Container>
-      {
-        projects.map((p: ProjectType, index: number) => (
-          <GsapContainer
-            key={index}
-            ref={(e: any) => projectsRefs.current[index] = e}
-            onClick={() => {
-              expand(index);
-              setActiveIndex(activeIndex === index ? null : index);
-            }}
-          >
-            <Fade
-              triggerOnce
-              delay={200 + index * 150}
-              direction={"up"}
+      <Fade
+        triggerOnce
+        direction={"down"}
+      >
+        <Title>
+          Quelques projets
+        </Title>
+      </Fade>
+      <ProjectsContainer>
+        {
+          projects.map((p: ProjectType, index: number) => (
+            <GsapContainer
+              key={index}
+              ref={(e: any) => projectsRefs.current[index] = e}
+              onClick={() => {
+                expand(index);
+                setActiveIndex(activeIndex === index ? null : index);
+              }}
             >
-              <Project>
-                <LogoContainer>
-                  <AnimatedIcon src={p.logo} />
-                </LogoContainer>
-              </Project>
-            </Fade>
-          </GsapContainer>
-        ))
-      }
+              <Fade
+                triggerOnce
+                delay={200 + index * 150}
+                direction={"up"}
+              >
+                <Project>
+                  <LogoContainer>
+                    <AnimatedIcon src={p.logo} />
+                  </LogoContainer>
+                </Project>
+              </Fade>
+            </GsapContainer>
+          ))
+        }
+      </ProjectsContainer>
     </Container>
   );
 };
@@ -87,6 +96,25 @@ const Projects = () => {
 export default Projects;
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+`;
+
+const Title = styled.div`
+  width: fit-content;
+  background: linear-gradient(
+    135deg,
+    #559be6 0%,
+    #9c388e 100%
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  font-size: 3.5vw;
+`;
+
+const ProjectsContainer = styled.div`
   display: flex;
   gap: 2.5vw;
 `;
