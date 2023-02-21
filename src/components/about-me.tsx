@@ -44,7 +44,7 @@ const Container = styled.div`
   flex: 3.15;
   display: flex;
   flex-direction: column;
-  gap: 1.5vw;
+  gap: 1.8vw;
 `;
 
 const Title = styled.div`
@@ -57,7 +57,7 @@ const Title = styled.div`
   -webkit-background-clip: text;
   color: transparent;
   font-weight: bold;
-  font-size: 3.5vw;
+  font-size: 3vw;
 `;
 
 const Description = styled.div`

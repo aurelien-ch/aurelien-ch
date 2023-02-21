@@ -23,7 +23,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1vw;
+  gap: .5vw;
 `;
 
 const Flex = styled.div`

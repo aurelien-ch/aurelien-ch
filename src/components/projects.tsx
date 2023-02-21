@@ -98,7 +98,7 @@ export default Projects;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2vw;
+  gap: 2.2vw;
 `;
 
 const Title = styled.div`
@@ -111,7 +111,7 @@ const Title = styled.div`
   -webkit-background-clip: text;
   color: transparent;
   font-weight: bold;
-  font-size: 3.5vw;
+  font-size: 3vw;
 `;
 
 const ProjectsContainer = styled.div`
