@@ -15,9 +15,6 @@ const App = () => {
   const sections: JSX.Element[] = [
     <First />,
     <Second />,
-    <First />,
-    <First />,
-    <First />,
   ];
 
   return (
