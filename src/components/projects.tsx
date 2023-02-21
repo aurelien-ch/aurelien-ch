@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 import gsap from "gsap";
 
-import AnimatedIcon from "./animated-icon";
 import { Project as ProjectType } from "../types";
+import AnimatedIcon from "./animated-icon";
 
 import Usense from "../assets/projects-icons/usense.png"
 import MyTelevision from "../assets/projects-icons/mytelevision.png"

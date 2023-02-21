@@ -1,53 +1,90 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 import Tilt from "react-parallax-tilt";
 
 import Image from "../assets/card-image.jpeg";
 
+import { ReactComponent as HoverText } from "../assets/handwrite-texts/hover.svg";
+
 const Card = () => {
+  const [hoverText, setHoverText] = useState<boolean>(true);
+
   const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
   return (
-    <Fade
-      triggerOnce
-      direction={"up"}
-    >
-      <TiltContainer>
-        <Tilt
-          scale={1.075}
-          transitionSpeed={1000}
-          glareEnable={true}
-          glareMaxOpacity={.6}
-          glareColor={"lightblue"}
-          glarePosition={"all"}
+    <Container>
+      <HoverTextContainer visible={hoverText}>
+        <Fade
+          triggerOnce
+          delay={3500}
         >
-          <CardContainer>
-            <BackgroundShape />
-            <ProfileImageShadow />
-            <ProfileImage src={Image} />
-            <CardLine isSafari={isSafari}>
-              <span>🧑🏻</span><DotSeparator /><span>Aurélien</span>
-            </CardLine>
-            <CardLine isSafari={isSafari}>
-              <span>💻</span><DotSeparator /><span>Dev Web</span>
-            </CardLine>
-            <CardLine isSafari={isSafari}>
-              <span>📱</span><DotSeparator /><span>Dev Mobile</span>
-            </CardLine>
-            <CardLine isSafari={isSafari}>
-              <span>🎓</span><DotSeparator /><span>Epitech</span>
-            </CardLine>
-            <CardLine isSafari={isSafari}>
-              <span>📍</span><DotSeparator /><span>Paris</span>
-            </CardLine>
-          </CardContainer>
-        </Tilt>
-      </TiltContainer>
-    </Fade>
+          <HoverText />
+        </Fade>
+      </HoverTextContainer>
+      <Fade
+        triggerOnce
+        direction={"up"}
+      >
+        <TiltContainer
+          onMouseEnter={() => setHoverText(false)}
+          onMouseLeave={() => setHoverText(true)}
+        >
+          <Tilt
+            scale={1.075}
+            transitionSpeed={1000}
+            glareEnable={true}
+            glareMaxOpacity={.6}
+            glareColor={"lightblue"}
+            glarePosition={"all"}
+          >
+            <CardContainer>
+              <BackgroundShape />
+              <ProfileImageShadow />
+              <ProfileImage src={Image} />
+              <CardLine isSafari={isSafari}>
+                <span>🧑🏻</span><DotSeparator /><span>Aurélien</span>
+              </CardLine>
+              <CardLine isSafari={isSafari}>
+                <span>💻</span><DotSeparator /><span>Dev Web</span>
+              </CardLine>
+              <CardLine isSafari={isSafari}>
+                <span>📱</span><DotSeparator /><span>Dev Mobile</span>
+              </CardLine>
+              <CardLine isSafari={isSafari}>
+                <span>🎓</span><DotSeparator /><span>Epitech</span>
+              </CardLine>
+              <CardLine isSafari={isSafari}>
+                <span>📍</span><DotSeparator /><span>Paris</span>
+              </CardLine>
+            </CardContainer>
+          </Tilt>
+        </TiltContainer>
+      </Fade>
+    </Container>
   );
 };
 
 export default Card;
+
+const Container = styled.div`
+  position: relative;
+`;
+
+const HoverTextContainer = styled.div<any>`
+  z-index: 1;
+  position: absolute;
+  top: -.3vw;
+  right: -3.2vw;
+  transform: rotate(25deg);
+  transition: ${p => p.visible ? 1 : .3}s;
+  transition-delay: ${p => p.visible ? .5 : 0}s;
+  opacity: ${p => p.visible ? 1 : 0};
+
+  svg {
+    height: 3.2vw;
+  }
+`;
 
 const TiltContainer = styled.div`
   .glare-wrapper {

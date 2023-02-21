@@ -7,6 +7,7 @@ const ScrollDown = () => {
   return (
     <Fade
       triggerOnce
+      duration={500}
       delay={1750}
     >
       <Container>

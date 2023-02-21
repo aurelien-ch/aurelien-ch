@@ -6,7 +6,10 @@ import TypeWriter from "./type-writer";
 const Headlines = () => {
   return (
     <Container>
-      <Fade triggerOnce>
+      <Fade
+        triggerOnce
+        duration={500}
+      >
         <MyNameIs>
           <TypeWriter text={"Bonjour ! Je m'appelle"} />
         </MyNameIs>
@@ -26,6 +29,7 @@ const Headlines = () => {
       </Fade>
       <Fade
         triggerOnce
+        duration={200}
         delay={1000}
       >
         <MyJobIs>
