@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Fade } from "react-awesome-reveal";
 
 interface Props {
   index: number;
@@ -9,38 +10,40 @@ interface Props {
 
 const SectionIndex = (p: Props) => {
   return (
-    <Container>
-      {
-        Array.from({ length: p.steps }, (_, i) => i).map((step: number) => (
-          <div key={step}>
-            <Step
-              active={step <= p.index}
-              current={step === p.index}
-              onClick={() => {
-                p.containerRef.current?.scrollTo({
-                  top: window.innerHeight * (step),
-                  behavior: "smooth",
-                });
-              }}
-            >
-              <span>{step + 1}</span>
-            </Step>
+    <Fade triggerOnce>
+      <Container>
+        {
+          Array.from({ length: p.steps }, (_, i) => i).map((step: number) => (
+            <div key={step}>
+              <Step
+                active={step <= p.index}
+                current={step === p.index}
+                onClick={() => {
+                  p.containerRef.current?.scrollTo({
+                    top: window.innerHeight * (step),
+                    behavior: "smooth",
+                  });
+                }}
+              >
+                <span>{step + 1}</span>
+              </Step>
 
-            {
-              step < p.steps - 1 ? (
-                <TrackLine>
-                  <ProgressLine
-                    filled={step < p.index}
-                    progressing={step === p.index}
-                    progress={p.scrollPercentage}
-                  />
-                </TrackLine>
-              ) : null
-            }
-          </div>
-        ))
-      }
-    </Container>
+              {
+                step < p.steps - 1 ? (
+                  <TrackLine>
+                    <ProgressLine
+                      filled={step < p.index}
+                      progressing={step === p.index}
+                      progress={p.scrollPercentage}
+                    />
+                  </TrackLine>
+                ) : null
+              }
+            </div>
+          ))
+        }
+      </Container>
+    </Fade>
   );
 };
 
