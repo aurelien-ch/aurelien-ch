@@ -110,11 +110,8 @@ const ProfessionContainer = styled.div`
 
 const Profession = styled.div`
   font-size: 2.2vw;
-  background: linear-gradient(
-    135deg,
-    #559be6 0%,
-    #9c388e 100%
-  );
+  background: linear-gradient(135deg, #559be6 0%, #9c388e 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 `;

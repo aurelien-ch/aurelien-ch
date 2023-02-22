@@ -103,11 +103,8 @@ const Container = styled.div`
 
 const Title = styled.div`
   width: fit-content;
-  background: linear-gradient(
-    135deg,
-    #559be6 0%,
-    #9c388e 100%
-  );
+  background: linear-gradient(135deg, #559be6 0%, #9c388e 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   font-weight: bold;
