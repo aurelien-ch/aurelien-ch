@@ -106,7 +106,7 @@ const CardContainer = styled.div`
   border-radius: 1.5vw;
   box-shadow: .4vw .4vw 3vw .2vw #5e4a63;
   user-select: none;
-  background: linear-gradient(135deg, #9c388e 0%, #559be6 100%);
+  background: ${p => p.theme.gradients.cardGradient};
 `;
 
 const BackgroundShape = styled.div`
@@ -139,7 +139,7 @@ const ProfileImage = styled.img`
   margin-bottom: 1.4vw;
 `;
 
-const CardLine = styled.div<any>`
+const CardLine = styled.div<{ isSafari: boolean }>`
   display: flex;
   justify-content: space-between;
   width: 85%;

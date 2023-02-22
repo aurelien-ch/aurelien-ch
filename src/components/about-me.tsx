@@ -49,7 +49,7 @@ const Container = styled.div`
 
 const Title = styled.div`
   width: fit-content;
-  background: linear-gradient(135deg, #559be6 0%, #9c388e 100%);
+  background: ${p => p.theme.gradients.textGradient};
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
