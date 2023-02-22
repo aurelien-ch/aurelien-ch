@@ -4,6 +4,8 @@ import { Fade } from "react-awesome-reveal";
 import gsap from "gsap";
 
 import { Project as ProjectType } from "../types";
+import { GradientText } from "../theme";
+
 import AnimatedIcon from "./animated-icon";
 
 import Usense from "../assets/projects-icons/usense.png"
@@ -101,12 +103,7 @@ const Container = styled.div`
   gap: 2.2vw;
 `;
 
-const Title = styled.div`
-  width: fit-content;
-  background: ${p => p.theme.gradients.textGradient};
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+const Title = styled(GradientText)`
   font-weight: bold;
   font-size: 3vw;
 `;

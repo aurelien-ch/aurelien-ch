@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const theme = {
   gradients: {
     backgroundGradient: `
@@ -13,3 +15,11 @@ export const theme = {
     cardGradient: "linear-gradient(135deg, #9c388e 0%, #559be6 100%)",
   },
 };
+
+export const GradientText = styled.div`
+  width: fit-content;
+  background: ${p => p.theme.gradients.textGradient};
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+`

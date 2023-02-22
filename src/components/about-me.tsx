@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
+import { GradientText } from "../theme";
+
 const AboutMe = () => {
   return (
     <Container>
@@ -47,12 +49,7 @@ const Container = styled.div`
   gap: 1.8vw;
 `;
 
-const Title = styled.div`
-  width: fit-content;
-  background: ${p => p.theme.gradients.textGradient};
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+const Title = styled(GradientText)`
   font-weight: bold;
   font-size: 3vw;
 `;

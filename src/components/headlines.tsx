@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
+import { GradientText } from "../theme";
 import TypeWriter from "./type-writer";
 
 const Headlines = () => {
@@ -108,10 +109,6 @@ const ProfessionContainer = styled.div`
   }
 `;
 
-const Profession = styled.div`
+const Profession = styled(GradientText)`
   font-size: 2.2vw;
-  background: ${p => p.theme.gradients.textGradient};
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
 `;
