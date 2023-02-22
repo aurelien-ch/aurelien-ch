@@ -70,7 +70,7 @@ const Projects = () => {
           projects.map((p: ProjectType, index: number) => (
             <GsapContainer
               key={index}
-              ref={(e: any) => projectsRefs.current[index] = e}
+              ref={(e: HTMLDivElement) => projectsRefs.current[index] = e}
               onClick={() => {
                 expand(index);
                 setActiveIndex(activeIndex === index ? null : index);
@@ -117,7 +117,7 @@ const GsapContainer = styled.div`
   flex: 1;
 `;
 
-const Project = styled.div<any>`
+const Project = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

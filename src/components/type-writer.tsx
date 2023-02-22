@@ -38,7 +38,7 @@ const TypeWriter = ({ text, delay = 0, speed = 50 }: Props) => {
 
 export default TypeWriter;
 
-const Text = styled.span<any>`
+const Text = styled.span<{ started: boolean }>`
   font-family: CourierPrime;
   visibility: ${p => p.started ? "visible" : "hidden"};
 `;

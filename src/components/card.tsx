@@ -71,7 +71,7 @@ const Container = styled.div`
   position: relative;
 `;
 
-const HoverTextContainer = styled.div<any>`
+const HoverTextContainer = styled.div<{ visible: boolean }>`
   z-index: 1;
   position: absolute;
   top: -.3vw;

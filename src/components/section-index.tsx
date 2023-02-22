@@ -56,7 +56,7 @@ const Container = styled.div`
   z-index: 1;
 `;
 
-const Step = styled.div<any>`
+const Step = styled.div<{ active: boolean, current: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,7 +87,7 @@ const TrackLine = styled.div`
   transform: translateX(calc(1.7vw / 2 - 50%));
 `;
 
-const ProgressLine = styled.div<any>`
+const ProgressLine = styled.div<{ filled: boolean, progressing: boolean, progress: number }>`
   position: absolute;
   height: ${p => p.filled ? 100 : p.progressing ? p.progress : 0}%;
   width: .1vw;
