@@ -7,6 +7,7 @@ import { IProject } from "../types";
 import { GradientText } from "../theme";
 
 import AnimatedIcon from "./animated-icon";
+import ImageViewer from "./image-viewer";
 
 import { ReactComponent as ExpandIcon } from "../assets/icons/expand.svg";
 
@@ -23,6 +24,7 @@ import SophrautoMockup from "../assets/projects-mockups/sophrauto.png"
 const Projects = () => {
   const projectsRefs = useRef<HTMLDivElement[]>([]);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   const projects: IProject[] = [
     {
@@ -51,65 +53,66 @@ const Projects = () => {
     projectsRefs.current = projectsRefs.current.slice(0, projects.length);
   }, [projects.length]);
 
-  const expand = async (index: number) => {
-    gsap.to(projectsRefs.current, {
-      flex: index === activeIndex ? 1 : .7,
-      duration: 2.3,
-      ease: "elastic(1, .4)",
-    });
+  useEffect(() => {
+    if (activeIndex !== null) {
+      gsap.to(projectsRefs.current, {
+        flex: .7,
+        duration: 2.3,
+        ease: "elastic(1, .4)",
+      });
 
-    gsap.to(projectsRefs.current[index], {
-      flex: index === activeIndex ? 1 : 1.3,
-      duration: 2.3,
-      ease: "elastic(1, .3)",
-    });
-  };
+      gsap.to(projectsRefs.current[activeIndex], {
+        flex: 1.3,
+        duration: 2.3,
+        ease: "elastic(1, .3)",
+      });
+    }
+  }, [activeIndex]);
 
   return (
-    <Container>
-      <Fade
-        triggerOnce
-        direction={"down"}
-      >
-        <Title>
-          Quelques projets
-        </Title>
-      </Fade>
-      <ProjectsContainer>
-        {
-          projects.map((p: IProject, index: number) => (
-            <GsapContainer
-              key={index}
-              ref={(e: HTMLDivElement) => projectsRefs.current[index] = e}
-              onClick={() => {
-                if (activeIndex === index) {
-
-                } else {
-                  expand(index);
-                  setActiveIndex(index);
-                }
-              }}
-            >
-              <Fade
-                triggerOnce
-                delay={200 + index * 150}
-                direction={"up"}
+    <>
+      <ImageViewer
+        src={zoomedImage}
+        setZoomedImage={setZoomedImage}
+      />
+      <Container>
+        <Fade
+          triggerOnce
+          direction={"down"}
+        >
+          <Title>
+            Quelques projets
+          </Title>
+        </Fade>
+        <ProjectsContainer>
+          {
+            projects.map((p: IProject, index: number) => (
+              <GsapContainer
+                key={index}
+                ref={(e: HTMLDivElement) => projectsRefs.current[index] = e}
+                onClick={() => setActiveIndex(index)}
               >
-                <Project showMockup={activeIndex === index}>
-                  <MockupImageContainer>
-                    <MockupImage src={p.mockup} />
-                    <ExpandIcon />
-                  </MockupImageContainer>
-                  <LogoContainer>
-                    <AnimatedIcon src={p.logo} />
-                  </LogoContainer>
-                </Project>
-              </Fade>
-            </GsapContainer>
-          ))
-        }
-      </ProjectsContainer>
-    </Container>
+                <Fade
+                  triggerOnce
+                  delay={200 + index * 150}
+                  direction={"up"}
+                >
+                  <Project showMockup={activeIndex === index}>
+                    <MockupImageContainer onClick={() => setZoomedImage(p.mockup)}>
+                      <MockupImage src={p.mockup} />
+                      <ExpandIcon />
+                    </MockupImageContainer>
+                    <LogoContainer>
+                      <AnimatedIcon src={p.logo} />
+                    </LogoContainer>
+                  </Project>
+                </Fade>
+              </GsapContainer>
+            ))
+          }
+        </ProjectsContainer>
+      </Container>
+    </>
   );
 };
 
@@ -136,9 +139,10 @@ const GsapContainer = styled.div`
 `;
 
 const MockupImageContainer = styled.div`
+  z-index: 1;
   position: absolute;
   width: 90%;
-  z-index: 1;
+  cursor: pointer;
 
   svg {
     position: absolute;
@@ -181,10 +185,11 @@ const Project = styled.div<{ showMockup: boolean }>`
   height: 13.2vw;
   background-color: rgba(255, 255, 255, .1);
   border-radius: 2.5vw;
-  cursor: pointer;
+  cursor: ${p => p.showMockup ? "auto" : "pointer"};
   transition: .4s;
 
   ${MockupImageContainer} {
+    pointer-events: ${p => p.showMockup ? "auto" : "none"};
     opacity: ${p => p.showMockup ? 1 : 0};
     transition: opacity ${p => p.showMockup ? .8 : .2}s ${p => p.showMockup ? .4 : 0}s;
   }

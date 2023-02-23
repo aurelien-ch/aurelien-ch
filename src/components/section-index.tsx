@@ -50,10 +50,10 @@ const SectionIndex = (p: Props) => {
 export default SectionIndex;
 
 const Container = styled.div`
+  z-index: 1;
   position: absolute;
   top: 1.5vw;
   left: 1.5vw;
-  z-index: 1;
 `;
 
 const Step = styled.div<{ active: boolean, current: boolean }>`
