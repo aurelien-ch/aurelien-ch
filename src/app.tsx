@@ -6,11 +6,11 @@ import SectionIndex from "./components/section-index";
 import First from "./pages/first";
 import Second from "./pages/second";
 
-import { CurrentSection } from "./types";
+import { ICurrentSection } from "./types";
 
 const App = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
-  const currentSection: CurrentSection = useCurrentSection(scrollContainerRef);
+  const currentSection: ICurrentSection = useCurrentSection(scrollContainerRef);
 
   const sections: JSX.Element[] = [
     <First />,

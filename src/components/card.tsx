@@ -77,9 +77,9 @@ const HoverTextContainer = styled.div<{ visible: boolean }>`
   top: -.3vw;
   right: -3.2vw;
   transform: rotate(25deg);
-  transition: ${p => p.visible ? 1 : .3}s;
-  transition-delay: ${p => p.visible ? .5 : 0}s;
+  transition: ${p => p.visible ? 1 : .3}s ${p => p.visible ? .5 : 0}s;
   opacity: ${p => p.visible ? 1 : 0};
+  pointer-events: none;
 
   svg {
     height: 3.2vw;

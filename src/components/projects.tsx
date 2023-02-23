@@ -3,37 +3,47 @@ import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 import gsap from "gsap";
 
-import { Project as ProjectType } from "../types";
+import { IProject } from "../types";
 import { GradientText } from "../theme";
 
 import AnimatedIcon from "./animated-icon";
 
-import Usense from "../assets/projects-icons/usense.png"
-import MyTelevision from "../assets/projects-icons/mytelevision.png"
-import Monuma from "../assets/projects-icons/monuma.png"
-import Sophrauto from "../assets/projects-icons/sophrauto.png"
+import { ReactComponent as ExpandIcon } from "../assets/icons/expand.svg";
 
+import UsenseIcon from "../assets/projects-icons/usense.png"
+import MyTelevisionIcon from "../assets/projects-icons/mytelevision.png"
+import MonumaIcon from "../assets/projects-icons/monuma.png"
+import SophrautoIcon from "../assets/projects-icons/sophrauto.png"
+
+import UsenseMockup from "../assets/projects-mockups/usense.png"
+import MyTelevisionMockup from "../assets/projects-mockups/mytelevision.png"
+import MonumaMockup from "../assets/projects-mockups/monuma.png"
+import SophrautoMockup from "../assets/projects-mockups/sophrauto.png"
 
 const Projects = () => {
   const projectsRefs = useRef<HTMLDivElement[]>([]);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const projects: ProjectType[] = [
+  const projects: IProject[] = [
     {
       name: "Usense",
-      logo: Usense,
+      logo: UsenseIcon,
+      mockup: UsenseMockup,
     },
     {
       name: "MyTelevision",
-      logo: MyTelevision,
+      logo: MyTelevisionIcon,
+      mockup: MyTelevisionMockup,
     },
     {
       name: "Monuma",
-      logo: Monuma,
+      logo: MonumaIcon,
+      mockup: MonumaMockup,
     },
     {
       name: "Sophrauto",
-      logo: Sophrauto,
+      logo: SophrautoIcon,
+      mockup: SophrautoMockup,
     },
   ];
 
@@ -41,16 +51,16 @@ const Projects = () => {
     projectsRefs.current = projectsRefs.current.slice(0, projects.length);
   }, [projects.length]);
 
-  const expand = (index: number) => {
+  const expand = async (index: number) => {
     gsap.to(projectsRefs.current, {
       flex: index === activeIndex ? 1 : .7,
-      duration: 2.5,
+      duration: 2.3,
       ease: "elastic(1, .4)",
     });
 
     gsap.to(projectsRefs.current[index], {
       flex: index === activeIndex ? 1 : 1.3,
-      duration: 2.5,
+      duration: 2.3,
       ease: "elastic(1, .3)",
     });
   };
@@ -67,13 +77,17 @@ const Projects = () => {
       </Fade>
       <ProjectsContainer>
         {
-          projects.map((p: ProjectType, index: number) => (
+          projects.map((p: IProject, index: number) => (
             <GsapContainer
               key={index}
               ref={(e: HTMLDivElement) => projectsRefs.current[index] = e}
               onClick={() => {
-                expand(index);
-                setActiveIndex(activeIndex === index ? null : index);
+                if (activeIndex === index) {
+
+                } else {
+                  expand(index);
+                  setActiveIndex(index);
+                }
               }}
             >
               <Fade
@@ -81,7 +95,11 @@ const Projects = () => {
                 delay={200 + index * 150}
                 direction={"up"}
               >
-                <Project>
+                <Project showMockup={activeIndex === index}>
+                  <MockupImageContainer>
+                    <MockupImage src={p.mockup} />
+                    <ExpandIcon />
+                  </MockupImageContainer>
                   <LogoContainer>
                     <AnimatedIcon src={p.logo} />
                   </LogoContainer>
@@ -117,23 +135,34 @@ const GsapContainer = styled.div`
   flex: 1;
 `;
 
-const Project = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 15vw;
-  background-color: rgba(255, 255, 255, .1);
-  border-radius: 2.5vw;
-  cursor: pointer;
-  transition: .4s;
+const MockupImageContainer = styled.div`
+  position: absolute;
+  width: 90%;
+  z-index: 1;
 
-  &:hover {
-    transform: scale(1.05);
-
-    img:not(:first-of-type) {
-      opacity: 1;
-    }
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 50%;
+    height: 2.5vw;
+    width: 2.5vw;
+    padding: .5vw;
+    transition: .4s;
   }
+
+  &:hover svg {
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+`;
+
+const MockupImage = styled.img`
+  height: 100%;
+  width: 100%;
+  border-radius: 1.5vw;
+  filter: brightness(.5);
 `;
 
 const LogoContainer = styled.div`
@@ -142,5 +171,29 @@ const LogoContainer = styled.div`
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 50%;
+  }
+`;
+
+const Project = styled.div<{ showMockup: boolean }>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 13.2vw;
+  background-color: rgba(255, 255, 255, .1);
+  border-radius: 2.5vw;
+  cursor: pointer;
+  transition: .4s;
+
+  ${MockupImageContainer} {
+    opacity: ${p => p.showMockup ? 1 : 0};
+    transition: opacity ${p => p.showMockup ? .8 : .2}s ${p => p.showMockup ? .4 : 0}s;
+  }
+
+  ${LogoContainer} img:not(:first-of-type) {
+    opacity: ${p => p.showMockup ? 1 : 0};
+  }
+
+  &:hover ${LogoContainer} img:not(:first-of-type) {
+    opacity: 1;
   }
 `;
