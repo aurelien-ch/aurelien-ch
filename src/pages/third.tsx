@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import Freelance from "../components/freelance";
 
-const Second = () => {
+const Third = () => {
   return (
     <Container>
       <Freelance />
@@ -10,7 +10,7 @@ const Second = () => {
   );
 };
 
-export default Second;
+export default Third;
 
 const Container = styled.div`
   height: 100%;
