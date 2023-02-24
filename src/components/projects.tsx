@@ -9,6 +9,7 @@ import ImageViewer from "./image-viewer";
 import { IProject } from "../types";
 import { GradientText } from "../theme";
 
+import { ReactComponent as CloseIcon } from "../assets/icons/close.svg";
 import { ReactComponent as ExpandIcon } from "../assets/icons/expand.svg";
 
 import UsenseIcon from "../assets/projects-icons/usense.png"
@@ -56,15 +57,21 @@ const Projects = () => {
   useEffect(() => {
     if (activeIndex !== null) {
       gsap.to(projectsRefs.current, {
-        flex: .7,
+        flex: 1,
         duration: 2.3,
         ease: "elastic(1, .4)",
       });
 
       gsap.to(projectsRefs.current[activeIndex], {
-        flex: 1.3,
+        flex: 1.8,
         duration: 2.3,
         ease: "elastic(1, .3)",
+      });
+    } else {
+      gsap.to(projectsRefs.current, {
+        flex: 1,
+        duration: 2.3,
+        ease: "elastic(1, .4)",
       });
     }
   }, [activeIndex]);
@@ -98,10 +105,21 @@ const Projects = () => {
                   direction={"up"}
                 >
                   <Project showMockup={activeIndex === index}>
-                    <MockupImageContainer onClick={() => setZoomedImage(p.mockup)}>
-                      <MockupImage src={p.mockup} />
-                      <ExpandIcon />
-                    </MockupImageContainer>
+                    <MockupContainer>
+                      <MockupHeader>
+                        <ProjectName>
+                          {p.name}
+                        </ProjectName>
+                        <CloseIcon onClick={(e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
+                          e.stopPropagation();
+                          setActiveIndex(null);
+                        }} />
+                      </MockupHeader>
+                      <MockupImageContainer onClick={() => setZoomedImage(p.mockup)}>
+                        <MockupImage src={p.mockup} />
+                        <ExpandIcon />
+                      </MockupImageContainer>
+                    </MockupContainer>
                     <LogoContainer>
                       <AnimatedIcon src={p.logo} />
                     </LogoContainer>
@@ -138,10 +156,39 @@ const GsapContainer = styled.div`
   flex: 1;
 `;
 
-const MockupImageContainer = styled.div`
+const MockupContainer = styled.div`
   z-index: 1;
   position: absolute;
   width: 90%;
+`;
+
+const MockupHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: .6;
+  margin: 0 .5vw .3vw;
+
+  svg {
+    height: 1.5vw;
+    width: 1.5vw;
+    transition: .4s;
+    cursor: pointer;
+  }
+
+  svg:hover {
+    transform: scale(1.15);
+  }
+`;
+
+const ProjectName = styled.div`
+  color: white;
+  font-size: 1vw;
+  font-weight: 500;
+`;
+
+const MockupImageContainer = styled.div`
+  position: relative;
   cursor: pointer;
 
   svg {
@@ -182,13 +229,13 @@ const Project = styled.div<{ showMockup: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 13.2vw;
+  height: 14vw;
   background-color: rgba(255, 255, 255, .1);
   border-radius: 2.5vw;
   cursor: ${p => p.showMockup ? "auto" : "pointer"};
   transition: .4s;
 
-  ${MockupImageContainer} {
+  ${MockupContainer} {
     pointer-events: ${p => p.showMockup ? "auto" : "none"};
     opacity: ${p => p.showMockup ? 1 : 0};
     transition: opacity ${p => p.showMockup ? .8 : .2}s ${p => p.showMockup ? .4 : 0}s;
