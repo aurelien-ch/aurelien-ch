@@ -11,7 +11,7 @@ import Third from "./pages/third";
 import { ICurrentSection } from "./types";
 
 const App = () => {
-  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const currentSection: ICurrentSection = useCurrentSection(scrollContainerRef);
 
   const sections: JSX.Element[] = [
@@ -44,7 +44,8 @@ const App = () => {
 export default App;
 
 const ScrollContainer = styled.div`
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   height: 100vh;
   scroll-snap-type: y mandatory;
   background: ${p => p.theme.gradients.backgroundGradient};

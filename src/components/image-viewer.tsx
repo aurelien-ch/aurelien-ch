@@ -10,7 +10,7 @@ interface Props {
 }
 
 const ImageViewer = (p: Props) => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [imageSrc, setImageSrc] = useState<string>("");
   const [active, setActive] = useState<boolean>(false);
 
