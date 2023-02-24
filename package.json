@@ -17,7 +17,6 @@
     "react-dom": "^18.2.0",
     "react-parallax-tilt": "^1.7.102",
     "react-remove-scroll": "^2.5.5",
-    "react-scripts": "5.0.1",
     "styled-components": "^5.3.6",
     "typescript": "^4.9.4",
     "web-vitals": "^2.1.4"
@@ -47,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "react-scripts": "5.0.1",
     "@types/styled-components": "^5.1.26"
   }
 }
