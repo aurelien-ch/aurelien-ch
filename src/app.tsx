@@ -3,8 +3,10 @@ import styled from "styled-components";
 
 import useCurrentSection from "./hooks/use-current-section";
 import SectionIndex from "./components/section-index";
+
 import First from "./pages/first";
 import Second from "./pages/second";
+import Third from "./pages/third";
 
 import { ICurrentSection } from "./types";
 
@@ -15,6 +17,7 @@ const App = () => {
   const sections: JSX.Element[] = [
     <First />,
     <Second />,
+    <Third />,
   ];
 
   return (

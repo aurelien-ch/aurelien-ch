@@ -3,11 +3,11 @@ import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 import gsap from "gsap";
 
-import { IProject } from "../types";
-import { GradientText } from "../theme";
-
 import AnimatedIcon from "./animated-icon";
 import ImageViewer from "./image-viewer";
+
+import { IProject } from "../types";
+import { GradientText } from "../theme";
 
 import { ReactComponent as ExpandIcon } from "../assets/icons/expand.svg";
 
