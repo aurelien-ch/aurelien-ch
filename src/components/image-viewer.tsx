@@ -69,7 +69,7 @@ const Container = styled.div<{ active: boolean }>`
   align-items: center;
   opacity: ${p => p.active ? 1 : 0};
   visibility: ${p => p.active ? "visible" : "hidden"};
-  transition: ${p => p.active ? .4 : .8}s;
+  transition: .4s;
 
   svg {
     position: absolute;
