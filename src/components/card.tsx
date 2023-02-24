@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
+import gsap from "gsap";
 import Tilt from "react-parallax-tilt";
 
 import Image from "../assets/card-image.jpeg";
@@ -8,9 +9,28 @@ import Image from "../assets/card-image.jpeg";
 import { ReactComponent as HoverText } from "../assets/handwrite-texts/hover.svg";
 
 const Card = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const [hoverText, setHoverText] = useState<boolean>(true);
 
   const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+  useEffect(() => {
+    const timeline = gsap.timeline();
+
+    timeline
+      .to(containerRef.current, {
+        duration: .7,
+        rotationX: 20,
+        rotationY: 180,
+        ease: "sine.in",
+      })
+      .to(containerRef.current, {
+        duration: 1.3,
+        rotationX: 0,
+        rotationY: 360,
+        ease: "sine.out",
+      });
+  }, [containerRef]);
 
   return (
     <Container>
@@ -25,6 +45,7 @@ const Card = () => {
       <Fade
         triggerOnce
         direction={"up"}
+        duration={2000}
       >
         <TiltContainer
           onMouseEnter={() => setHoverText(false)}
@@ -38,7 +59,7 @@ const Card = () => {
             glareColor={"lightblue"}
             glarePosition={"all"}
           >
-            <CardContainer>
+            <CardContainer ref={containerRef}>
               <BackgroundShape />
               <ProfileImageShadow />
               <ProfileImage src={Image} />
@@ -125,6 +146,7 @@ const ProfileImageShadow = styled.div`
   width: 80%;
   aspect-ratio: 1;
   background: radial-gradient(circle, black 0%, transparent 60%);
+  transform: translate3d(0, 0, .01vw);
 `;
 
 const ProfileImage = styled.img`
@@ -146,6 +168,7 @@ const CardLine = styled.div<{ isSafari: boolean }>`
   margin-top: 1.2vw;
   color: white;
   font-size: 1vw;
+  transform: translate3d(0, 0, .01vw);
 
   span{
     font-family: CourierPrime;
