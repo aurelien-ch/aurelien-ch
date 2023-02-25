@@ -9,8 +9,8 @@ import ImageViewer from "./image-viewer";
 import { IProject } from "../types";
 import { GradientText } from "../theme";
 
+import { ReactComponent as OpenIcon } from "../assets/icons/open.svg";
 import { ReactComponent as CloseIcon } from "../assets/icons/close.svg";
-import { ReactComponent as ExpandIcon } from "../assets/icons/expand.svg";
 
 import UsenseIcon from "../assets/projects-icons/usense.png"
 import MyTelevisionIcon from "../assets/projects-icons/mytelevision.png"
@@ -117,7 +117,7 @@ const Projects = () => {
                       </MockupHeader>
                       <MockupImageContainer onClick={() => setZoomedImage(p.mockup)}>
                         <MockupImage src={p.mockup} />
-                        <ExpandIcon />
+                        <OpenIcon />
                       </MockupImageContainer>
                     </MockupContainer>
                     <LogoContainer>
@@ -166,18 +166,18 @@ const MockupHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  opacity: .6;
+  opacity: .8;
   margin: 0 .5vw .3vw;
 
   svg {
-    height: 1.5vw;
-    width: 1.5vw;
+    height: 1.3vw;
+    width: 1.3vw;
     transition: .4s;
     cursor: pointer;
   }
 
   svg:hover {
-    transform: scale(1.15);
+    transform: scale(1.2);
   }
 `;
 

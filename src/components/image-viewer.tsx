@@ -85,7 +85,7 @@ const Container = styled.div<{ active: boolean }>`
   }
 
   ${Image} {
-    transform: scale(${p => p.active ? 1 : 0.9});
+    transform: scale(${p => p.active ? 1 : .9});
     opacity: ${p => p.active ? 1 : 0};
     transition: .4s;
   }

@@ -44,14 +44,12 @@ export default AboutMe;
 
 const Container = styled.div`
   flex: 3.15;
-  display: flex;
-  flex-direction: column;
-  gap: 1.8vw;
 `;
 
 const Title = styled(GradientText)`
   font-weight: bold;
   font-size: 3vw;
+  margin-bottom: 1.8vw;
 `;
 
 const Description = styled.div`
