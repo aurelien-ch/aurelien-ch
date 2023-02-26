@@ -166,7 +166,7 @@ const MockupHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  opacity: .8;
+  opacity: .6;
   margin: 0 .5vw .3vw;
 
   svg {

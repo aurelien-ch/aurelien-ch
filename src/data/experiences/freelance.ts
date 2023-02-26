@@ -22,7 +22,7 @@ const Freelance = [
       — CRUD des entités<br/>
       — Gestion des rôles et permissions<br/>
       <br/>
-      https://usense.healthcare/<br/>
+      <a target="_blank" href="https://usense.healthcare/">https://usense.healthcare/</a><br/>
       <br/><br/>
       <b>💻 ResArtes 💻</b><br/>
       <br/>
@@ -30,7 +30,7 @@ const Freelance = [
       <br/>
       ➔ Développement Mobile <b>[React Native + TypeScript]</b><br/>
       <br/>
-      https://www.res-artes.com/<br/>
+      <a target="_blank" href="https://res-artes.com/">https://res-artes.com/</a><br/>
       <br/><br/>
       <b>💻 Monuma 💻</b><br/>
       <br/>
@@ -38,7 +38,7 @@ const Freelance = [
       <br/>
       ➔ Développement Front-End <b>[React.js + TypeScript]</b><br/>
       <br/>
-      https://www.monuma.fr/
+      <a target="_blank" href="https://saretec.fr/fr/activites/conseil-prevention/monuma-0">https://saretec.fr/ - Monuma</a>
     `,
   },
   {

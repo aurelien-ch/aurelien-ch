@@ -17,7 +17,7 @@ const Accordion = (p: Props) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <Container>
+    <div>
       <Title>
         {p.title}
       </Title>
@@ -29,7 +29,11 @@ const Accordion = (p: Props) => {
             return (
               <Item
                 key={index}
-                onClick={() => setActiveIndex(active ? null : index)}
+                onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+                  if (!(e.target as HTMLLinkElement).href) {
+                    setActiveIndex(active ? null : index);
+                  }
+                }}
               >
                 <ItemHeader active={active}>
                   <ItemTitleContainer>
@@ -52,16 +56,11 @@ const Accordion = (p: Props) => {
           })
         }
       </Items>
-    </Container>
+    </div>
   );
 };
 
 export default Accordion;
-
-const Container = styled.div`
-  /* flex: 1; */
-  /* height: 100%; */
-`;
 
 const Items = styled.div`
   display: flex;
@@ -72,7 +71,6 @@ const Items = styled.div`
 const Title = styled(GradientText)`
   font-weight: bold;
   font-size: 3vw;
-  margin-top: 5vw;
   margin-bottom: 1.8vw;
 `;
 
@@ -94,7 +92,6 @@ const ItemHeader = styled.div<{ active: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* opacity: .8; */
   
   svg {
     height: 2vw;
@@ -126,16 +123,21 @@ const ItemDescription = styled.div`
   color: rgba(255, 255, 255, .6);
   font-weight: 500;
   font-size: 1vw;
-  max-height: 36vh;
+  max-height: 35vh;
   overflow-y: scroll;
   margin-top: 1.6vw;
-  /* padding-right: .8vw; */
-  /* padding-bottom: 5vw; */
-  /* mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%); */
   
   b {
     color: white;
     font-weight: 600;
+  }
+
+  a {
+    color: rgba(255, 255, 255, .6);
+    transition: .4s;
+  }
+
+  a:hover {
+    color: white;
   }
 `;

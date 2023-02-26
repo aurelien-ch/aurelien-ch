@@ -34,13 +34,14 @@ export default Third;
 const Container = styled.div`
   height: 100%;
   display: flex;
-  /* align-items: center; */
+  margin-top: 5vw;
 `;
 
 const Center = styled.div`
   width: 100%;
   display: flex;
   gap: 2.5vw;
+  margin: 5vw 0;
 
   > div {
     flex: 1;
@@ -49,8 +50,7 @@ const Center = styled.div`
 
 const Column = styled.div`
   flex: 1;
-  /* height: 100%; */
   display: flex;
   flex-direction: column;
-  /* gap: 5vw; */
+  gap: 3vw;
 `;

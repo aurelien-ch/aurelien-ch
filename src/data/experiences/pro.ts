@@ -7,7 +7,7 @@ const Pro = [
       ➔ Développement Front-End <b>[ASP.NET Razor]</b><br/>
       ➔ Développement Back-End <b>[C# .NET]</b><br/>
       <br/>
-      https://vpwhite.com/
+      <a target="_blank" href="https://vpwhite.com/">https://vpwhite.com/</a>
     `,
   },
   {
@@ -17,7 +17,7 @@ const Pro = [
       ➔ Développement Front-End <b>[ASP.NET Razor]</b><br/>
       ➔ Développement Back-End <b>[C# .NET]</b><br/>
       <br/>
-      https://vpwhite.com/
+      <a target="_blank" href="https://vpwhite.com/">https://vpwhite.com/</a>
     `,
   },
 ];
