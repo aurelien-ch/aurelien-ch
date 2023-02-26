@@ -12,10 +12,10 @@ import { GradientText } from "../theme";
 import { ReactComponent as OpenIcon } from "../assets/icons/open.svg";
 import { ReactComponent as CloseIcon } from "../assets/icons/close.svg";
 
-import UsenseIcon from "../assets/projects-icons/usense.png"
-import MyTelevisionIcon from "../assets/projects-icons/mytelevision.png"
-import MonumaIcon from "../assets/projects-icons/monuma.png"
-import SophrautoIcon from "../assets/projects-icons/sophrauto.png"
+import UsenseIcon from "../assets/projects-logos/usense.png"
+import MyTelevisionIcon from "../assets/projects-logos/mytelevision.png"
+import MonumaIcon from "../assets/projects-logos/monuma.png"
+import SophrautoIcon from "../assets/projects-logos/sophrauto.png"
 
 import UsenseMockup from "../assets/projects-mockups/usense.png"
 import MyTelevisionMockup from "../assets/projects-mockups/mytelevision.png"
