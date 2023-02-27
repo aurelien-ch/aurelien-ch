@@ -78,6 +78,7 @@ const Card = () => {
         <Fade
           triggerOnce
           delay={3500}
+          direction={"up"}
         >
           <HoverText />
         </Fade>
@@ -89,8 +90,9 @@ const Card = () => {
 export default Card;
 
 const HoverTextContainer = styled.div<{ visible: boolean }>`
-  transition: ${p => p.visible ? 1 : .3}s ${p => p.visible ? .5 : 0}s;
   opacity: ${p => p.visible ? .5 : 0};
+  transform: translateY(${p => p.visible ? 0 : 1}vw);
+  transition: ${p => p.visible ? 1 : .3}s;
   margin-top: 1.5vw;
 `;
 
