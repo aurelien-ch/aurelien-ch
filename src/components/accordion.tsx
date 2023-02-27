@@ -19,9 +19,14 @@ const Accordion = (p: Props) => {
 
   return (
     <div>
-      <Title>
-        {p.title}
-      </Title>
+      <Fade
+        triggerOnce
+        direction={"down"}
+      >
+        <Title>
+          {p.title}
+        </Title>
+      </Fade>
       <Items>
         <Fade
           triggerOnce

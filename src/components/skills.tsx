@@ -13,9 +13,17 @@ const Skills = () => {
       {
         SkillsData.map((category: ISkillCategory, index: number) => (
           <Category key={index}>
-            <CategoryLabel>
-              {category.name}
-            </CategoryLabel>
+            <Fade
+              triggerOnce
+              cascade
+              damping={.1}
+              delay={index * 400}
+              direction={"down"}
+            >
+              <CategoryLabel>
+                {category.name}
+              </CategoryLabel>
+            </Fade>
             <Badges>
               <Fade
                 triggerOnce
