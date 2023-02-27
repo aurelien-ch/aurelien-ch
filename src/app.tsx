@@ -7,6 +7,7 @@ import SectionIndex from "./components/section-index";
 import First from "./pages/first";
 import Second from "./pages/second";
 import Third from "./pages/third";
+import Fourth from "./pages/fourth";
 
 import { ICurrentSection } from "./types";
 
@@ -18,6 +19,7 @@ const App = () => {
     <First />,
     <Second />,
     <Third />,
+    <Fourth />,
   ];
 
   return (
