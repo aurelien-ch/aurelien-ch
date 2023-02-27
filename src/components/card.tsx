@@ -33,15 +33,7 @@ const Card = () => {
   }, [containerRef]);
 
   return (
-    <Container>
-      <HoverTextContainer visible={hoverText}>
-        <Fade
-          triggerOnce
-          delay={3500}
-        >
-          <HoverText />
-        </Fade>
-      </HoverTextContainer>
+    <div>
       <Fade
         triggerOnce
         direction={"up"}
@@ -82,29 +74,24 @@ const Card = () => {
           </Tilt>
         </TiltContainer>
       </Fade>
-    </Container>
+      <HoverTextContainer visible={hoverText}>
+        <Fade
+          triggerOnce
+          delay={3500}
+        >
+          <HoverText />
+        </Fade>
+      </HoverTextContainer>
+    </div>
   );
 };
 
 export default Card;
 
-const Container = styled.div`
-  position: relative;
-`;
-
 const HoverTextContainer = styled.div<{ visible: boolean }>`
-  z-index: 1;
-  position: absolute;
-  top: -.3vw;
-  right: -3.2vw;
-  transform: rotate(25deg);
   transition: ${p => p.visible ? 1 : .3}s ${p => p.visible ? .5 : 0}s;
-  opacity: ${p => p.visible ? 1 : 0};
-  pointer-events: none;
-
-  svg {
-    height: 3.2vw;
-  }
+  opacity: ${p => p.visible ? .5 : 0};
+  margin-top: 1.5vw;
 `;
 
 const TiltContainer = styled.div`

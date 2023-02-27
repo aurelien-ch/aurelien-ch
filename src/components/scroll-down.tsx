@@ -52,7 +52,7 @@ const Container = styled.div`
 `;
 
 const Label = styled.div`
-  color: rgba(255, 255, 255, .4);
+  color: rgba(255, 255, 255, .5);
   font-size: 1vw;
   font-family: CourierPrime;
 `;
@@ -60,8 +60,8 @@ const Label = styled.div`
 const Arrow = styled.div`
   height: 1.2vw;
   width: 1.2vw;
-  border-right: .15vw solid rgba(255, 255, 255, .4);
-  border-bottom: .15vw solid rgba(255, 255, 255, .4);
+  border-right: .15vw solid rgba(255, 255, 255, .5);
+  border-bottom: .15vw solid rgba(255, 255, 255, .5);
   opacity: 0; 
   animation: ${MoveArrow} 2.5s 2.8s ease-in-out infinite;
 `;

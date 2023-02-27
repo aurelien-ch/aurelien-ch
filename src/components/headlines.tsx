@@ -84,7 +84,7 @@ const FirstName = styled.div`
 
 const LastName = styled.div`
   font-size: 7vw;
-  color: rgba(255, 255, 255, .4);
+  color: rgba(255, 255, 255, .5);
   transform: translateY(-.5vw);
   margin-bottom: 3vw;
 `;
