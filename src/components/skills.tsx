@@ -3,119 +3,52 @@ import { Fade } from "react-awesome-reveal";
 
 import AnimatedIcon from "./animated-icon";
 
-import Html from "../assets/skills-icons/html.png"
-import Css from "../assets/skills-icons/css.png"
-import Js from "../assets/skills-icons/js.png"
-import Ts from "../assets/skills-icons/ts.png"
-import React from "../assets/skills-icons/react.png"
-import Flutter from "../assets/skills-icons/flutter.png"
-import Firebase from "../assets/skills-icons/firebase.png"
-import Node from "../assets/skills-icons/node.png"
-import MongoDB from "../assets/skills-icons/mongodb.png"
-import SQL from "../assets/skills-icons/sql.png"
-import Git from "../assets/skills-icons/git.png"
-import Stripe from "../assets/skills-icons/stripe.png"
+import { ISkillCategory, INamedSkill, IIconsSkill } from "../types";
+
+import SkillsData from "../data/skills";
 
 const Skills = () => {
   return (
     <Container>
-      <Category>
-        <CategoryLabel>
-          FRONT-END
-        </CategoryLabel>
-        <Badges>
-          <Fade
-            triggerOnce
-            cascade
-            damping={.1}
-            direction={"right"}
-          >
-            <Badge>
-              <AnimatedIcon src={Html} />
-              <AnimatedIcon src={Css} />
-              <AnimatedIcon src={Js} />
-              <AnimatedIcon src={Ts} />
-            </Badge>
-            <Badge>
-              <AnimatedIcon src={React} />
-              <BadgeLabel>
-                React
-              </BadgeLabel>
-            </Badge>
-            <Badge>
-              <AnimatedIcon src={Flutter} />
-              <BadgeLabel>
-                Flutter
-              </BadgeLabel>
-            </Badge>
-          </Fade>
-        </Badges>
-      </Category>
-      <Category>
-        <CategoryLabel>
-          BACK-END
-        </CategoryLabel>
-        <Badges>
-          <Fade
-            triggerOnce
-            cascade
-            damping={.1}
-            delay={300}
-            direction={"right"}
-          >
-            <Badge>
-              <AnimatedIcon src={Firebase} />
-              <BadgeLabel>
-                Firebase
-              </BadgeLabel>
-            </Badge>
-            <Badge>
-              <AnimatedIcon src={Node} />
-              <BadgeLabel>
-                Node
-              </BadgeLabel>
-            </Badge>
-            <Badge>
-              <AnimatedIcon src={MongoDB} />
-              <BadgeLabel>
-                MongoDB
-              </BadgeLabel>
-            </Badge>
-            <Badge>
-              <AnimatedIcon src={SQL} />
-              <BadgeLabel>
-                SQL
-              </BadgeLabel>
-            </Badge>
-          </Fade>
-        </Badges>
-      </Category> <Category>
-        <CategoryLabel>
-          TOOLS
-        </CategoryLabel>
-        <Badges>
-          <Fade
-            triggerOnce
-            cascade
-            damping={.1}
-            delay={700}
-            direction={"right"}
-          >
-            <Badge>
-              <AnimatedIcon src={Git} />
-              <BadgeLabel>
-                Git
-              </BadgeLabel>
-            </Badge>
-            <Badge>
-              <AnimatedIcon src={Stripe} />
-              <BadgeLabel>
-                Stripe
-              </BadgeLabel>
-            </Badge>
-          </Fade>
-        </Badges>
-      </Category>
+      {
+        SkillsData.map((category: ISkillCategory, index: number) => (
+          <Category>
+            <CategoryLabel>
+              {category.name}
+            </CategoryLabel>
+            <Badges>
+              <Fade
+                triggerOnce
+                cascade
+                damping={.1}
+                delay={index * 400}
+                direction={"right"}
+              >
+                {
+                  category.skills.map((skill: INamedSkill | IIconsSkill) => {
+                    return (skill as IIconsSkill).icons ? (
+                      <Badge>
+                        {
+                          (skill as IIconsSkill).icons.map((icon: string) => (
+                            <AnimatedIcon src={require(`../assets/skills-icons/${icon}`)} />
+                          ))
+                        }
+                      </Badge>
+                    ) : (
+                      <Badge>
+                        <AnimatedIcon src={require(`../assets/skills-icons/${(skill as INamedSkill).icon}`)} />
+                        <BadgeLabel>
+                          {(skill as INamedSkill).name}
+                        </BadgeLabel>
+                      </Badge>
+                    )
+                  })
+                }
+              </Fade>
+            </Badges>
+          </Category>
+        ))
+      }
     </Container>
   );
 };
