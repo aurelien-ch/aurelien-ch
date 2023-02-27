@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { Fade } from "react-awesome-reveal";
 import AnimateHeight from "react-animate-height";
 import HTMLReactParser from "html-react-parser";
 
@@ -22,39 +23,46 @@ const Accordion = (p: Props) => {
         {p.title}
       </Title>
       <Items>
-        {
-          p.data.map((exp: IExperience, index: number) => {
-            const active = activeIndex === index;
+        <Fade
+          triggerOnce
+          cascade
+          damping={.2}
+          direction={"up"}
+        >
+          {
+            p.data.map((exp: IExperience, index: number) => {
+              const active = activeIndex === index;
 
-            return (
-              <Item
-                key={index}
-                onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-                  if (!(e.target as HTMLLinkElement).href) {
-                    setActiveIndex(active ? null : index);
-                  }
-                }}
-              >
-                <ItemHeader active={active}>
-                  <ItemTitleContainer>
-                    <ItemTitle>
-                      {exp.title}
-                    </ItemTitle>
-                    <ItemDetails>
-                      — {exp.details}
-                    </ItemDetails>
-                  </ItemTitleContainer>
-                  <ExpandIcon />
-                </ItemHeader>
-                <AnimateHeight height={active ? "auto" : 0}>
-                  <ItemDescription>
-                    {HTMLReactParser(exp.description)}
-                  </ItemDescription>
-                </AnimateHeight>
-              </Item>
-            );
-          })
-        }
+              return (
+                <Item
+                  key={index}
+                  onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+                    if (!(e.target as HTMLLinkElement).href) {
+                      setActiveIndex(active ? null : index);
+                    }
+                  }}
+                >
+                  <ItemHeader active={active}>
+                    <ItemTitleContainer>
+                      <ItemTitle>
+                        {exp.title}
+                      </ItemTitle>
+                      <ItemDetails>
+                        — {exp.details}
+                      </ItemDetails>
+                    </ItemTitleContainer>
+                    <ExpandIcon />
+                  </ItemHeader>
+                  <AnimateHeight height={active ? "auto" : 0}>
+                    <ItemDescription>
+                      {HTMLReactParser(exp.description)}
+                    </ItemDescription>
+                  </AnimateHeight>
+                </Item>
+              );
+            })
+          }
+        </Fade>
       </Items>
     </div>
   );
