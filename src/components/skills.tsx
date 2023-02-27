@@ -12,7 +12,7 @@ const Skills = () => {
     <Container>
       {
         SkillsData.map((category: ISkillCategory, index: number) => (
-          <Category>
+          <Category key={index}>
             <CategoryLabel>
               {category.name}
             </CategoryLabel>
@@ -25,17 +25,20 @@ const Skills = () => {
                 direction={"right"}
               >
                 {
-                  category.skills.map((skill: INamedSkill | IIconsSkill) => {
+                  category.skills.map((skill: INamedSkill | IIconsSkill, index: number) => {
                     return (skill as IIconsSkill).icons ? (
-                      <Badge>
+                      <Badge key={index}>
                         {
-                          (skill as IIconsSkill).icons.map((icon: string) => (
-                            <AnimatedIcon src={require(`../assets/skills-icons/${icon}`)} />
+                          (skill as IIconsSkill).icons.map((icon: string, index: number) => (
+                            <AnimatedIcon
+                              key={index}
+                              src={require(`../assets/skills-icons/${icon}`)}
+                            />
                           ))
                         }
                       </Badge>
                     ) : (
-                      <Badge>
+                      <Badge key={index}>
                         <AnimatedIcon src={require(`../assets/skills-icons/${(skill as INamedSkill).icon}`)} />
                         <BadgeLabel>
                           {(skill as INamedSkill).name}
