@@ -30,7 +30,7 @@ const Headlines = () => {
       </Fade>
       <Fade
         triggerOnce
-        duration={200}
+        duration={500}
         delay={1000}
       >
         <MyJobIs>
