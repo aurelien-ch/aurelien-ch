@@ -40,7 +40,7 @@ const Container = styled.div`
 const Center = styled.div`
   width: 100%;
   display: flex;
-  gap: 2.5vw;
+  gap: 3vw;
   margin: 5vw 0;
 
   > div {

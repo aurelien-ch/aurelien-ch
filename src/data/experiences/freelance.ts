@@ -38,7 +38,7 @@ const Freelance = [
       <br/>
       ➔ Développement Front-End <b>[React.js + TypeScript]</b><br/>
       <br/>
-      <a target="_blank" href="https://saretec.fr/fr/activites/conseil-prevention/monuma-0">https://saretec.fr/ - Monuma</a>
+      <a target="_blank" href="https://saretec.fr/fr/activites/conseil-prevention/monuma-0">https://saretec.fr/ — Monuma</a>
     `,
   },
   {
