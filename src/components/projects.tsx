@@ -9,50 +9,19 @@ import ImageViewer from "./image-viewer";
 import { IProject } from "../types";
 import { GradientText } from "../theme";
 
+import ProjectsData from "../data/projects";
+
 import { ReactComponent as OpenIcon } from "../assets/icons/open.svg";
 import { ReactComponent as CloseIcon } from "../assets/icons/close.svg";
-
-import UsenseIcon from "../assets/projects-logos/usense.png"
-import MyTelevisionIcon from "../assets/projects-logos/mytelevision.png"
-import MonumaIcon from "../assets/projects-logos/monuma.png"
-import SophrautoIcon from "../assets/projects-logos/sophrauto.png"
-
-import UsenseMockup from "../assets/projects-mockups/usense.png"
-import MyTelevisionMockup from "../assets/projects-mockups/mytelevision.png"
-import MonumaMockup from "../assets/projects-mockups/monuma.png"
-import SophrautoMockup from "../assets/projects-mockups/sophrauto.png"
 
 const Projects = () => {
   const projectsRefs = useRef<HTMLDivElement[]>([]);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
-  const projects: IProject[] = [
-    {
-      name: "Usense",
-      logo: UsenseIcon,
-      mockup: UsenseMockup,
-    },
-    {
-      name: "MyTelevision",
-      logo: MyTelevisionIcon,
-      mockup: MyTelevisionMockup,
-    },
-    {
-      name: "Monuma",
-      logo: MonumaIcon,
-      mockup: MonumaMockup,
-    },
-    {
-      name: "Sophrauto",
-      logo: SophrautoIcon,
-      mockup: SophrautoMockup,
-    },
-  ];
-
   useEffect(() => {
-    projectsRefs.current = projectsRefs.current.slice(0, projects.length);
-  }, [projects.length]);
+    projectsRefs.current = projectsRefs.current.slice(0, ProjectsData.length);
+  }, []);
 
   useEffect(() => {
     if (activeIndex !== null) {
@@ -93,7 +62,7 @@ const Projects = () => {
         </Fade>
         <ProjectsContainer>
           {
-            projects.map((p: IProject, index: number) => (
+            ProjectsData.map((p: IProject, index: number) => (
               <GsapContainer
                 key={index}
                 ref={(e: HTMLDivElement) => projectsRefs.current[index] = e}
@@ -115,13 +84,13 @@ const Projects = () => {
                           setActiveIndex(null);
                         }} />
                       </MockupHeader>
-                      <MockupImageContainer onClick={() => setZoomedImage(p.mockup)}>
-                        <MockupImage src={p.mockup} />
+                      <MockupImageContainer onClick={() => setZoomedImage(require(`../assets/projects-mockups/${p.mockup}`))}>
+                        <MockupImage src={require(`../assets/projects-mockups/${p.mockup}`)} />
                         <OpenIcon />
                       </MockupImageContainer>
                     </MockupContainer>
                     <LogoContainer>
-                      <AnimatedIcon src={p.logo} />
+                      <AnimatedIcon src={require(`../assets/projects-logos/${p.logo}`)} />
                     </LogoContainer>
                   </Project>
                 </Fade>
