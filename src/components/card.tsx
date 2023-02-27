@@ -11,8 +11,15 @@ import { ReactComponent as HoverText } from "../assets/handwrite-texts/hover.svg
 const Card = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hoverText, setHoverText] = useState<boolean>(true);
+  const [tiltEnabled, setTiltEnabled] = useState<boolean>(false);
 
   const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setTiltEnabled(true);
+    }, 2000);
+  }, []);
 
   useEffect(() => {
     const timeline = gsap.timeline();
@@ -40,12 +47,13 @@ const Card = () => {
         duration={2000}
       >
         <TiltContainer
+          tiltEnabled={tiltEnabled}
           onMouseEnter={() => setHoverText(false)}
           onMouseLeave={() => setHoverText(true)}
         >
           <Tilt
-            scale={1.075}
-            transitionSpeed={1000}
+            scale={1.1}
+            transitionSpeed={1500}
             glareEnable={true}
             glareMaxOpacity={.6}
             glareColor={"lightblue"}
@@ -96,7 +104,9 @@ const HoverTextContainer = styled.div<{ visible: boolean }>`
   margin-top: 1.5vw;
 `;
 
-const TiltContainer = styled.div`
+const TiltContainer = styled.div<{ tiltEnabled: boolean }>`
+  pointer-events: ${p => p.tiltEnabled ? "auto" : "none"};
+
   .glare-wrapper {
     border-radius: 1.5vw !important;
   }
