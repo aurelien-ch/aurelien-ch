@@ -3,6 +3,8 @@ import { Fade } from "react-awesome-reveal";
 
 import AnimatedIcon from "./animated-icon";
 
+import { IProject } from "../types";
+
 import { ReactComponent as OpenIcon } from "../assets/icons/open.svg";
 import { ReactComponent as CloseIcon } from "../assets/icons/close.svg";
 
@@ -10,9 +12,7 @@ interface Props {
   index: number;
   eRef: (e: HTMLDivElement) => HTMLDivElement;
   active: boolean;
-  name: string;
-  logo: string;
-  mockup: string;
+  data: IProject;
   setActiveIndex: React.Dispatch<React.SetStateAction<number | null>>;
   setZoomedImage: React.Dispatch<React.SetStateAction<string | null>>;
 }
@@ -32,20 +32,20 @@ const Project = (p: Props) => {
           <MockupContainer>
             <MockupHeader>
               <ProjectName>
-                {p.name}
+                {p.data.name}
               </ProjectName>
               <CloseIcon onClick={(e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
                 e.stopPropagation();
                 p.setActiveIndex(null);
               }} />
             </MockupHeader>
-            <MockupImageContainer onClick={() => p.setZoomedImage(require(`../assets/projects-mockups/${p.mockup}`))}>
-              <MockupImage src={require(`../assets/projects-mockups/${p.mockup}`)} />
+            <MockupImageContainer onClick={() => p.setZoomedImage(require(`../assets/projects-mockups/${p.data.mockup}`))}>
+              <MockupImage src={require(`../assets/projects-mockups/${p.data.mockup}`)} />
               <OpenIcon />
             </MockupImageContainer>
           </MockupContainer>
           <LogoContainer>
-            <AnimatedIcon src={require(`../assets/projects-logos/${p.logo}`)} />
+            <AnimatedIcon src={require(`../assets/projects-logos/${p.data.logo}`)} />
           </LogoContainer>
         </ProjectContainer>
       </Fade>

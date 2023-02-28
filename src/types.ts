@@ -29,3 +29,10 @@ export interface IExperience {
   details: string;
   description: string;
 };
+
+export interface IReview {
+  name: string;
+  stars: number;
+  company: string;
+  reviews: string[];
+};

@@ -54,7 +54,7 @@ const Projects = () => {
           direction={"down"}
         >
           <Title>
-            Quelques projets
+            Quelques Projets
           </Title>
         </Fade>
         <ProjectsContainer>
@@ -65,9 +65,7 @@ const Projects = () => {
                 index={index}
                 eRef={(e: HTMLDivElement) => projectsRefs.current[index] = e}
                 active={activeIndex === index}
-                name={p.name}
-                logo={p.logo}
-                mockup={p.mockup}
+                data={p}
                 setActiveIndex={setActiveIndex}
                 setZoomedImage={setZoomedImage}
               />

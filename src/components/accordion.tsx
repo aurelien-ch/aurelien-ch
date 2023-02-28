@@ -133,12 +133,13 @@ const ItemDetails = styled.div`
 `;
 
 const ItemDescription = styled.div`
+  max-height: 20vw;
+  overflow-y: scroll;
   color: rgba(255, 255, 255, .6);
   font-weight: 500;
   font-size: 1vw;
-  max-height: 20vw;
-  overflow-y: scroll;
   margin-top: 1.6vw;
+  padding-right: 1vw;
   
   b {
     color: white;
@@ -148,6 +149,7 @@ const ItemDescription = styled.div`
   a {
     color: rgba(255, 255, 255, .6);
     transition: .4s;
+    outline: none;
   }
 
   a:hover {

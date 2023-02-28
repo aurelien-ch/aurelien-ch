@@ -60,7 +60,7 @@ const Freelance = [
       <br/>
       ➔ Features :<br/>
       — Authentification <b>[Firebase]</b><br/>
-      — Base de données (exercices favoris, exercices vus, notes...) <b>[Firebase]</b><br/>
+      — Base de données (exercices favoris, exercices vus, notes) <b>[Firebase]</b><br/>
       — Lecture d'exercices audio<br/>
       — Lecture d'exercices vidéo<br/>
       — Lecture de PDF<br/>
