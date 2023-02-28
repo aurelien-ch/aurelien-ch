@@ -34,14 +34,14 @@ export default Third;
 const Container = styled.div`
   height: 100%;
   display: flex;
-  margin-top: 5vw;
+  align-items: center;
 `;
 
 const Center = styled.div`
+  height: 50vw;
   width: 100%;
   display: flex;
   gap: 3vw;
-  margin: 5vw 0;
 
   > div {
     flex: 1;

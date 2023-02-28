@@ -136,7 +136,7 @@ const ItemDescription = styled.div`
   color: rgba(255, 255, 255, .6);
   font-weight: 500;
   font-size: 1vw;
-  max-height: 35vh;
+  max-height: 20vw;
   overflow-y: scroll;
   margin-top: 1.6vw;
   
