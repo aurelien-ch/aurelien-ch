@@ -126,7 +126,7 @@ const StarsContainer = styled.div`
 
 const Content = styled.div`
   height: 100%;
-  max-height: 10vw;
+  max-height: 6vw;
   overflow-y: scroll;
   color: rgba(255, 255, 255, .6);
   font-size: 1.05vw;

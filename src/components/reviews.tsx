@@ -10,7 +10,7 @@ import ReviewsData from "../data/reviews";
 
 const Reviews = () => {
   return (
-    <>
+    <div>
       <Fade
         triggerOnce
         direction={"down"}
@@ -36,7 +36,7 @@ const Reviews = () => {
           }
         </Fade>
       </ReviewsContainer>
-    </>
+    </div>
   );
 };
 
