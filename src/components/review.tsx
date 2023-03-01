@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import HTMLReactParser from "html-react-parser";
 
 import { IReview } from "../types";
@@ -31,7 +31,10 @@ const Review = (p: Props) => {
           }
         </StarsContainer>
       </Header>
-      <Content ref={contentRef}>
+      <Content
+        ref={contentRef}
+        key={reviewIndex}
+      >
         {HTMLReactParser(p.data.reviews[reviewIndex] ?? "a")}
       </Content>
       <Pagination>
@@ -67,6 +70,18 @@ const Review = (p: Props) => {
 
 export default Review;
 
+const ContentFade = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(1vw);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 const Container = styled.div`
   flex: 1;
   background-color: rgba(255, 255, 255, .1);
@@ -77,6 +92,8 @@ const Container = styled.div`
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  border-bottom: .1vw solid rgba(255, 255, 255, .2);
+  padding-bottom: 1.4vw;
 `;
 
 const NameContainer = styled.div`
@@ -115,10 +132,11 @@ const Content = styled.div`
   font-size: 1.05vw;
   font-weight: 500;
   margin-top: 1.4vw;
-  padding: 1.3vw 1.3vw 1.3vw 0;
-  border-top: .1vw solid rgba(255, 255, 255, .2);
+  padding-right: 1.3vw;
+  padding-bottom: 1.3vw;
   mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+  animation:${ContentFade} 1s;
 
   br {
     display: block;
