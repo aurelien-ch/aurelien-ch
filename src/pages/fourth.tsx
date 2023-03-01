@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 import Reviews from "../components/reviews";
+import Contact from "../components/contact";
 
 const Fourth = () => {
   return (
     <Container>
       <Reviews />
+      <Contact />
     </Container>
   );
 };

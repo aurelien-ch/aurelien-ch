@@ -61,7 +61,7 @@ const Review = (p: Props) => {
           <NextIcon />
         </NextButton>
       </Pagination>
-    </Container >
+    </Container>
   );
 };
 

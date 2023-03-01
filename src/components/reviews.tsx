@@ -10,24 +10,33 @@ import ReviewsData from "../data/reviews";
 
 const Reviews = () => {
   return (
-    <Fade
-      triggerOnce
-      direction={"down"}
-    >
-      <Title>
-        Avis Clients
-      </Title>
+    <>
+      <Fade
+        triggerOnce
+        direction={"down"}
+      >
+        <Title>
+          Avis Clients
+        </Title>
+      </Fade>
       <ReviewsContainer>
-        {
-          ReviewsData.map((r: IReview, index: number) => (
-            <Review
-              key={index}
-              data={r}
-            />
-          ))
-        }
+        <Fade
+          triggerOnce
+          cascade
+          damping={.2}
+          direction={"up"}
+        >
+          {
+            ReviewsData.map((r: IReview, index: number) => (
+              <Review
+                key={index}
+                data={r}
+              />
+            ))
+          }
+        </Fade>
       </ReviewsContainer>
-    </Fade>
+    </>
   );
 };
 
@@ -42,4 +51,9 @@ const Title = styled(GradientText)`
 const ReviewsContainer = styled.div`
   display: flex;
   gap: 2vw;
+
+  > div {
+    display: flex;
+    flex: 1;
+  }
 `;
