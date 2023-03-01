@@ -17,6 +17,7 @@
     "react-animate-height": "^3.1.1",
     "react-awesome-reveal": "^4.2.3",
     "react-dom": "^18.2.0",
+    "react-globe.gl": "^2.23.3",
     "react-parallax-tilt": "^1.7.102",
     "react-remove-scroll": "^2.5.5",
     "styled-components": "^5.3.6",
