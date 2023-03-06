@@ -1,13 +1,21 @@
 import styled from "styled-components";
 
-import Reviews from "../components/reviews";
+import Review from "../components/review";
 import Contact from "../components/contact";
+
+import ReviewsData from "../data/reviews";
 
 const Fourth = () => {
   return (
     <Container>
-      <Reviews />
-      <Contact />
+      <Row>
+        <Review data={ReviewsData[0]} />
+        <Review data={ReviewsData[1]} />
+      </Row>
+      <Row>
+        <Review data={ReviewsData[2]} />
+        <Contact />
+      </Row>
     </Container>
   );
 };
@@ -19,5 +27,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 3vw;
+  gap: 2vw;
+`;
+
+const Row = styled.div`
+  display: flex;
+  gap: 2vw;
 `;

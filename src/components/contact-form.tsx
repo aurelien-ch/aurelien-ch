@@ -74,7 +74,7 @@ const ContactForm = () => {
 export default ContactForm;
 
 const Form = styled.form`
-  flex: 1;
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 1vw;
@@ -118,7 +118,8 @@ const SendText = styled.div`
 `;
 
 const SendButton = styled.button<{ $loading: boolean }>`
-  position: relative;
+  position: absolute;
+  bottom: -4.2vw;
   width: fit-content;
   align-self: flex-end;
   background-color: rgba(255, 255, 255, .1);

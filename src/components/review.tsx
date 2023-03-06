@@ -18,52 +18,58 @@ const Review = (p: Props) => {
 
   return (
     <Container>
-      <Header>
-        <NameContainer>
-          <Name>{p.data.name}</Name>
-          <Company>— {p.data.company}</Company>
-        </NameContainer>
-        <StarsContainer>
-          {
-            Array.from({ length: p.data.stars }, (_, i) => i).map((index: number) => (
-              <StarIcon key={index} />
-            ))
-          }
-        </StarsContainer>
-      </Header>
-      <Content
-        ref={contentRef}
-        key={reviewIndex}
-      >
-        {HTMLReactParser(p.data.reviews[reviewIndex] ?? "a")}
-      </Content>
-      <Pagination>
-        <PrevButton
-          disabled={reviewIndex <= 0}
-          onClick={() => {
-            if (reviewIndex > 0 && contentRef.current) {
-              setReviewIndex(reviewIndex - 1);
-              contentRef.current.scrollTo(0, 0);
+      <Padding>
+        <Header>
+          <NameContainer>
+            <Name>{p.data.name}</Name>
+            <Company>— {p.data.company}</Company>
+          </NameContainer>
+          <StarsContainer>
+            {
+              Array.from({ length: p.data.stars }, (_, i) => i).map((index: number) => (
+                <StarIcon key={index} />
+              ))
             }
-          }}
+          </StarsContainer>
+        </Header>
+        <Content
+          ref={contentRef}
+          key={reviewIndex}
         >
-          <PrevIcon />
-        </PrevButton>
-        <PaginationIndex>
-          {reviewIndex + 1} / {p.data.reviews.length}
-        </PaginationIndex>
-        <NextButton
-          disabled={reviewIndex >= p.data.reviews.length - 1}
-          onClick={() => {
-            if (reviewIndex < p.data.reviews.length - 1 && contentRef.current) {
-              setReviewIndex(reviewIndex + 1)
-              contentRef.current.scrollTo(0, 0);
-            };
-          }}
-        >
-          <NextIcon />
-        </NextButton>
-      </Pagination>
+          {HTMLReactParser(p.data.reviews[reviewIndex] ?? "a")}
+        </Content>
+        {
+          p.data.reviews.length > 1 ? (
+            <Pagination>
+              <PrevButton
+                disabled={reviewIndex <= 0}
+                onClick={() => {
+                  if (reviewIndex > 0 && contentRef.current) {
+                    setReviewIndex(reviewIndex - 1);
+                    contentRef.current.scrollTo(0, 0);
+                  }
+                }}
+              >
+                <PrevIcon />
+              </PrevButton>
+              <PaginationIndex>
+                {reviewIndex + 1} / {p.data.reviews.length}
+              </PaginationIndex>
+              <NextButton
+                disabled={reviewIndex >= p.data.reviews.length - 1}
+                onClick={() => {
+                  if (reviewIndex < p.data.reviews.length - 1 && contentRef.current) {
+                    setReviewIndex(reviewIndex + 1)
+                    contentRef.current.scrollTo(0, 0);
+                  };
+                }}
+              >
+                <NextIcon />
+              </NextButton>
+            </Pagination>
+          ) : null
+        }
+      </Padding>
     </Container>
   );
 };
@@ -86,7 +92,10 @@ const Container = styled.div`
   flex: 1;
   background-color: rgba(255, 255, 255, .1);
   border-radius: 1.5vw;
-  padding: 2vw 2.5vw;
+`;
+
+const Padding = styled.div`
+  margin: 2vw 2.5vw 1.5vw;
 `;
 
 const Header = styled.div`
@@ -126,7 +135,7 @@ const StarsContainer = styled.div`
 
 const Content = styled.div`
   height: 100%;
-  max-height: 6vw;
+  max-height: 8vw;
   overflow-y: scroll;
   color: rgba(255, 255, 255, .6);
   font-size: 1.05vw;
