@@ -149,7 +149,6 @@ const ItemDescription = styled.div`
   a {
     color: rgba(255, 255, 255, .6);
     transition: .4s;
-    outline: none;
   }
 
   a:hover {

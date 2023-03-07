@@ -3,6 +3,7 @@ import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import { Oval } from "react-loader-spinner";
 
+import { ReactComponent as SendIcon } from "../assets/icons/send.svg";
 
 const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -59,13 +60,17 @@ const ContactForm = () => {
         type={"submit"}
         $loading={loading}
       >
-        <SendText>Envoyer</SendText>
-        <Oval
-          color={"white"}
-          secondaryColor={"rgba(255, 255, 255, .5)"}
-          strokeWidth={5}
-          strokeWidthSecondary={5}
-        />
+        <SendIconContainer>
+          <SendIcon />
+        </SendIconContainer>
+        <LoadingIconContainer>
+          <Oval
+            color={"white"}
+            secondaryColor={"rgba(255, 255, 255, .5)"}
+            strokeWidth={5}
+            strokeWidthSecondary={5}
+          />
+        </LoadingIconContainer>
       </SendButton>
     </Form>
   );
@@ -94,7 +99,6 @@ const Input = styled.input`
   border-radius: 1vw;
   padding: 1vw 1.5vw;;
   border: none;
-  outline: none;
   color: white;
   font-size: 1vw;
 `;
@@ -104,53 +108,62 @@ const TextArea = styled.textarea`
   border-radius: 1vw;
   padding: 1vw 1.5vw;;
   border: none;
-  outline: none;
   color: white;
   font-size: 1vw;
   resize: none;
 `;
 
-const SendText = styled.div`
-  color: white;
-  font-size: 1vw;
-  font-weight: bold;
+const SendIconContainer = styled.div`
   transition: .4s;
+
+  svg {
+    display: block;
+    height: 1.5vw;
+    width: 1.5vw;
+  }
+`;
+
+const LoadingIconContainer = styled.div`
+  transition: .4s;
+
+  svg {
+      height: 1.3vw;
+      width: 1.3vw;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0;
+  }
 `;
 
 const SendButton = styled.button<{ $loading: boolean }>`
   position: absolute;
-  bottom: -4.2vw;
+  bottom: .7vw;
+  right: .7vw;
   width: fit-content;
   align-self: flex-end;
   background-color: rgba(255, 255, 255, .1);
   border: none;
   border-radius: .8vw;
-  padding: 1vw 1.5vw;;
+  padding: .8vw;
   transition: .4s;
   cursor: pointer;
   pointer-events: ${p => p.$loading ? "none" : "auto"};
 
-  > div {
+  * {
     padding: 0 !important;
   }
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.07);
   }
 
-  ${SendText} {
+  ${SendIconContainer} {
     opacity: ${p => p.$loading ? 0 : 1};
   }
 
-  svg {
-    height: 1.5vw;
-    width: 1.5vw;
+  ${LoadingIconContainer} {
     opacity: ${p => p.$loading ? 1 : 0};
-    transition: .4s;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 0;
   }
 `;
