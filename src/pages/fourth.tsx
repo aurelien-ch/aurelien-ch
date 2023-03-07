@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Fade } from "react-awesome-reveal";
 
 import Review from "../components/review";
 import Contact from "../components/contact";
@@ -9,12 +10,27 @@ const Fourth = () => {
   return (
     <Container>
       <Row>
-        <Review data={ReviewsData[0]} />
-        <Review data={ReviewsData[1]} />
+        <Fade
+          triggerOnce
+          cascade
+          damping={.2}
+          direction={"up"}
+        >
+          <Review data={ReviewsData[0]} />
+          <Review data={ReviewsData[1]} />
+        </Fade>
       </Row>
       <Row>
-        <Review data={ReviewsData[2]} />
-        <Contact />
+        <Fade
+          triggerOnce
+          cascade
+          damping={.2}
+          direction={"up"}
+          delay={300}
+        >
+          <Review data={ReviewsData[2]} />
+          <Contact />
+        </Fade>
       </Row>
     </Container>
   );
@@ -33,4 +49,9 @@ const Container = styled.div`
 const Row = styled.div`
   display: flex;
   gap: 2vw;
+
+  > div {
+    flex: 1;
+    display: grid;
+  }
 `;
