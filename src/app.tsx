@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import styled from "styled-components";
 
-import resp from "./utils/resp";
+import { resp, devices } from "./utils/responsive";
 
 import useCurrentSection from "./hooks/use-current-section";
 import SectionIndex from "./components/section-index";
@@ -52,10 +52,15 @@ export default App;
 const ScrollContainer = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 100vh;
   scroll-snap-type: y mandatory;
+  height: 100vh;
   background: ${p => p.theme.gradients.backgroundGradient};
   padding: 0 ${resp(9)};
+
+  @media ${devices.tablet} {
+    scroll-snap-type: unset;
+    padding: 0 ${resp(5)};
+  }
 `;
 
 const ScrollSection = styled.section`
@@ -63,4 +68,8 @@ const ScrollSection = styled.section`
   scroll-snap-stop: always;
   position: relative;
   height: 100vh;
+
+  @media ${devices.tablet} {
+    height: auto;
+  }
 `;

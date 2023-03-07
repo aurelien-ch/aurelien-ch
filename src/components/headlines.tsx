@@ -2,12 +2,11 @@ import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
 import { GradientText } from "../theme";
-import resp from "../utils/resp";
+import { resp, devices } from "../utils/responsive";
 
 import TypeWriter from "./type-writer";
 
 const Headlines = () => {
-
   return (
     <Container>
       <Fade
@@ -63,6 +62,10 @@ export default Headlines;
 
 const Container = styled.div`
   font-weight: bold;
+
+  @media ${devices.tablet} {
+    margin-bottom: ${resp(6)};
+  }
 `;
 
 const ContextLine = styled.div`
@@ -83,6 +86,10 @@ const MyJobIs = styled(ContextLine)`
 const FirstName = styled.div`
   font-size: ${resp(7)};
   color: white;
+
+  @media ${devices.mobile} {
+    font-size: ${resp(6)};
+  }
 `;
 
 const LastName = styled.div`
@@ -90,6 +97,10 @@ const LastName = styled.div`
   color: rgba(255, 255, 255, .5);
   transform: translateY(${resp(-.5)});
   margin-bottom: ${resp(3)};
+
+  @media ${devices.mobile} {
+    font-size: ${resp(6)};
+  }
 `;
 
 const ProfessionContainer = styled.div`
@@ -99,6 +110,10 @@ const ProfessionContainer = styled.div`
     font-weight: normal;
     font-size: ${resp(3)};
     transform: translateY(${resp(-.7)});
+
+    @media ${devices.mobile} {
+      font-size: ${resp(2.6)};
+    }
 
     &:first-child {
       color: #559be6;
@@ -114,4 +129,8 @@ const ProfessionContainer = styled.div`
 
 const Profession = styled(GradientText)`
   font-size: ${resp(2.2)};
+
+  @media ${devices.mobile} {
+    font-size: ${resp(1.7)};
+  }
 `;

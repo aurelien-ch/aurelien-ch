@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import { RemoveScroll } from "react-remove-scroll";
 
-import resp from "../utils/resp";
+import { resp } from "../utils/responsive";
 
 import { ReactComponent as CloseIcon } from "../assets/icons/close.svg";
 

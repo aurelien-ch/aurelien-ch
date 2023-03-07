@@ -4,7 +4,7 @@ import { Fade } from "react-awesome-reveal";
 import AnimateHeight from "react-animate-height";
 import HTMLReactParser from "html-react-parser";
 
-import resp from "../utils/resp";
+import { resp } from "../utils/responsive";
 import { GradientText } from "../theme";
 import { IExperience } from "../types";
 

@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import HTMLReactParser from "html-react-parser";
 
-import resp from "../utils/resp";
+import { resp } from "../utils/responsive";
 
 import { IReview } from "../types";
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import { Oval } from "react-loader-spinner";
 
-import resp from "../utils/resp";
+import { resp } from "../utils/responsive";
 
 import { ReactComponent as SendIcon } from "../assets/icons/send.svg";
 

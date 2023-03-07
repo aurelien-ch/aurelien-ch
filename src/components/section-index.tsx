@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
-import resp from "../utils/resp";
+import { resp } from "../utils/responsive";
 
 interface Props {
   index: number;

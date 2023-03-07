@@ -4,7 +4,7 @@ import { Fade } from "react-awesome-reveal";
 import gsap from "gsap";
 import Tilt from "react-parallax-tilt";
 
-import resp from "../utils/resp";
+import { resp } from "../utils/responsive";
 
 import Image from "../assets/card-image.jpeg";
 import { ReactComponent as HoverText } from "../assets/handwrite-texts/hover.svg";

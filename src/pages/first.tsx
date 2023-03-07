@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { devices } from "../utils/responsive";
+
 import Headlines from "../components/headlines";
 import Card from "../components/card";
 import ScrollDown from "../components/scroll-down";
@@ -23,4 +25,10 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media ${devices.tablet} {
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+  }
 `;

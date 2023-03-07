@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
-import resp from "../utils/resp";
+import { resp, devices } from "../utils/responsive";
 import { GradientText } from "../theme";
 
 import ContactForm from "./contact-form";
@@ -26,6 +26,10 @@ export default Contact;
 
 const Container = styled.div`
   flex: 1;
+
+  @media ${devices.tablet} {
+    margin-top: ${resp(2)};
+  }
 `;
 
 const Title = styled(GradientText)`

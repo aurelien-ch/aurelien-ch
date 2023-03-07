@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import resp from "../utils/resp";
+import { resp, devices } from "../utils/responsive";
 
 import AboutMe from "../components/about-me";
 import Skills from "../components/skills";
@@ -26,9 +26,21 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: ${resp(.5)};
+
+  @media ${devices.tablet} {
+    height: auto;
+    flex-direction: column;
+    gap: ${resp(1.5)};
+    margin-top: ${resp(5)};
+  }
 `;
 
 const Flex = styled.div`
   display: flex;
   gap: ${resp(5)};
+
+  @media ${devices.tablet} {
+    flex-direction: column;
+    gap: ${resp(3)};
+  }
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
-import resp from "../utils/resp";
+import { resp, devices } from "../utils/responsive";
 import { IProject } from "../types";
 
 import AnimatedIcon from "./animated-icon";
@@ -65,14 +65,20 @@ const MockupContainer = styled.div`
   z-index: 1;
   position: absolute;
   width: 90%;
+  transform: translateY(${resp(-.2)});
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
 const MockupHeader = styled.div`
   display: flex;
+  width: 95%;
   justify-content: space-between;
   align-items: center;
   opacity: .6;
-  margin: 0 ${resp(.5)} ${resp(.3)};
+  margin-bottom: ${resp(.5)};
 
   svg {
     height: ${resp(1.3)};
@@ -93,6 +99,8 @@ const ProjectName = styled.div`
 `;
 
 const MockupImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
   position: relative;
   cursor: pointer;
 
@@ -115,8 +123,8 @@ const MockupImageContainer = styled.div`
 `;
 
 const MockupImage = styled.img`
-  height: 100%;
-  width: 100%;
+  height: fit-content;
+  max-width: 100%;
   border-radius: ${resp(1.5)};
   filter: brightness(.5);
 `;
@@ -144,6 +152,10 @@ const ProjectContainer = styled.div<{ showMockup: boolean }>`
     pointer-events: ${p => p.showMockup ? "auto" : "none"};
     opacity: ${p => p.showMockup ? 1 : 0};
     transition: opacity ${p => p.showMockup ? .8 : .2}s ${p => p.showMockup ? .4 : 0}s;
+
+    @media ${devices.mobile} {
+      transition: .6s;
+    }
   }
 
   ${LogoContainer} img:not(:first-of-type) {
@@ -152,5 +164,13 @@ const ProjectContainer = styled.div<{ showMockup: boolean }>`
 
   &:hover ${LogoContainer} img:not(:first-of-type) {
     opacity: 1;
+  }
+
+  @media ${devices.tablet} {
+    height: ${resp(13)};
+  }
+
+  @media ${devices.mobile} {
+    height: ${resp(18)};
   }
 `;

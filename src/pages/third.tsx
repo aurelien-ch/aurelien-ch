@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import resp from "../utils/resp";
+import { resp, devices } from "../utils/responsive";
 
 import Accordion from "../components/accordion";
 
@@ -37,6 +37,11 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+
+  @media ${devices.tablet} {
+    height: auto;
+    margin-top: ${resp(5)};
+  }
 `;
 
 const Center = styled.div`
@@ -47,6 +52,10 @@ const Center = styled.div`
 
   > div {
     flex: 1;
+  }
+
+  @media ${devices.tablet} {
+    flex-direction: column;
   }
 `;
 

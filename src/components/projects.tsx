@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 import gsap from "gsap";
 
-import resp from "../utils/resp";
+import { resp, devices } from "../utils/responsive";
 import { IProject } from "../types";
 import { GradientText } from "../theme";
 
@@ -94,4 +94,8 @@ const Title = styled(GradientText)`
 const ProjectsContainer = styled.div`
   display: flex;
   gap: ${resp(2.5)};
+
+  @media ${devices.mobile} {
+    flex-direction: column;
+  }
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
-import resp from "../utils/resp";
+import { resp } from "../utils/responsive";
 import { ISkillCategory, INamedSkill, IIconsSkill } from "../types";
 
 import AnimatedIcon from "./animated-icon";
