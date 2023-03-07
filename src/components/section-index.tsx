@@ -60,7 +60,7 @@ const Step = styled.div<{ active: boolean, current: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  height:1.7vw;
+  height: 1.7vw;
   width: 1.7vw;
   border-radius: 100%;
   background-color: ${p => p.active ? "rgb(125, 88, 161)" : "rgb(70, 71, 140)"};

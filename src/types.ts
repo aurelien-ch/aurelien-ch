@@ -3,6 +3,11 @@ export interface ICurrentSection {
   scrollPercentage: number;
 };
 
+export interface IPlatform {
+  logo: string;
+  link: string;
+};
+
 export interface ISkillCategory {
   name: string;
   skills: (INamedSkill | IIconsSkill)[],

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import useCurrentSection from "./hooks/use-current-section";
 import SectionIndex from "./components/section-index";
+import Platforms from "./components/platforms";
 
 import First from "./pages/first";
 import Second from "./pages/second";
@@ -39,6 +40,7 @@ const App = () => {
           ))
         }
       </ScrollContainer>
+      <Platforms />
     </>
   )
 };
