@@ -35,6 +35,7 @@ const Review = (p: Props) => {
         <Content
           ref={contentRef}
           key={reviewIndex}
+          paginated={p.data.reviews.length > 1}
         >
           {HTMLReactParser(p.data.reviews[reviewIndex] ?? "a")}
         </Content>
@@ -133,9 +134,9 @@ const StarsContainer = styled.div`
   }
 `;
 
-const Content = styled.div`
+const Content = styled.div<{ paginated: boolean }>`
   height: 100%;
-  max-height: 8vw;
+  max-height: ${p => p.paginated ? 8.2 : 12}vw;
   overflow-y: scroll;
   color: rgba(255, 255, 255, .6);
   font-size: 1.05vw;
