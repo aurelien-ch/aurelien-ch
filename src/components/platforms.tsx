@@ -24,7 +24,7 @@ const Platforms = () => {
       <Container>
         {
           platforms.map((platform: IPlatform, index: number) => (
-            <PlatformContainer key={index}>
+            <div key={index}>
               <a
                 href={platform.link}
                 target="_blank"
@@ -40,7 +40,7 @@ const Platforms = () => {
                   <JoinLine />
                 ) : null
               }
-            </PlatformContainer>
+            </div>
           ))
         }
       </Container>
@@ -53,13 +53,8 @@ export default Platforms;
 const Container = styled.div`
   z-index: 1;
   position: absolute;
-  top: 1.5vw;
+  bottom: 1.5vw;
   right: 1.5vw;
-  display: flex;
-`;
-
-const PlatformContainer = styled.div`
-  display: flex;
 `;
 
 const Chip = styled.div`
@@ -69,13 +64,15 @@ const Chip = styled.div`
   height: 2.2vw;
   width: 2.2vw;
   border-radius: 100%;
-  background-color: rgb(125, 88, 161, .9);
+  background-color: rgb(125, 88, 161);
   font-size: .8vw;
   cursor: pointer;
   transition: .4s;
+  opacity: .8;
 
   &:hover {
     transform: scale(1.15);
+    opacity: 1;
   }
 `;
 
@@ -85,8 +82,8 @@ const Logo = styled.img`
 `;
 
 const JoinLine = styled.div`
-  width: 2.2vw;
-  height: .1vw;
+  height: 2.2vw;
+  width: .1vw;
   background-color: rgba(125, 88, 161);
-  transform: translateY(calc(2.2vw / 2 - 50%));
+  transform: translateX(calc(2.2vw / 2 - 50%));
 `;
