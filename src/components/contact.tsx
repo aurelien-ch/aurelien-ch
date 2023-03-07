@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
-import ContactForm from "./contact-form";
-
+import resp from "../utils/resp";
 import { GradientText } from "../theme";
+
+import ContactForm from "./contact-form";
 
 const Contact = () => {
   return (
@@ -29,6 +30,6 @@ const Container = styled.div`
 
 const Title = styled(GradientText)`
   font-weight: bold;
-  font-size: 3vw;
-  margin-bottom: 1.8vw;
+  font-size: ${resp(3)};
+  margin-bottom: ${resp(1.8)};
 `;

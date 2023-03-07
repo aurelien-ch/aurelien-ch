@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
+import resp from "../utils/resp";
 import { IPlatform } from "../types";
 
 const Platforms = () => {
@@ -53,19 +54,19 @@ export default Platforms;
 const Container = styled.div`
   z-index: 1;
   position: absolute;
-  bottom: 1.5vw;
-  right: 1.5vw;
+  bottom: ${resp(1.5)};
+  right: ${resp(1.5)};
 `;
 
 const Chip = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2.2vw;
-  width: 2.2vw;
+  height: ${resp(2.2)};
+  width: ${resp(2.2)};
   border-radius: 100%;
   background-color: rgb(125, 88, 161);
-  font-size: .8vw;
+  font-size: ${resp(.8)};
   cursor: pointer;
   transition: .4s;
   opacity: .8;
@@ -82,8 +83,8 @@ const Logo = styled.img`
 `;
 
 const JoinLine = styled.div`
-  height: 2.2vw;
-  width: .1vw;
+  height: ${resp(2.2)};
+  width: ${resp(.1)};
   background-color: rgba(125, 88, 161);
-  transform: translateX(calc(2.2vw / 2 - 50%));
+  transform: translateX(calc(${resp(2.2)} / 2 - 50%));
 `;

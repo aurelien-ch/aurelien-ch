@@ -2,9 +2,12 @@ import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
 import { GradientText } from "../theme";
+import resp from "../utils/resp";
+
 import TypeWriter from "./type-writer";
 
 const Headlines = () => {
+
   return (
     <Container>
       <Fade
@@ -63,30 +66,30 @@ const Container = styled.div`
 `;
 
 const ContextLine = styled.div`
-  font-size: 1.2vw;
+  font-size: ${resp(1.2)};
   font-weight: normal;
   color: rgba(255, 255, 255, .5);
-  margin-left: 1vw;
+  margin-left: ${resp(1)};
 `;
 
 const MyNameIs = styled(ContextLine)`
-  margin-bottom: 1vw;
+  margin-bottom: ${resp(1)};
 `;
 
 const MyJobIs = styled(ContextLine)`
-  margin-bottom: 1.5vw;
+  margin-bottom: ${resp(1.5)};
 `;
 
 const FirstName = styled.div`
-  font-size: 7vw;
+  font-size: ${resp(7)};
   color: white;
 `;
 
 const LastName = styled.div`
-  font-size: 7vw;
+  font-size: ${resp(7)};
   color: rgba(255, 255, 255, .5);
-  transform: translateY(-.5vw);
-  margin-bottom: 3vw;
+  transform: translateY(${resp(-.5)});
+  margin-bottom: ${resp(3)};
 `;
 
 const ProfessionContainer = styled.div`
@@ -94,21 +97,21 @@ const ProfessionContainer = styled.div`
 
   span {
     font-weight: normal;
-    font-size: 3vw;
-    transform: translateY(-.7vw);
+    font-size: ${resp(3)};
+    transform: translateY(${resp(-.7)});
 
     &:first-child {
       color: #559be6;
-      margin-right: .8vw;
+      margin-right: ${resp(.8)};
     }
 
     &:last-child {
       color: #9c388e;
-      margin-left: .6vw;
+      margin-left: ${resp(.6)};
     }
   }
 `;
 
 const Profession = styled(GradientText)`
-  font-size: 2.2vw;
+  font-size: ${resp(2.2)};
 `;

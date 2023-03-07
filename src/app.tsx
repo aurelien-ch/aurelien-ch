@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import styled from "styled-components";
 
+import resp from "./utils/resp";
+
 import useCurrentSection from "./hooks/use-current-section";
 import SectionIndex from "./components/section-index";
 import Platforms from "./components/platforms";
@@ -53,7 +55,7 @@ const ScrollContainer = styled.div`
   height: 100vh;
   scroll-snap-type: y mandatory;
   background: ${p => p.theme.gradients.backgroundGradient};
-  padding: 0 9vw;
+  padding: 0 ${resp(9)};
 `;
 
 const ScrollSection = styled.section`

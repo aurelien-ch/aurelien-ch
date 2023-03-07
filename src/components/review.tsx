@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import HTMLReactParser from "html-react-parser";
 
+import resp from "../utils/resp";
+
 import { IReview } from "../types";
 
 import { ReactComponent as StarIcon } from "../assets/icons/star.svg";
@@ -80,7 +82,7 @@ export default Review;
 const ContentFade = keyframes`
   from {
     opacity: 0;
-    transform: translateY(1vw);
+    transform: translateY(${resp(1)});
   }
   
   to {
@@ -92,35 +94,35 @@ const ContentFade = keyframes`
 const Container = styled.div`
   flex: 1;
   background-color: rgba(255, 255, 255, .1);
-  border-radius: 1.5vw;
+  border-radius: ${resp(1.5)};
 `;
 
 const Padding = styled.div`
-  margin: 2vw 2.5vw 1.5vw;
+  margin: ${resp(2)} ${resp(2.5)} ${resp(1.5)};
 `;
 
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
-  border-bottom: .1vw solid rgba(255, 255, 255, .2);
-  padding-bottom: 1.4vw;
+  border-bottom: ${resp(.1)} solid rgba(255, 255, 255, .2);
+  padding-bottom: ${resp(1.4)};
 `;
 
 const NameContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: .5vw;
+  gap: ${resp(.5)};
 `;
 
 const Name = styled.div`
   color: white;
-  font-size: 1.3vw;
+  font-size: ${resp(1.3)};
   font-weight: bold;
 `;
 
 const Company = styled.div`
   color: rgba(255, 255, 255, .4);
-  font-size: 1.3vw;
+  font-size: ${resp(1.3)};
   font-weight: 500;
 `;
 
@@ -128,22 +130,22 @@ const StarsContainer = styled.div`
   display: flex;
 
   svg {
-    height: 1.8vw;
-    width: 1.8vw;
+    height: ${resp(1.8)};
+    width: ${resp(1.8)};
     opacity: .8;
   }
 `;
 
 const Content = styled.div<{ paginated: boolean }>`
   height: 100%;
-  max-height: ${p => p.paginated ? 8.2 : 12}vw;
+  max-height: ${p => resp(p.paginated ? 8.2 : 12)};
   overflow-y: scroll;
   color: rgba(255, 255, 255, .6);
-  font-size: 1.05vw;
+  font-size: ${resp(1.05)};
   font-weight: 500;
-  margin-top: 1.4vw;
-  padding-right: 1.3vw;
-  padding-bottom: 1.3vw;
+  margin-top: ${resp(1.4)};
+  padding-right: ${resp(1.3)};
+  padding-bottom: ${resp(1.3)};
   mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
   animation:${ContentFade} 1s;
@@ -151,7 +153,7 @@ const Content = styled.div<{ paginated: boolean }>`
   br {
     display: block;
     content: "";
-    margin: .5vw 0;
+    margin: ${resp(.5)} 0;
   }
 `;
 
@@ -159,19 +161,19 @@ const Pagination = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1vw;
+  margin-top: ${resp(1)};
 
   svg {
-    height: 1.2vw;
-    width: 1.2vw;
+    height: ${resp(1.2)};
+    width: ${resp(1.2)};
   }
 `;
 
 const PaginationButton = styled.div<{ disabled: boolean }>`
   background-color: rgba(255, 255, 255, .1);
-  border-radius: .5vw;
+  border-radius: ${resp(.5)};
   opacity: ${p => p.disabled ? .4 : 1};
-  padding: .5vw .6vw;
+  padding: ${resp(.5)} ${resp(.6)};
   transition: .4s;
   cursor: pointer;
 
@@ -182,17 +184,17 @@ const PaginationButton = styled.div<{ disabled: boolean }>`
 
 const PrevButton = styled(PaginationButton)`
   svg {
-    transform: translate(-.05vw, .1vw);
+    transform: translate(${resp(-.05)}, ${resp(.1)});
   }
 `;
 
 const NextButton = styled(PaginationButton)`
   svg {
-    transform: translate(.05vw, .1vw);
+    transform: translate(${resp(.05)}, ${resp(.1)});
   }
 `;
 
 const PaginationIndex = styled.div`
   color: rgba(255, 255, 255, .6);
-  font-size: .9vw;
+  font-size: ${resp(.9)};
 `;

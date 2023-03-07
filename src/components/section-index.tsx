@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
+import resp from "../utils/resp";
+
 interface Props {
   index: number;
   steps: number;
@@ -52,20 +54,20 @@ export default SectionIndex;
 const Container = styled.div`
   z-index: 1;
   position: absolute;
-  top: 1.5vw;
-  left: 1.5vw;
+  top: ${resp(1.5)};
+  left: ${resp(1.5)};
 `;
 
 const Step = styled.div<{ active: boolean, current: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 1.7vw;
-  width: 1.7vw;
+  height: ${resp(1.7)};
+  width: ${resp(1.7)};
   border-radius: 100%;
   background-color: ${p => p.active ? "rgb(125, 88, 161)" : "rgb(70, 71, 140)"};
   color: rgba(255, 255, 255, ${p => p.active ? 1 : .4});
-  font-size: .8vw;
+  font-size: ${resp(.8)};
   transform: scale(${p => p.current ? 1.15 : 1});
   cursor: pointer;
   transition: .4s;
@@ -76,20 +78,20 @@ const Step = styled.div<{ active: boolean, current: boolean }>`
 
   span {
     font-family: CourierPrime;
-    transform: translateY(.08vw);
+    transform: translateY(${resp(.08)});
   }
 `;
 
 const TrackLine = styled.div`
-  height: 1.7vw;
-  width: .1vw;
+  height: ${resp(1.7)};
+  width: ${resp(.1)};
   background-color: rgba(125, 88, 161, .3);
-  transform: translateX(calc(1.7vw / 2 - 50%));
+  transform: translateX(calc(${resp(1.7)} / 2 - 50%));
 `;
 
 const ProgressLine = styled.div<{ filled: boolean, progressing: boolean, progress: number }>`
   position: absolute;
   height: ${p => p.filled ? 100 : p.progressing ? p.progress : 0}%;
-  width: .1vw;
+  width: ${resp(.1)};
   background-color: rgb(125, 88, 161);
 `;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
+import resp from "../utils/resp";
 import { GradientText } from "../theme";
 
 const AboutMe = () => {
@@ -48,18 +49,18 @@ const Container = styled.div`
 
 const Title = styled(GradientText)`
   font-weight: bold;
-  font-size: 3vw;
-  margin-bottom: 1.8vw;
+  font-size: ${resp(3)};
+  margin-bottom: ${resp(1.8)};
 `;
 
 const Description = styled.div`
   font-weight: 500;
   color: rgba(255, 255, 255, .6);
-  font-size: 1.07vw;
+  font-size: ${resp(1.07)};
 `;
 
 const Sentence = styled.div`
-  margin-bottom: .8vw;
+  margin-bottom: ${resp(.8)};
 
   span {
     color: white;

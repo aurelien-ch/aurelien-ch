@@ -3,11 +3,12 @@ import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 import gsap from "gsap";
 
-import ImageViewer from "./image-viewer";
-import Project from "./project";
-
+import resp from "../utils/resp";
 import { IProject } from "../types";
 import { GradientText } from "../theme";
+
+import ImageViewer from "./image-viewer";
+import Project from "./project";
 
 import ProjectsData from "../data/projects";
 
@@ -82,15 +83,15 @@ export default Projects;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2.2vw;
+  gap: ${resp(2.2)};
 `;
 
 const Title = styled(GradientText)`
   font-weight: bold;
-  font-size: 3vw;
+  font-size: ${resp(3)};
 `;
 
 const ProjectsContainer = styled.div`
   display: flex;
-  gap: 2.5vw;
+  gap: ${resp(2.5)};
 `;

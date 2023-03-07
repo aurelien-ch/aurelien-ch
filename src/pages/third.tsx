@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import resp from "../utils/resp";
+
 import Accordion from "../components/accordion";
 
 import FreelanceExp from "../data/experiences/freelance";
@@ -38,10 +40,10 @@ const Container = styled.div`
 `;
 
 const Center = styled.div`
-  height: 50vw;
+  height: ${resp(50)};
   width: 100%;
   display: flex;
-  gap: 3vw;
+  gap: ${resp(3)};
 
   > div {
     flex: 1;
@@ -52,5 +54,5 @@ const Column = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 3vw;
+  gap: ${resp(3)};
 `;

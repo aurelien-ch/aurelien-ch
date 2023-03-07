@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
-import AnimatedIcon from "./animated-icon";
-
+import resp from "../utils/resp";
 import { IProject } from "../types";
+
+import AnimatedIcon from "./animated-icon";
 
 import { ReactComponent as OpenIcon } from "../assets/icons/open.svg";
 import { ReactComponent as CloseIcon } from "../assets/icons/close.svg";
@@ -71,11 +72,11 @@ const MockupHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   opacity: .6;
-  margin: 0 .5vw .3vw;
+  margin: 0 ${resp(.5)} ${resp(.3)};
 
   svg {
-    height: 1.3vw;
-    width: 1.3vw;
+    height: ${resp(1.3)};
+    width: ${resp(1.3)};
     transition: .4s;
     cursor: pointer;
   }
@@ -87,7 +88,7 @@ const MockupHeader = styled.div`
 
 const ProjectName = styled.div`
   color: white;
-  font-size: 1vw;
+  font-size: ${resp(1)};
   font-weight: 500;
 `;
 
@@ -102,9 +103,9 @@ const MockupImageContainer = styled.div`
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, .5);
     border-radius: 50%;
-    height: 2.5vw;
-    width: 2.5vw;
-    padding: .5vw;
+    height: ${resp(2.5)};
+    width:${resp(2.5)};
+    padding: ${resp(.5)};
     transition: .4s;
   }
 
@@ -116,13 +117,13 @@ const MockupImageContainer = styled.div`
 const MockupImage = styled.img`
   height: 100%;
   width: 100%;
-  border-radius: 1.5vw;
+  border-radius: ${resp(1.5)};
   filter: brightness(.5);
 `;
 
 const LogoContainer = styled.div`
   img {
-    height: 5vw;
+    height: ${resp(5)};;
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 50%;
@@ -133,9 +134,9 @@ const ProjectContainer = styled.div<{ showMockup: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 14vw;
+  height: ${resp(14)};
   background-color: rgba(255, 255, 255, .1);
-  border-radius: 2.5vw;
+  border-radius: ${resp(2.5)};
   cursor: ${p => p.showMockup ? "auto" : "pointer"};
   transition: .4s;
 

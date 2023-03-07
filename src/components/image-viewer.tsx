@@ -2,6 +2,8 @@ import { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import { RemoveScroll } from "react-remove-scroll";
 
+import resp from "../utils/resp";
+
 import { ReactComponent as CloseIcon } from "../assets/icons/close.svg";
 
 interface Props {
@@ -54,15 +56,15 @@ const ZIndex = styled.div`
 
 const Image = styled.img`
   width: 80%;
-  border-radius: 2vw;
+  border-radius: ${resp(2)};
 `;
 
 const Container = styled.div<{ active: boolean }>`
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -9vw;
-  right: -9vw;
+  left: ${resp(-9)};
+  right: ${resp(-9)};
   background-color: rgba(0, 0, 0, .6);
   display: flex;
   justify-content: center;
@@ -73,9 +75,9 @@ const Container = styled.div<{ active: boolean }>`
 
   svg {
     position: absolute;
-    top: 2vw;
-    right: 2vw;
-    height: 3vw;
+    top: ${resp(2)};
+    right: ${resp(2)};
+    height: ${resp(3)};
     cursor: pointer;
     transition: .4s;
 

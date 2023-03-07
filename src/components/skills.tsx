@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
-import AnimatedIcon from "./animated-icon";
-
+import resp from "../utils/resp";
 import { ISkillCategory, INamedSkill, IIconsSkill } from "../types";
+
+import AnimatedIcon from "./animated-icon";
 
 import SkillsData from "../data/skills";
 
@@ -71,35 +72,35 @@ const Container = styled.div`
 `;
 
 const Category = styled.div`
-  margin-bottom: 2vw;
+  margin-bottom: ${resp(2)};
 `;
 
 const CategoryLabel = styled.div`
   font-weight: bold;
-  font-size: .9vw;
+  font-size: ${resp(.9)};
   color: rgba(255, 255, 255, .7);
-  margin-left: .5vw;
-  margin-bottom: .7vw;
+  margin-left: ${resp(.5)};
+  margin-bottom: ${resp(.7)};
 `;
 
 const Badges = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: .8vw;
+  gap: ${resp(.8)};
 `;
 
 const Badge = styled.div`
   display: flex;
   align-items: center;
-  gap: .6vw;
+  gap: ${resp(.6)};
   background-color: rgba(255, 255, 255, .1);
-  padding: .5vw 1vw;
-  border-radius: 2vw;
+  padding: ${resp(.5)} ${resp(1)};
+  border-radius: ${resp(2)};
   cursor: default;
   transition: .4s;
 
   img {
-    height: 1.8vw;
+    height: ${resp(1.8)};
   }
 
   &:hover {
@@ -113,7 +114,7 @@ const Badge = styled.div`
 
 const BadgeLabel = styled.div`
   font-weight: 600;
-  font-size: .9vw;
+  font-size: ${resp(.9)};
   color: white;
-  margin-right: .2vw
+  margin-right: ${resp(.2)};
 `;

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
+import resp from "../utils/resp";
+
 import Review from "../components/review";
 import Contact from "../components/contact";
 
@@ -43,12 +45,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2vw;
+  gap: ${resp(2)};
 `;
 
 const Row = styled.div`
   display: flex;
-  gap: 2vw;
+  gap: ${resp(2)};
 
   > div {
     flex: 1;

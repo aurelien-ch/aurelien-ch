@@ -1,6 +1,8 @@
 import styled, { keyframes } from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
+import resp from "../utils/resp";
+
 import TypeWriter from "../components/type-writer";
 
 const ScrollDown = () => {
@@ -36,14 +38,14 @@ const MoveArrow = keyframes`
   }
 
   60% { 
-    transform: rotate(45deg) translate(1.2vw, 1.2vw);
+    transform: rotate(45deg) translate(${resp(1.2)}, ${resp(1.2)});
     opacity: 0; 
   }
 `;
 
 const Container = styled.div`
   position: absolute;
-  bottom: 5vw;
+  bottom: ${resp(5)};
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -53,15 +55,15 @@ const Container = styled.div`
 
 const Label = styled.div`
   color: rgba(255, 255, 255, .5);
-  font-size: 1vw;
+  font-size: ${resp(1)};
   font-family: CourierPrime;
 `;
 
 const Arrow = styled.div`
-  height: 1.2vw;
-  width: 1.2vw;
-  border-right: .15vw solid rgba(255, 255, 255, .5);
-  border-bottom: .15vw solid rgba(255, 255, 255, .5);
+  height: ${resp(1.2)};
+  width: ${resp(1.2)};
+  border-right: ${resp(.15)} solid rgba(255, 255, 255, .5);
+  border-bottom: ${resp(.15)} solid rgba(255, 255, 255, .5);
   opacity: 0; 
   animation: ${MoveArrow} 2.5s 2.8s ease-in-out infinite;
 `;

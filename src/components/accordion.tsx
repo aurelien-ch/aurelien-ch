@@ -4,6 +4,7 @@ import { Fade } from "react-awesome-reveal";
 import AnimateHeight from "react-animate-height";
 import HTMLReactParser from "html-react-parser";
 
+import resp from "../utils/resp";
 import { GradientText } from "../theme";
 import { IExperience } from "../types";
 
@@ -78,21 +79,21 @@ export default Accordion;
 const Items = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.2vw;
+  gap: ${resp(1.2)};
 `;
 
 const Title = styled(GradientText)`
   font-weight: bold;
-  font-size: 3vw;
-  margin-bottom: 1.8vw;
+  font-size: ${resp(3)};
+  margin-bottom: ${resp(1.8)};
 `;
 
 const Item = styled.div`
   display: flex;
   flex-direction: column;
   background-color: rgba(255, 255, 255, .1);
-  padding: 2vw 2.5vw;
-  border-radius: 1vw;
+  padding: ${resp(2)} ${resp(2.5)};
+  border-radius: ${resp(1)};
   cursor: pointer;
   transition: .4s;
 
@@ -107,8 +108,8 @@ const ItemHeader = styled.div<{ active: boolean }>`
   align-items: center;
   
   svg {
-    height: 2vw;
-    width: 2vw;
+    height: ${resp(2)};
+    width: ${resp(2)};
     transform: rotate(${p => p.active ? -180 : 0}deg);
     transition: .4s;
   }
@@ -117,29 +118,29 @@ const ItemHeader = styled.div<{ active: boolean }>`
 const ItemTitleContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: .5vw;
+  gap: ${resp(.5)};
 `;
 
 const ItemTitle = styled.div`
   color: white;
   font-weight: bold;
-  font-size: 1.3vw;
+  font-size: ${resp(1.3)};
 `;
 
 const ItemDetails = styled.div`
   color: rgba(255, 255, 255, .4);
   font-weight: 500;
-  font-size: 1vw;
+  font-size: ${resp(1)};
 `;
 
 const ItemDescription = styled.div`
-  max-height: 20vw;
+  max-height: ${resp(20)};
   overflow-y: scroll;
   color: rgba(255, 255, 255, .6);
   font-weight: 500;
-  font-size: 1vw;
-  margin-top: 1.6vw;
-  padding-right: 1vw;
+  font-size: ${resp(1)};
+  margin-top: ${resp(1.6)};
+  padding-right: ${resp(1)};
   
   b {
     color: white;

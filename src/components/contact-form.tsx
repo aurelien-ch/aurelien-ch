@@ -3,6 +3,8 @@ import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import { Oval } from "react-loader-spinner";
 
+import resp from "../utils/resp";
+
 import { ReactComponent as SendIcon } from "../assets/icons/send.svg";
 
 const ContactForm = () => {
@@ -82,12 +84,12 @@ const Form = styled.form`
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 1vw;
+  gap: ${resp(1)};
 `;
 
 const NameContainer = styled.div`
   display: flex;
-  gap: 1vw;
+  gap: ${resp(1)};
 
   input {
     flex: 1;
@@ -96,20 +98,20 @@ const NameContainer = styled.div`
 
 const Input = styled.input`
   background-color: rgba(255, 255, 255, .1);
-  border-radius: 1vw;
-  padding: 1vw 1.5vw;;
+  border-radius: ${resp(1)};
+  padding: ${resp(1)} ${resp(1.5)};
   border: none;
   color: white;
-  font-size: 1vw;
+  font-size: ${resp(1)};
 `;
 
 const TextArea = styled.textarea`
   background-color: rgba(255, 255, 255, .1);
-  border-radius: 1vw;
-  padding: 1vw 1.5vw;;
+  border-radius: ${resp(1)};
+  padding: ${resp(1)} ${resp(1.5)};
   border: none;
   color: white;
-  font-size: 1vw;
+  font-size: ${resp(1)};
   resize: none;
 `;
 
@@ -118,8 +120,8 @@ const SendIconContainer = styled.div`
 
   svg {
     display: block;
-    height: 1.5vw;
-    width: 1.5vw;
+    height: ${resp(1.5)};
+    width: ${resp(1.5)};
   }
 `;
 
@@ -127,8 +129,8 @@ const LoadingIconContainer = styled.div`
   transition: .4s;
 
   svg {
-      height: 1.3vw;
-      width: 1.3vw;
+      height: ${resp(1.3)};
+      width: ${resp(1.3)};
       position: absolute;
       top: 50%;
       left: 50%;
@@ -139,14 +141,14 @@ const LoadingIconContainer = styled.div`
 
 const SendButton = styled.button<{ $loading: boolean }>`
   position: absolute;
-  bottom: .7vw;
-  right: .7vw;
+  bottom: ${resp(.7)};
+  right: ${resp(.7)};
   width: fit-content;
   align-self: flex-end;
   background-color: rgba(255, 255, 255, .1);
   border: none;
-  border-radius: .8vw;
-  padding: .8vw;
+  border-radius: ${resp(.8)};
+  padding: ${resp(.8)};
   transition: .4s;
   cursor: pointer;
   pointer-events: ${p => p.$loading ? "none" : "auto"};

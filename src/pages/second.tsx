@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import resp from "../utils/resp";
+
 import AboutMe from "../components/about-me";
 import Skills from "../components/skills";
 import Projects from "../components/projects";
@@ -23,10 +25,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: .5vw;
+  gap: ${resp(.5)};
 `;
 
 const Flex = styled.div`
   display: flex;
-  gap: 5vw;
+  gap: ${resp(5)};
 `;
