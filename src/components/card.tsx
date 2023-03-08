@@ -61,7 +61,11 @@ const Card = () => {
             glarePosition={"all"}
           >
             <CardContainer ref={containerRef}>
-              <BackgroundShape />
+              {
+                !isSafari ? (
+                  <BackgroundShape />
+                ) : null
+              }
               <ProfileImageShadow />
               <ProfileImage src={Image} />
               <CardLine isSafari={isSafari}>
