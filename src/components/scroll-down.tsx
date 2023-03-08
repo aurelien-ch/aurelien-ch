@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
-import { resp } from "../utils/responsive";
+import { resp, devices } from "../utils/responsive";
 
 import TypeWriter from "../components/type-writer";
 
@@ -51,6 +51,14 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media ${devices.tablet} {
+    bottom: ${resp(7)};
+  }
+
+  @media ${devices.mobile} {
+    bottom: ${resp(8)};
+  }
 `;
 
 const Label = styled.div`
