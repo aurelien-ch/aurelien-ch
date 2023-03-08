@@ -18,7 +18,7 @@ export const resp = (size: number) => {
     return `${size * 1.75}vh`;
   } else {
     if (window.innerHeight > window.innerWidth) {
-      return `${size}vh`;
+      return `${size * 1.2}vh`;
     } else {
       return `${size}vw`;
     }

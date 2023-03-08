@@ -4,7 +4,7 @@ import { Fade } from "react-awesome-reveal";
 import gsap from "gsap";
 import Tilt from "react-parallax-tilt";
 
-import { resp } from "../utils/responsive";
+import { resp, devices } from "../utils/responsive";
 
 import Image from "../assets/card-image.jpeg";
 import { ReactComponent as HoverText } from "../assets/handwrite-texts/hover.svg";
@@ -132,6 +132,11 @@ const CardContainer = styled.div`
   box-shadow: ${resp(.4)} ${resp(.4)} ${resp(3)} ${resp(.2)} #5e4a63;
   user-select: none;
   background: ${p => p.theme.gradients.cardGradient};
+
+  @media ${devices.tablet} {
+    height: ${resp(28)};
+    width: ${resp(18)};
+  }
 `;
 
 const BackgroundShape = styled.div`

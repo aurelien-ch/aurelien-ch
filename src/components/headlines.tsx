@@ -62,10 +62,6 @@ export default Headlines;
 
 const Container = styled.div`
   font-weight: bold;
-
-  @media ${devices.tablet} {
-    /* margin-bottom: ${resp(5)}; */
-  }
 `;
 
 const ContextLine = styled.div`
@@ -87,8 +83,8 @@ const FirstName = styled.div`
   font-size: ${resp(7)};
   color: white;
 
-  @media ${devices.mobile} {
-    font-size: ${resp(6)};
+  @media ${devices.tablet} {
+    font-size: ${resp(4.5)};
   }
 `;
 
@@ -98,8 +94,8 @@ const LastName = styled.div`
   transform: translateY(${resp(-.5)});
   margin-bottom: ${resp(3)};
 
-  @media ${devices.mobile} {
-    font-size: ${resp(6)};
+  @media ${devices.tablet} {
+    font-size: ${resp(4.5)};
   }
 `;
 
@@ -111,8 +107,8 @@ const ProfessionContainer = styled.div`
     font-size: ${resp(3)};
     transform: translateY(${resp(-.7)});
 
-    @media ${devices.mobile} {
-      font-size: ${resp(2.6)};
+    @media ${devices.tablet} {
+      font-size: ${resp(2.4)};
     }
 
     &:first-child {
@@ -130,7 +126,7 @@ const ProfessionContainer = styled.div`
 const Profession = styled(GradientText)`
   font-size: ${resp(2.2)};
 
-  @media ${devices.mobile} {
-    font-size: ${resp(1.7)};
+  @media ${devices.tablet} {
+    font-size: ${resp(1.5)};
   }
 `;
