@@ -55,12 +55,12 @@ const ZIndex = styled.div`
 `;
 
 const Image = styled.img`
-  width: 80%;
+  width: 90vw;
   border-radius: ${resp(2)};
 `;
 
 const Container = styled.div<{ active: boolean }>`
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: ${resp(-9)};
