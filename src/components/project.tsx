@@ -193,6 +193,6 @@ const ProjectContainer = styled.div<{ showMockup: boolean }>`
   }
 
   @media ${devices.mobile} {
-    height: ${resp(18)};
+    height: ${resp(22)};
   }
 `;
