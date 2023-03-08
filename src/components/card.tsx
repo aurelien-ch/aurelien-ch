@@ -110,7 +110,7 @@ const HoverTextContainer = styled.div<{ visible: boolean }>`
 
   @media ${devices.tablet} {
     transform: scale(.9);
-    margin-top: ${resp(-.5)};
+    margin-top: ${resp(-.7)};
   }
 `;
 

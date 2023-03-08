@@ -30,7 +30,7 @@ const Container = styled.div`
     height: 80vh;
     justify-content: flex-start;
     flex-direction: column;
-    margin-top: ${resp(8)};
+    margin-top: ${resp(7)};
     gap: ${resp(1)};
   }
 `;
