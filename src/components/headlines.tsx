@@ -69,6 +69,10 @@ const ContextLine = styled.div`
   font-weight: normal;
   color: rgba(255, 255, 255, .5);
   margin-left: ${resp(1)};
+
+  @media ${devices.tablet} {
+    font-size: ${resp(1)};
+  }
 `;
 
 const MyNameIs = styled(ContextLine)`

@@ -119,6 +119,10 @@ const TiltContainer = styled.div<{ tiltEnabled: boolean }>`
   * {
     transform-style: preserve-3d;
   }
+
+  @media ${devices.tablet} {
+    transform: scale(.9);
+  }
 `;
 
 const CardContainer = styled.div`
@@ -132,11 +136,6 @@ const CardContainer = styled.div`
   box-shadow: ${resp(.4)} ${resp(.4)} ${resp(3)} ${resp(.2)} #5e4a63;
   user-select: none;
   background: ${p => p.theme.gradients.cardGradient};
-
-  @media ${devices.tablet} {
-    height: ${resp(28)};
-    width: ${resp(18)};
-  }
 `;
 
 const BackgroundShape = styled.div`

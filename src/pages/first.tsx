@@ -27,10 +27,10 @@ const Container = styled.div`
   align-items: center;
 
   @media ${devices.tablet} {
-    height: 82vh;
+    height: 83vh;
     justify-content: flex-start;
     flex-direction: column;
     margin-top: ${resp(8)};
-    gap: ${resp(3)};
+    gap: ${resp(1)};
   }
 `;
