@@ -62,6 +62,10 @@ const ScrollContainer = styled.div`
     height: auto;
     padding: 0 ${resp(5)};
   }
+
+  @media ${devices.mobile} {
+    padding: 0 ${resp(3)};
+  }
 `;
 
 const ScrollSection = styled.section`

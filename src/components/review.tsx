@@ -171,10 +171,14 @@ const Pagination = styled.div`
 `;
 
 const PaginationButton = styled.div<{ disabled: boolean }>`
+  height: ${resp(2)};
+  width: ${resp(2)};
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(255, 255, 255, .1);
   border-radius: ${resp(.5)};
   opacity: ${p => p.disabled ? .4 : 1};
-  padding: ${resp(.5)} ${resp(.6)};
   transition: .4s;
   cursor: pointer;
 
@@ -185,13 +189,13 @@ const PaginationButton = styled.div<{ disabled: boolean }>`
 
 const PrevButton = styled(PaginationButton)`
   svg {
-    transform: translate(${resp(-.05)}, ${resp(.1)});
+    transform: translateX(${resp(-.05)});
   }
 `;
 
 const NextButton = styled(PaginationButton)`
   svg {
-    transform: translate(${resp(.05)}, ${resp(.1)});
+    transform: translateX(${resp(.05)});
   }
 `;
 
