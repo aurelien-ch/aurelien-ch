@@ -77,10 +77,18 @@ const ContextLine = styled.div`
 
 const MyNameIs = styled(ContextLine)`
   margin-bottom: ${resp(1)};
+
+  @media ${devices.tablet} {
+    margin-bottom: ${resp(.8)};
+  }
 `;
 
 const MyJobIs = styled(ContextLine)`
   margin-bottom: ${resp(1.5)};
+
+  @media ${devices.tablet} {
+    margin-bottom: ${resp(1.3)};
+  }
 `;
 
 const FirstName = styled.div`
@@ -132,6 +140,6 @@ const Profession = styled(GradientText)`
   font-size: ${resp(2.2)};
 
   @media ${devices.tablet} {
-    font-size: ${resp(1.5)};
+    font-size: ${resp(1.6)};
   }
 `;
