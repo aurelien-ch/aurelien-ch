@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import HTMLReactParser from "html-react-parser";
 
-import { resp } from "../utils/responsive";
+import { resp, devices } from "../utils/responsive";
 
 import { IReview } from "../types";
 
@@ -100,6 +100,10 @@ const Container = styled.div`
 const Padding = styled.div`
   height: 100%;
   margin: ${resp(2)} ${resp(2.5)} ${resp(1.5)};
+
+  @media ${devices.tablet} {
+    height: auto;
+  }
 `;
 
 const Header = styled.div`
@@ -155,6 +159,10 @@ const Content = styled.div<{ paginated: boolean }>`
     display: block;
     content: "";
     margin: ${resp(.5)} 0;
+  }
+
+  @media ${devices.tablet} {
+    height: auto;
   }
 `;
 
