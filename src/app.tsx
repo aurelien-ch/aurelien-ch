@@ -33,6 +33,7 @@ const App = () => {
         scrollPercentage={currentSection.scrollPercentage}
         containerRef={scrollContainerRef}
       />
+      <Platforms />
       <ScrollContainer ref={scrollContainerRef}>
         {
           sections.map((section: JSX.Element, index: number) => (
@@ -42,7 +43,6 @@ const App = () => {
           ))
         }
       </ScrollContainer>
-      <Platforms />
     </>
   )
 };
