@@ -119,10 +119,18 @@ const MockupImageContainer = styled.div`
     width:${resp(2.5)};
     padding: ${resp(.5)};
     transition: .4s;
+
+    @media ${devices.mobile} {
+      display: none;
+    }
   }
 
   &:hover svg {
     transform: translate(-50%, -50%) scale(1.15);
+  }
+
+  @media ${devices.mobile} {
+    pointer-events: none;
   }
 `;
 
@@ -130,6 +138,10 @@ const MockupImage = styled.img`
   max-width: 100%;
   border-radius: ${resp(1.5)};
   filter: brightness(.5);
+
+  @media ${devices.mobile} {
+    filter: none;
+  }
 `;
 
 const LogoContainer = styled.div`
