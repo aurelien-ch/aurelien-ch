@@ -70,6 +70,10 @@ const MockupContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  @media ${devices.mobile} {
+    position: relative;
+  }
 `;
 
 const MockupHeader = styled.div`
@@ -135,6 +139,10 @@ const LogoContainer = styled.div`
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 50%;
+  }
+
+  @media ${devices.mobile} {
+    display: none;
   }
 `;
 
