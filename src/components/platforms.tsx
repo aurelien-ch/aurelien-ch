@@ -69,7 +69,6 @@ const Chip = styled.div`
   font-size: ${resp(.8)};
   cursor: pointer;
   transition: .4s;
-  opacity: .8;
 
   &:hover {
     transform: scale(1.15);
