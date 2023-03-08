@@ -61,10 +61,6 @@ const ScrollContainer = styled.div`
     scroll-snap-type: unset;
     padding: 0 ${resp(5)};
   }
-
-  @media ${devices.mobile} {
-    padding-bottom: env(safe-area-inset-bottom);
-  }
 `;
 
 const ScrollSection = styled.section`
