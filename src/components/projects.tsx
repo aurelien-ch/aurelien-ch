@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 import gsap from "gsap";
 
-import { resp, devices } from "../utils/responsive";
+import { resp, sizes, devices } from "../utils/responsive";
 import { IProject } from "../types";
 import { GradientText } from "../theme";
 
@@ -65,7 +65,7 @@ const Projects = () => {
                 key={index}
                 index={index}
                 eRef={(e: HTMLDivElement) => projectsRefs.current[index] = e}
-                active={activeIndex === index}
+                active={window.innerWidth <= sizes.mobile ? true : activeIndex === index}
                 data={p}
                 setActiveIndex={setActiveIndex}
                 setZoomedImage={setZoomedImage}
