@@ -98,6 +98,7 @@ const Container = styled.div`
 `;
 
 const Padding = styled.div`
+  height: 100%;
   margin: ${resp(2)} ${resp(2.5)} ${resp(1.5)};
 `;
 
