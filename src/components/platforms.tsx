@@ -57,10 +57,12 @@ const Container = styled.div`
   bottom: ${resp(1.5)};
   right: ${resp(1.5)};
 
-  /* @media ${devices.tablet} {
+  @media ${devices.tablet} {
     top: ${resp(1.5)};
     left: ${resp(1.5)};
-  } */
+    bottom: auto;
+    right: auto;
+  }
 `;
 
 const Chip = styled.div`

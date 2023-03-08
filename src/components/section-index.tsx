@@ -57,9 +57,9 @@ const Container = styled.div`
   top: ${resp(1.5)};
   left: ${resp(1.5)};
 
-  /* @media ${devices.tablet} {
+  @media ${devices.tablet} {
     display: none;
-  } */
+  }
 `;
 
 const Step = styled.div<{ active: boolean, current: boolean }>`
