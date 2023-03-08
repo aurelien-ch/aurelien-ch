@@ -64,7 +64,7 @@ const Container = styled.div`
   font-weight: bold;
 
   @media ${devices.tablet} {
-    margin-bottom: ${resp(6)};
+    /* margin-bottom: ${resp(5)}; */
   }
 `;
 

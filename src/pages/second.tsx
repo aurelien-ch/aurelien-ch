@@ -31,7 +31,7 @@ const Container = styled.div`
     height: auto;
     flex-direction: column;
     gap: ${resp(1.5)};
-    margin-top: ${resp(15)};
+    margin-top: ${resp(17)};
   }
 `;
 
