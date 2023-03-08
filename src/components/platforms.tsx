@@ -54,15 +54,15 @@ export default Platforms;
 const Container = styled.div`
   z-index: 1;
   position: absolute;
-  /* bottom: ${resp(1.5)};
-  right: ${resp(1.5)}; */
-  top: ${resp(1.5)};
-  left: ${resp(1.5)};
+  bottom: ${resp(1.5)};
+  right: ${resp(1.5)};
 
-  /* @media ${devices.tablet} {
+  @media ${devices.tablet} {
+    bottom: initial;
+    right: initial;
     top: ${resp(1.5)};
     left: ${resp(1.5)};
-  } */
+  }
 `;
 
 const Chip = styled.div`

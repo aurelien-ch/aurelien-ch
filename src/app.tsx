@@ -58,7 +58,7 @@ const ScrollContainer = styled.div`
   padding: 0 9vw;
 
   @media ${devices.tablet} {
-    scroll-snap-type: unset;
+    scroll-snap-type: initial;
     padding: 0 ${resp(5)};
   }
 `;
@@ -70,6 +70,8 @@ const ScrollSection = styled.section`
   height: 100vh;
 
   @media ${devices.tablet} {
+  scroll-snap-align: initial;
+  scroll-snap-stop: initial;
     height: auto;
   }
 `;
