@@ -62,6 +62,7 @@ const Container = styled.div`
 `;
 
 const MockupContainer = styled.div`
+  height: 100%;
   z-index: 1;
   position: absolute;
   width: 90%;
@@ -103,6 +104,8 @@ const ProjectName = styled.div`
 `;
 
 const MockupImageContainer = styled.div`
+  height: 100%;
+  height: 70%;
   display: flex;
   justify-content: center;
   position: relative;
