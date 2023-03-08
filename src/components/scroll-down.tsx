@@ -53,11 +53,11 @@ const Container = styled.div`
   align-items: center;
 
   @media ${devices.tablet} {
-    bottom: ${resp(12)};
+    bottom: ${resp(-2)};
   }
 
   @media ${devices.mobile} {
-    bottom: ${resp(15)};
+    bottom: ${resp(0)};
   }
 `;
 
