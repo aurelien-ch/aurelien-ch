@@ -89,6 +89,10 @@ const MockupHeader = styled.div`
     width: ${resp(1.3)};
     transition: .4s;
     cursor: pointer;
+
+    @media ${devices.mobile} {
+      display: none;
+    }
   }
 
   svg:hover {
