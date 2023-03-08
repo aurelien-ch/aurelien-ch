@@ -55,7 +55,7 @@ const ScrollContainer = styled.div`
   scroll-snap-type: y mandatory;
   height: 100vh;
   background: ${p => p.theme.gradients.backgroundGradient};
-  padding: 0 ${resp(9)};
+  padding: 0 9vw;
 
   @media ${devices.tablet} {
     scroll-snap-type: unset;
