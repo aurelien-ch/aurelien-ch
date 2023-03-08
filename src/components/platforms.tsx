@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
-import { resp } from "../utils/responsive";
+import { resp, devices } from "../utils/responsive";
 import { IPlatform } from "../types";
 
 const Platforms = () => {
@@ -56,6 +56,13 @@ const Container = styled.div`
   position: absolute;
   bottom: ${resp(1.5)};
   right: ${resp(1.5)};
+
+  @media ${devices.tablet} {
+    bottom: unset;
+    right: unset;
+    top: ${resp(1.5)};
+    left: ${resp(1.5)};
+  }
 `;
 
 const Chip = styled.div`

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
-import { resp } from "../utils/responsive";
+import { resp, devices } from "../utils/responsive";
 
 interface Props {
   index: number;
@@ -56,6 +56,10 @@ const Container = styled.div`
   position: absolute;
   top: ${resp(1.5)};
   left: ${resp(1.5)};
+
+  @media ${devices.tablet} {
+    display: none;
+  }
 `;
 
 const Step = styled.div<{ active: boolean, current: boolean }>`
