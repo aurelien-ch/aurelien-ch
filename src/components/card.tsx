@@ -107,6 +107,11 @@ const HoverTextContainer = styled.div<{ visible: boolean }>`
   transform: translateY(${p => resp(p.visible ? 0 : 1)});
   transition: ${p => p.visible ? 1 : .3}s;
   margin-top: ${resp(1.5)};
+
+  @media ${devices.tablet} {
+    transform: scale(.9);
+    margin-top: ${resp(-.5)};
+  }
 `;
 
 const TiltContainer = styled.div<{ tiltEnabled: boolean }>`

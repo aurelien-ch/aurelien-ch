@@ -27,7 +27,7 @@ const Container = styled.div`
   align-items: center;
 
   @media ${devices.tablet} {
-    height: 83vh;
+    height: 80vh;
     justify-content: flex-start;
     flex-direction: column;
     margin-top: ${resp(8)};
