@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { devices } from "../utils/responsive";
+import { resp, devices } from "../utils/responsive";
 
 import Headlines from "../components/headlines";
 import Card from "../components/card";
@@ -27,8 +27,9 @@ const Container = styled.div`
   align-items: center;
 
   @media ${devices.tablet} {
-    height: 100vh;
-    justify-content: center;
+    height: 90vh;
+    justify-content: flex-start;
     flex-direction: column;
+    margin-top: ${resp(10)};
   }
 `;
