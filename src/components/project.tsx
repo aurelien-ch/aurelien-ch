@@ -70,10 +70,6 @@ const MockupContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  @media ${devices.mobile} {
-    position: relative;
-  }
 `;
 
 const MockupHeader = styled.div`
@@ -131,7 +127,6 @@ const MockupImageContainer = styled.div`
 `;
 
 const MockupImage = styled.img`
-  height: fit-content;
   max-width: 100%;
   border-radius: ${resp(1.5)};
   filter: brightness(.5);
