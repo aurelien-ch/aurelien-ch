@@ -58,8 +58,8 @@ const Container = styled.div`
   right: ${resp(1.5)};
 
   @media ${devices.tablet} {
-    bottom: unset;
-    right: unset;
+    bottom: initial;
+    right: initial;
     top: ${resp(1.5)};
     left: ${resp(1.5)};
   }
