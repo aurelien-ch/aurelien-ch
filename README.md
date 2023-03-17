@@ -1,3 +1,5 @@
 # Personal Website [CV/Portfolio]
 
-## WIP
+This is the repository of my personal website.
+
+Feel free to check it out at : https://aurelien-ch.vercel.app
