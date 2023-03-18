@@ -96,7 +96,7 @@ const FirstName = styled.div`
   color: white;
 
   @media ${devices.tablet} {
-    font-size: ${resp(5)};
+    font-size: ${resp(4.5)};
   }
 `;
 
@@ -107,7 +107,7 @@ const LastName = styled.div`
   margin-bottom: ${resp(3)};
 
   @media ${devices.tablet} {
-    font-size: ${resp(5)};
+    font-size: ${resp(4.5)};
     margin-bottom: ${resp(2)};
   }
 `;

@@ -19,7 +19,7 @@ export const resp = (size: number) => {
   } else {
     if (window.innerHeight > window.innerWidth) {
       // If portrait / mobile
-      return `${size * 1.4}vh`;
+      return `${size * 1.5}vh`;
     } else {
       return `${size}vw`;
     }
