@@ -59,7 +59,7 @@ const Container = styled.div`
 
   @media ${devices.tablet} {
     top: ${resp(1.5)};
-    left: ${resp(1.5)};
+    right: ${resp(1.5)};
   }
 `;
 

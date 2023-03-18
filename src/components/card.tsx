@@ -109,8 +109,7 @@ const HoverTextContainer = styled.div<{ visible: boolean }>`
   margin-top: ${resp(1.5)};
 
   @media ${devices.tablet} {
-    transform: scale(.8);
-    margin-top: ${resp(0)};
+    display: none;
   }
 `;
 
@@ -126,7 +125,7 @@ const TiltContainer = styled.div<{ tiltEnabled: boolean }>`
   }
 
   @media ${devices.tablet} {
-    transform: scale(.95);
+    transform: scale(.9);
   }
 `;
 

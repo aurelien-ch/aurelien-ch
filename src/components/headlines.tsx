@@ -96,7 +96,7 @@ const FirstName = styled.div`
   color: white;
 
   @media ${devices.tablet} {
-    font-size: ${resp(4.5)};
+    font-size: ${resp(4)};
   }
 `;
 
@@ -107,8 +107,8 @@ const LastName = styled.div`
   margin-bottom: ${resp(3)};
 
   @media ${devices.tablet} {
-    font-size: ${resp(4.5)};
-    margin-bottom: ${resp(2)};
+    font-size: ${resp(4)};
+    margin-bottom: ${resp(1)};
   }
 `;
 
@@ -140,6 +140,6 @@ const Profession = styled(GradientText)`
   font-size: ${resp(2.2)};
 
   @media ${devices.tablet} {
-    font-size: ${resp(1.6)};
+    font-size: ${resp(1.4)};
   }
 `;
