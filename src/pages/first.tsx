@@ -31,6 +31,5 @@ const Container = styled.div`
     justify-content: flex-start;
     flex-direction: column;
     margin-top: ${resp(4)};
-    gap: ${resp(1)};
   }
 `;

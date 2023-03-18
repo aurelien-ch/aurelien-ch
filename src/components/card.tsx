@@ -125,7 +125,7 @@ const TiltContainer = styled.div<{ tiltEnabled: boolean }>`
   }
 
   @media ${devices.tablet} {
-    transform: scale(.9);
+    transform: scale(.85);
   }
 `;
 
