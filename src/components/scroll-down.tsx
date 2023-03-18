@@ -53,7 +53,7 @@ const Container = styled.div`
   align-items: center;
 
   @media ${devices.tablet} {
-    bottom: ${resp(-2.5)};
+    bottom: ${resp(0)};
   }
 `;
 
