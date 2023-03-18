@@ -78,5 +78,9 @@ const ScrollSection = styled.section`
     scroll-snap-align: initial;
     scroll-snap-stop: initial;
     height: auto;
+
+    :first-of-type {
+      pointer-events: none;
+    }
   }
 `;

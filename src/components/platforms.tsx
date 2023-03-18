@@ -58,6 +58,7 @@ const Container = styled.div`
   right: ${resp(1.5)};
 
   @media ${devices.tablet} {
+    height: fit-content;
     top: ${resp(1.5)};
     right: ${resp(1.5)};
   }
