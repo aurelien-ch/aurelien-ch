@@ -64,7 +64,7 @@ const ScrollContainer = styled.div`
   }
 
   @media ${devices.mobile} {
-    padding: 0 ${resp(3)};
+    padding: 0 ${resp(1.5)};
   }
 `;
 

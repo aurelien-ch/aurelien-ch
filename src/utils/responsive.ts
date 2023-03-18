@@ -18,7 +18,8 @@ export const resp = (size: number) => {
     return `${size * 1.75}vh`;
   } else {
     if (window.innerHeight > window.innerWidth) {
-      return `${size * 1.2}vh`;
+      // If portrait / mobile
+      return `${size * 1.4}vh`;
     } else {
       return `${size}vw`;
     }
