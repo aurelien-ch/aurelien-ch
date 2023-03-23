@@ -149,7 +149,7 @@ const MockupImage = styled.img`
 
 const LogoContainer = styled.div`
   img {
-    height: ${resp(5)};;
+    height: ${resp(5)};
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 50%;
