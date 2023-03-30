@@ -143,7 +143,7 @@ const StarsContainer = styled.div`
 
 const Content = styled.div<{ paginated: boolean }>`
   height: 100%;
-  max-height: ${p => resp(p.paginated ? 9 : 10.5)};
+  max-height: ${p => resp(p.paginated ? 9 : 11)};
   overflow-y: scroll;
   color: rgba(255, 255, 255, .6);
   font-size: ${resp(1.05)};
