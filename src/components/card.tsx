@@ -90,7 +90,7 @@ const Card = () => {
       <HoverTextContainer visible={hoverText}>
         <Fade
           triggerOnce
-          delay={3500}
+          delay={2200}
           direction={"up"}
         >
           <HoverText />
