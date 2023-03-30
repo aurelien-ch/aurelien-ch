@@ -97,7 +97,7 @@ const NameContainer = styled.div`
 `;
 
 const Input = styled.input`
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, .07);
   border-radius: ${resp(1)};
   padding: ${resp(1)} ${resp(1.5)};
   border: none;
@@ -106,7 +106,7 @@ const Input = styled.input`
 `;
 
 const TextArea = styled.textarea`
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, .07);
   border-radius: ${resp(1)};
   padding: ${resp(1)} ${resp(1.5)};
   border: none;
@@ -145,7 +145,7 @@ const SendButton = styled.button<{ $loading: boolean }>`
   right: ${resp(.7)};
   width: fit-content;
   align-self: flex-end;
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, .09);
   border: none;
   border-radius: ${resp(.8)};
   padding: ${resp(.8)};

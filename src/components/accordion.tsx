@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Fade } from "react-awesome-reveal";
 import AnimateHeight from "react-animate-height";
 import HTMLReactParser from "html-react-parser";
@@ -60,7 +60,7 @@ const Accordion = (p: Props) => {
                     <ExpandIcon />
                   </ItemHeader>
                   <AnimateHeight height={active ? "auto" : 0}>
-                    <ItemDescription>
+                    <ItemDescription overflow={exp.description.length > 1000}>
                       {HTMLReactParser(exp.description)}
                     </ItemDescription>
                   </AnimateHeight>
@@ -91,14 +91,14 @@ const Title = styled(GradientText)`
 const Item = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, .07);
   padding: ${resp(2)} ${resp(2.5)};
   border-radius: ${resp(1)};
   cursor: pointer;
   transition: .4s;
 
   &:hover {
-    background-color: rgba(255, 255, 255, .2);
+    background-color: rgba(255, 255, 255, .12);
   }
 `;
 
@@ -133,14 +133,20 @@ const ItemDetails = styled.div`
   font-size: ${resp(1)};
 `;
 
-const ItemDescription = styled.div`
-  max-height: ${resp(20)};
+const ItemDescription = styled.div<{ overflow: boolean }>`
+  max-height: ${resp(18)};
   overflow-y: scroll;
   color: rgba(255, 255, 255, .6);
   font-weight: 500;
   font-size: ${resp(1)};
   margin-top: ${resp(1.6)};
   padding-right: ${resp(1)};
+
+  ${p => p.overflow && css`
+    padding-bottom: ${resp(2)};
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  `}
   
   b {
     color: white;

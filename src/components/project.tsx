@@ -165,7 +165,7 @@ const ProjectContainer = styled.div<{ showMockup: boolean }>`
   justify-content: center;
   align-items: center;
   height: ${resp(14)};
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, .07);
   border-radius: ${resp(2.5)};
   cursor: ${p => p.showMockup ? "auto" : "pointer"};
   transition: .4s;

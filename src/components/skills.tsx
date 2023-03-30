@@ -93,7 +93,7 @@ const Badge = styled.div`
   display: flex;
   align-items: center;
   gap: ${resp(.6)};
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, .07);
   padding: ${resp(.5)} ${resp(1)};
   border-radius: ${resp(2)};
   cursor: default;

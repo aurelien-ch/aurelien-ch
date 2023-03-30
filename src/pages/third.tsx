@@ -45,7 +45,7 @@ const Container = styled.div`
 `;
 
 const Center = styled.div`
-  height: ${resp(50)};
+  height: ${resp(48.5)};
   width: 100%;
   display: flex;
   gap: ${resp(3)};

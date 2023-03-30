@@ -93,7 +93,7 @@ const ContentFade = keyframes`
 
 const Container = styled.div`
   flex: 1;
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, .07);
   border-radius: ${resp(1.5)};
 `;
 
@@ -143,16 +143,16 @@ const StarsContainer = styled.div`
 
 const Content = styled.div<{ paginated: boolean }>`
   height: 100%;
-  max-height: ${p => resp(p.paginated ? 9 : 11)};
+  max-height: ${p => resp(p.paginated ? 9 : 10.5)};
   overflow-y: scroll;
   color: rgba(255, 255, 255, .6);
   font-size: ${resp(1.05)};
   font-weight: 500;
   margin-top: ${resp(1.4)};
   padding-right: ${resp(1.3)};
-  padding-bottom: ${resp(1.3)};
-  mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+  padding-bottom: ${resp(1.5)};
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
   animation:${ContentFade} 1s;
 
   br {
@@ -187,7 +187,7 @@ const PaginationButton = styled.div<{ disabled: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, .09);
   border-radius: ${resp(.5)};
   opacity: ${p => p.disabled ? .4 : 1};
   transition: .4s;
