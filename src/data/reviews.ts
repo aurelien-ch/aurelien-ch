@@ -1,27 +1,17 @@
 const Reviews = [
   {
-    name: "Samba",
-    company: "XKSGroup",
+    name: "Mattia",
+    company: "Appunto",
     stars: 5,
     reviews: [
       `
-        Aurélien a été très à l’écoute de nos besoins et a été force de proposition.
+        J’ai collaboré avec Aurélien dans le cadre de plusieurs projets pour mes clients.
         <br/>
-        Sérieux et expérimenté, ça a été très agréable de travailler avec Aurélien aussi bien sur un plan technique que humain.
+        Travailler avec Aurélien est un réel plaisir. Rapide et efficace, il sait combiner une bonne maitrise des outils techniques à un réel gout pour les aspects visuels et l’ergonomie des produits.
         <br/>
-        Je vous le recommande, et ça sera avec plaisir pour une nouvelle collaboration ! Encore merci.
-      `,
-      `
-        Réactif, efficace, professionnel et honnête dans ses tarifs, Aurélien est à la hauteur de sa réputation et mérite amplement ses 5 étoiles.
+        Toujours force de proposition, il sait chercher et trouver les bonnes solutions pour résoudre les problématiques les plus différentes. La communication est toujours fluide, Aurélien est attentif à mes requêtes et soucieux de bien comprendre le sens du projet.
         <br/>
-        Un contact à garder précieusement !
-      `,
-      `
-        Grâce à son écoute, sa bienveillance et son professionnalisme, Aurélien a su répondre à mes attentes, et réaliser mon projet en bonne et due forme.
-        <br/>
-        Mon application est fluide, et le résultat est sensationnel ! Il est passionné et cela se ressent dans son travail.
-        <br/>
-        À l'écoute des besoins et sait s'adapter. Très pro... Je vous le recommande fortement, vous ne serez pas déçu.
+        Au plaisir de travailler à nouveau ensemble !
       `,
     ],
   },
@@ -53,22 +43,28 @@ const Reviews = [
     ]
   },
   {
-    name: "Mattia",
-    company: "Appunto",
+    name: "Samba",
+    company: "XKSGroup",
     stars: 5,
     reviews: [
       `
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Aurélien a été très à l’écoute de nos besoins et a été force de proposition.
         <br/>
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Sérieux et expérimenté, ça a été très agréable de travailler avec Aurélien aussi bien sur un plan technique que humain.
         <br/>
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Je vous le recommande, et ça sera avec plaisir pour une nouvelle collaboration ! Encore merci.
+      `,
+      `
+        Réactif, efficace, professionnel et honnête dans ses tarifs, Aurélien est à la hauteur de sa réputation et mérite amplement ses 5 étoiles.
         <br/>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Un contact à garder précieusement !
+      `,
+      `
+        Grâce à son écoute, sa bienveillance et son professionnalisme, Aurélien a su répondre à mes attentes, et réaliser mon projet en bonne et due forme.
         <br/>
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Mon application est fluide, et le résultat est sensationnel ! Il est passionné et cela se ressent dans son travail.
         <br/>
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        À l'écoute des besoins et sait s'adapter. Très pro... Je vous le recommande fortement, vous ne serez pas déçu.
       `,
     ],
   },
