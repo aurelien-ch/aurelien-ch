@@ -35,5 +35,5 @@ const Container = styled.div`
 const Title = styled(GradientText)`
   font-weight: bold;
   font-size: ${resp(3)};
-  margin-bottom: ${resp(1.8)};
+  margin-bottom: ${resp(1.2)};
 `;

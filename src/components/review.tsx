@@ -99,7 +99,7 @@ const Container = styled.div`
 
 const Padding = styled.div`
   height: 100%;
-  margin: ${resp(2)} ${resp(2.5)} ${resp(1.5)};
+  margin: ${resp(1.8)} ${resp(2.5)} ${resp(1.5)};
 
   @media ${devices.tablet} {
     height: auto;
@@ -143,7 +143,7 @@ const StarsContainer = styled.div`
 
 const Content = styled.div<{ paginated: boolean }>`
   height: 100%;
-  max-height: ${p => resp(p.paginated ? 8.2 : 12)};
+  max-height: ${p => resp(p.paginated ? 9 : 11)};
   overflow-y: scroll;
   color: rgba(255, 255, 255, .6);
   font-size: ${resp(1.05)};
@@ -167,10 +167,13 @@ const Content = styled.div<{ paginated: boolean }>`
 `;
 
 const Pagination = styled.div`
+  position: absolute;
+  left: ${resp(2.5)};
+  right: ${resp(2.5)};
+  bottom: ${resp(1.5)};
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: ${resp(1)};
 
   svg {
     height: ${resp(1.2)};

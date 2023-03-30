@@ -16,6 +16,32 @@ const Reviews = [
     ],
   },
   {
+    name: "Samba",
+    company: "XKSGroup",
+    stars: 5,
+    reviews: [
+      `
+        Aurélien a été très à l’écoute de nos besoins et a été force de proposition.
+        <br/>
+        Sérieux et expérimenté, ça a été très agréable de travailler avec Aurélien aussi bien sur un plan technique que humain.
+        <br/>
+        Je vous le recommande, et ça sera avec plaisir pour une nouvelle collaboration ! Encore merci.
+      `,
+      `
+        Réactif, efficace, professionnel et honnête dans ses tarifs, Aurélien est à la hauteur de sa réputation et mérite amplement ses 5 étoiles.
+        <br/>
+        Un contact à garder précieusement !
+      `,
+      `
+        Grâce à son écoute, sa bienveillance et son professionnalisme, Aurélien a su répondre à mes attentes, et réaliser mon projet en bonne et due forme.
+        <br/>
+        Mon application est fluide, et le résultat est sensationnel ! Il est passionné et cela se ressent dans son travail.
+        <br/>
+        À l'écoute des besoins et sait s'adapter. Très pro... Je vous le recommande fortement, vous ne serez pas déçu.
+      `,
+    ],
+  },
+  {
     name: "Manuella",
     company: "Sophrauto",
     stars: 5,
@@ -41,32 +67,6 @@ const Reviews = [
         Cette fois encore, notre projet a grandi grâce à Aurélien !
       `,
     ]
-  },
-  {
-    name: "Samba",
-    company: "XKSGroup",
-    stars: 5,
-    reviews: [
-      `
-        Aurélien a été très à l’écoute de nos besoins et a été force de proposition.
-        <br/>
-        Sérieux et expérimenté, ça a été très agréable de travailler avec Aurélien aussi bien sur un plan technique que humain.
-        <br/>
-        Je vous le recommande, et ça sera avec plaisir pour une nouvelle collaboration ! Encore merci.
-      `,
-      `
-        Réactif, efficace, professionnel et honnête dans ses tarifs, Aurélien est à la hauteur de sa réputation et mérite amplement ses 5 étoiles.
-        <br/>
-        Un contact à garder précieusement !
-      `,
-      `
-        Grâce à son écoute, sa bienveillance et son professionnalisme, Aurélien a su répondre à mes attentes, et réaliser mon projet en bonne et due forme.
-        <br/>
-        Mon application est fluide, et le résultat est sensationnel ! Il est passionné et cela se ressent dans son travail.
-        <br/>
-        À l'écoute des besoins et sait s'adapter. Très pro... Je vous le recommande fortement, vous ne serez pas déçu.
-      `,
-    ],
   },
 ];
 
