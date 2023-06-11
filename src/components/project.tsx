@@ -62,15 +62,14 @@ const Container = styled.div`
 `;
 
 const MockupContainer = styled.div`
-  height: 100%;
   z-index: 1;
   position: absolute;
-  width: 90%;
   transform: translateY(${resp(-.2)});
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 0 ${resp(1.5)};
 `;
 
 const MockupHeader = styled.div`
@@ -104,8 +103,6 @@ const ProjectName = styled.div`
 `;
 
 const MockupImageContainer = styled.div`
-  height: 100%;
-  height: 70%;
   display: flex;
   justify-content: center;
   position: relative;
@@ -138,6 +135,7 @@ const MockupImageContainer = styled.div`
 `;
 
 const MockupImage = styled.img`
+  height: ${resp(10)};
   max-width: 100%;
   border-radius: ${resp(1.5)};
   filter: brightness(.5);

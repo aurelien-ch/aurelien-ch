@@ -55,7 +55,8 @@ const ZIndex = styled.div`
 `;
 
 const Image = styled.img`
-  width: 85vw;
+  max-height: 80vh;
+  max-width: 90vw;
   border-radius: ${resp(2)};
 `;
 

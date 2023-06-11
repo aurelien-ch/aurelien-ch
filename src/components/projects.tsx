@@ -30,7 +30,7 @@ const Projects = () => {
       });
 
       gsap.to(projectsRefs.current[activeIndex], {
-        flex: 1.8,
+        flex: activeIndex === 0 ? 1.6 : 2.2,
         duration: 2.3,
         ease: "elastic(1, .3)",
       });
