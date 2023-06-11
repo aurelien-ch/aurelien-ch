@@ -1,5 +1,10 @@
 const Projects = [
   {
+    name: "WeDoData",
+    logo: "wedodata.png",
+    mockup: "wedodata.png",
+  },
+  {
     name: "Usense",
     logo: "usense.png",
     mockup: "usense.png",
