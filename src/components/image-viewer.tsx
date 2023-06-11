@@ -55,7 +55,7 @@ const ZIndex = styled.div`
 `;
 
 const Image = styled.img`
-  width: 90vw;
+  width: 85vw;
   border-radius: ${resp(2)};
 `;
 
@@ -76,7 +76,7 @@ const Container = styled.div<{ active: boolean }>`
   svg {
     position: absolute;
     top: ${resp(2)};
-    right: ${resp(2)};
+    right: ${resp(11)};
     height: ${resp(3)};
     cursor: pointer;
     transition: .4s;
