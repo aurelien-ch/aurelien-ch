@@ -153,6 +153,10 @@ const ItemDescription = styled.div<{ overflow: boolean }>`
     font-weight: 600;
   }
 
+  span {
+    margin-left: ${resp(1.2)};
+  }
+
   a {
     color: rgba(255, 255, 255, .6);
     transition: .4s;
