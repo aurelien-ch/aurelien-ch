@@ -1,7 +1,22 @@
 const Freelance = [
   {
+    title: "Leequid",
+    details: "8 mois",
+    description: `
+      Développement de la landing page et de l'application web de <b>Leequid</b>, plateforme de <b>liquid staking</b> sur la blockchain <b>Lukso</b>.<br/>
+      <br/>
+       ➔ Développement Front-End <b>[React.js + TypeScript]</b><br/>
+      <span />— Pages de : Stake | Unstake | Swap | Add / Remove liquidity<br/>
+      <span />— Claim / Auto-compound rewards<br/>
+      <span />— Statistiques / Analyse des rewards<br/>
+      <span />— Page de metrics Leequid / Lukso<br/>
+      <br/>
+      <a target="_blank" href="https://leequid.io/">https://leequid.io/</a><br/>
+    `,
+  },
+  {
     title: "Appunto",
-    details: "10 mois",
+    details: "1 an",
     description: `
       <b>💻 Usense 💻</b><br/>
       <br/>
