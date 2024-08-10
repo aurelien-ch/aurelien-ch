@@ -7,8 +7,6 @@ import { useEffect, useState } from "react";
 import { APP_NAME, APP_DESCRIPTION } from "@/utils/globals";
 import theme from "@/utils/theme";
 import { RespProvider } from "@/providers/resp-context";
-import { Web3Modal } from "@/providers/web-3-modal";
-import Header from "@/components/header";
 
 import type { AppProps } from "next/app";
 
@@ -33,15 +31,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <RespProvider>
-        <Web3Modal>
-          <SnackbarProvider
-            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-            style={snackbarStyle}
-          >
-            <Header />
-            <Component {...pageProps} />
-          </SnackbarProvider>
-        </Web3Modal>
+        <SnackbarProvider
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          style={snackbarStyle}
+        >
+          <Component {...pageProps} />
+        </SnackbarProvider>
       </RespProvider>
     </>
   ) : null;
