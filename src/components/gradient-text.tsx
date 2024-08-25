@@ -15,7 +15,7 @@ export default GradientText;
 
 const Container = styled.div`
   width: fit-content;
-  background: ${theme.gradientText};
+  background: ${theme.textGradient};
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

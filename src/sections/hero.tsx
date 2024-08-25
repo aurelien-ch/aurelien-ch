@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 import Headlines from "@/components/headlines";
+import Card from "@/components/card";
 
 const Hero = () => {
   return (
     <Container>
       <Headlines />
+      <Card />
     </Container>
   );
 };
