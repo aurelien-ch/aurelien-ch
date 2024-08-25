@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import Modal from "@/components/modals/modal";
+
 import Button from "@/components/button";
 
 interface Props {
