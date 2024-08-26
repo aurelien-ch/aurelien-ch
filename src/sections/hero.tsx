@@ -4,6 +4,7 @@ import theme from "@/utils/theme";
 import { useScroll } from "@/providers/scroll-context";
 import Headlines from "@/components/headlines";
 import Card from "@/components/card";
+import ScrollDown from "@/components/scroll-down";
 
 const Hero = () => {
   const scrollY = useScroll();
@@ -12,6 +13,7 @@ const Hero = () => {
     <Container $scrollY={scrollY}>
       <Headlines />
       <Card />
+      <ScrollDown />
     </Container>
   );
 };
@@ -34,8 +36,8 @@ const Container = styled.div<{ $scrollY: number }>`
     bottom: 0;
     background: ${theme.backgroundGradient};
     transform: scale(
-      ${(p) => Math.max(1.01 - p.$scrollY / 1000, 0.96)},
-      ${(p) => Math.max(1.01 - p.$scrollY / 2000, 0.98)}
+      ${(p) => Math.max(1.01 - p.$scrollY / 2000, 0.96)},
+      ${(p) => Math.max(1.01 - p.$scrollY / 3000, 0.98)}
     );
     border-radius: 2rem;
   }
