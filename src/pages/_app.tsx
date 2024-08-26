@@ -3,6 +3,7 @@ import "@/styles/fonts.scss";
 
 import { useEffect, useState } from "react";
 import Head from "next/head";
+import { appWithTranslation } from "next-i18next";
 import { SnackbarProvider } from "notistack";
 
 import { APP_NAME, APP_DESCRIPTION } from "@/utils/globals";
@@ -11,7 +12,7 @@ import { ScrollProvider } from "@/providers/scroll-context";
 
 import type { AppProps } from "next/app";
 
-export default function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
 
   const snackbarStyle = {
@@ -46,4 +47,6 @@ export default function App({ Component, pageProps }: AppProps) {
       </RespProvider>
     </>
   ) : null;
-}
+};
+
+export default appWithTranslation(App);

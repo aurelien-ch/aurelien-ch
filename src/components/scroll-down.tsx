@@ -4,10 +4,7 @@ import { Fade } from "react-awesome-reveal";
 const ScrollDown = () => {
   return (
     <Container>
-      <Fade
-        triggerOnce
-        delay={4000}
-      >
+      <Fade triggerOnce delay={4000}>
         <Arrow />
       </Fade>
     </Container>
@@ -42,12 +39,11 @@ const Container = styled.div`
   align-items: center;
 `;
 
-
 const Arrow = styled.div`
   height: 2rem;
   width: 2rem;
-  border-right: .2rem solid rgba(255, 255, 255, .5);
-  border-bottom: .2rem solid rgba(255, 255, 255, .5);
-  opacity: 0; 
+  border-right: 0.2rem solid rgba(255, 255, 255, 0.5);
+  border-bottom: 0.2rem solid rgba(255, 255, 255, 0.5);
+  opacity: 0;
   animation: ${MoveArrow} 2.5s 2.8s ease-in-out infinite;
 `;

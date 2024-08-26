@@ -1,28 +1,28 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
+import { useTranslation } from "react-i18next";
 
-import GradientText from "@/components/gradient-text";
+import { GradientText } from "@/utils/styles";
 
 const Headlines = () => {
+  const { t } = useTranslation();
+
   return (
     <Container>
       <Fade triggerOnce delay={250}>
-        <ContextLine>Bonjour ! Je m&apos;appelle</ContextLine>
+        <Context>{t("myNameIs")}</Context>
       </Fade>
       <Fade triggerOnce cascade damping={0.2} direction={"left"} delay={500}>
         <FirstName>Aurélien</FirstName>
         <LastName>Charpilienne</LastName>
       </Fade>
       <Fade triggerOnce delay={1250}>
-        <ContextLine>Et je suis</ContextLine>
+        <Context>{t("iAmA")}</Context>
       </Fade>
       <Fade triggerOnce delay={1500}>
         <ProfessionContainer>
           <span>&#123;</span>
-          <GradientText
-            text={"Développeur Web & Mobile Fullstack"}
-            style={{ fontSize: "3.2rem", fontWeight: 600 }}
-          />
+          <Profession>{t("profession")}</Profession>
           <span>&#125;</span>
         </ProfessionContainer>
       </Fade>
@@ -34,8 +34,8 @@ export default Headlines;
 
 const Container = styled.div``;
 
-const ContextLine = styled.div`
-  font-size: 1.8rem;
+const Context = styled.div`
+  font-size: 1.6rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.5);
   margin-bottom: 1rem;
@@ -72,4 +72,9 @@ const ProfessionContainer = styled.div`
       margin-left: 0.6rem;
     }
   }
+`;
+
+const Profession = styled(GradientText)`
+  font-size: 3.2rem;
+  font-weight: 600;
 `;

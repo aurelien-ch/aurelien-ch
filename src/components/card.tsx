@@ -52,38 +52,38 @@ const Card = () => {
             glareColor={"lightblue"}
             glarePosition={"all"}
           >
-            <CardContainer ref={containerRef}>
+            <Container ref={containerRef}>
               {!isSafari ? <BackgroundShape /> : null}
               <ProfileImageShadow />
               <ProfileImage src={"/images/photo.jpeg"} alt={"Profile picture"} $3d={tiltEnabled} />
-              <CardLines>
-                <CardLine>
-                  <CardEmoji>🧑🏻</CardEmoji>
-                  <DotSeparator />
-                  <CardLabel>Aurélien</CardLabel>
-                </CardLine>
-                <CardLine>
-                  <CardEmoji>💻</CardEmoji>
-                  <DotSeparator />
-                  <CardLabel>Dev Web</CardLabel>
-                </CardLine>
-                <CardLine>
-                  <CardEmoji>📱</CardEmoji>
-                  <DotSeparator />
-                  <CardLabel>Dev Mobile</CardLabel>
-                </CardLine>
-                <CardLine>
-                  <CardEmoji>🎓</CardEmoji>
-                  <DotSeparator />
-                  <CardLabel>Epitech</CardLabel>
-                </CardLine>
-                <CardLine>
-                  <CardEmoji>📍</CardEmoji>
-                  <DotSeparator />
-                  <CardLabel>Paris</CardLabel>
-                </CardLine>
-              </CardLines>
-            </CardContainer>
+              <Lines>
+                <Line>
+                  <Emoji>🧑🏻</Emoji>
+                  <DotsSeparator />
+                  <Label>Aurélien</Label>
+                </Line>
+                <Line>
+                  <Emoji>💻</Emoji>
+                  <DotsSeparator />
+                  <Label>Dev Web</Label>
+                </Line>
+                <Line>
+                  <Emoji>📱</Emoji>
+                  <DotsSeparator />
+                  <Label>Dev Mobile</Label>
+                </Line>
+                <Line>
+                  <Emoji>🎓</Emoji>
+                  <DotsSeparator />
+                  <Label>Epitech</Label>
+                </Line>
+                <Line>
+                  <Emoji>📍</Emoji>
+                  <DotsSeparator />
+                  <Label>Paris</Label>
+                </Line>
+              </Lines>
+            </Container>
           </Tilt>
         </TiltContainer>
       </Fade>
@@ -105,7 +105,7 @@ const TiltContainer = styled.div<{ $tiltEnabled: boolean }>`
   }
 `;
 
-const CardContainer = styled.div`
+const Container = styled.div`
   height: 46rem;
   width: 32rem;
   display: flex;
@@ -148,7 +148,7 @@ const ProfileImage = styled.img<{ $3d: boolean }>`
   transition: transform 0.5s;
 `;
 
-const CardLines = styled.div`
+const Lines = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -157,7 +157,7 @@ const CardLines = styled.div`
   padding: 0 3rem;
 `;
 
-const CardLine = styled.div`
+const Line = styled.div`
   width: 100%;
   display: flex;
   align-items: flex-end;
@@ -165,19 +165,19 @@ const CardLine = styled.div`
   transform: translate3d(0, 0, 0.01rem);
 `;
 
-const CardEmoji = styled.div`
+const Emoji = styled.div`
   font-size: 1.6rem;
   transform: translateY(0.2rem) translateZ(1rem);
 `;
 
-const DotSeparator = styled.div`
+const DotsSeparator = styled.div`
   flex: 1;
   border-bottom: 0.1rem dotted rgba(255, 255, 255, 0.8);
   margin: 0 0.7rem;
   transform: translateY(-0.3rem);
 `;
 
-const CardLabel = styled.div`
+const Label = styled.div`
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
   transform: translateZ(1rem);
