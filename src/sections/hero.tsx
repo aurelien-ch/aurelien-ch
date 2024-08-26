@@ -25,7 +25,7 @@ const Container = styled.div<{ $scrollY: number }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 12rem;
+  padding: 0 13rem;
 
   &:before {
     content: "";

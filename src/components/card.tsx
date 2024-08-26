@@ -145,7 +145,7 @@ const ProfileImage = styled.img<{ $3d: boolean }>`
   aspect-ratio: 1;
   border-radius: 50rem;
   transform: translateZ(${(p) => (p.$3d ? 2 : 0.1)}rem);
-  transition: transform 0.5s;
+  transition: transform 0.5s ease-in-out;
 `;
 
 const Lines = styled.div`
