@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 import { Fade } from "react-awesome-reveal";
 import gsap from "gsap";
 import Tilt from "react-parallax-tilt";
@@ -7,6 +8,8 @@ import Tilt from "react-parallax-tilt";
 import theme from "@/utils/theme";
 
 const Card = () => {
+  const { t } = useTranslation();
+
   const containerRef = useRef<HTMLDivElement>(null);
   const [tiltEnabled, setTiltEnabled] = useState<boolean>(false);
 
@@ -65,22 +68,27 @@ const Card = () => {
                 <Line>
                   <Emoji>💻</Emoji>
                   <DotsSeparator />
-                  <Label>Dev Web</Label>
-                </Line>
-                <Line>
-                  <Emoji>📱</Emoji>
-                  <DotsSeparator />
-                  <Label>Dev Mobile</Label>
+                  <Label>{t("professionShort")}</Label>
                 </Line>
                 <Line>
                   <Emoji>🎓</Emoji>
                   <DotsSeparator />
-                  <Label>Epitech</Label>
+                  <Label>EPITECH</Label>
+                </Line>
+                <Line>
+                  <Emoji>📞</Emoji>
+                  <DotsSeparator />
+                  <Label>+33 6 41 95 10 40</Label>
+                </Line>
+                <Line>
+                  <Emoji>✉️</Emoji>
+                  <DotsSeparator />
+                  <Label>aurelien.charpilienne@gmail.com</Label>
                 </Line>
                 <Line>
                   <Emoji>📍</Emoji>
                   <DotsSeparator />
-                  <Label>Paris</Label>
+                  <Label>Paris, France</Label>
                 </Line>
               </Lines>
             </Container>
@@ -106,8 +114,8 @@ const TiltContainer = styled.div<{ $tiltEnabled: boolean }>`
 `;
 
 const Container = styled.div`
-  height: 46rem;
-  width: 32rem;
+  height: 50rem;
+  width: 34rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -166,7 +174,7 @@ const Line = styled.div`
 `;
 
 const Emoji = styled.div`
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   transform: translateY(0.2rem) translateZ(1rem);
 `;
 
