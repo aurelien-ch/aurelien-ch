@@ -23,6 +23,10 @@ export default function App({ Component, pageProps }: AppProps) {
     setIsMounted(true);
   }, []);
 
+  useEffect(() => {
+    window.history.scrollRestoration = "manual";
+  }, []);
+
   return isMounted ? (
     <>
       <Head>
