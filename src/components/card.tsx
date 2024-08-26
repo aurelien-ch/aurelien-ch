@@ -43,7 +43,7 @@ const Card = () => {
   return (
     <div>
       <Fade triggerOnce direction={"up"} duration={revealDuration} delay={revealDelay}>
-        <TiltContainer tiltEnabled={tiltEnabled}>
+        <TiltContainer $tiltEnabled={tiltEnabled}>
           <Tilt
             scale={1.1}
             transitionSpeed={1500}
@@ -93,8 +93,8 @@ const Card = () => {
 
 export default Card;
 
-const TiltContainer = styled.div<{ tiltEnabled: boolean }>`
-  pointer-events: ${(p) => (p.tiltEnabled ? "auto" : "none")};
+const TiltContainer = styled.div<{ $tiltEnabled: boolean }>`
+  pointer-events: ${(p) => (p.$tiltEnabled ? "auto" : "none")};
 
   .glare-wrapper {
     border-radius: 1.5rem !important;

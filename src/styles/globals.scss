@@ -15,11 +15,7 @@ html,
 body {
   max-width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(135deg,
-      rgba(24, 65, 134, 1) 0%,
-      rgba(48, 31, 96, 1) 33%,
-      rgba(24, 48, 65, 1) 66%,
-      rgba(12, 70, 82, 1) 100%);
+  background-color: rgb(221, 245, 255);
   overflow-x: clip;
   color: white;
 }

@@ -15,5 +15,5 @@ export default Home;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 12rem;
+  height: 300vh;
 `;
