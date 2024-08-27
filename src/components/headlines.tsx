@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Fade } from "react-awesome-reveal";
 
 import { GradientText } from "@/utils/styles";
+import { FIRST_NAME, LAST_NAME } from "@/utils/globals";
 
 const Headlines = () => {
   const { t } = useTranslation();
@@ -10,19 +11,19 @@ const Headlines = () => {
   return (
     <Container>
       <Fade triggerOnce delay={250}>
-        <Context>{t("myNameIs")}</Context>
+        <Context>{t("hero.myNameIs")}</Context>
       </Fade>
       <Fade triggerOnce cascade damping={0.2} direction={"left"} delay={500}>
-        <FirstName>Aurélien</FirstName>
-        <LastName>Charpilienne</LastName>
+        <FirstName>{FIRST_NAME}</FirstName>
+        <LastName>{LAST_NAME}</LastName>
       </Fade>
       <Fade triggerOnce delay={1250}>
-        <Context>{t("iAmA")}</Context>
+        <Context>{t("hero.iAmA")}</Context>
       </Fade>
       <Fade triggerOnce delay={1500}>
         <ProfessionContainer>
           <span>&#123;</span>
-          <Profession>{t("profession")}</Profession>
+          <Profession>{t("hero.profession")}</Profession>
           <span>&#125;</span>
         </ProfessionContainer>
       </Fade>

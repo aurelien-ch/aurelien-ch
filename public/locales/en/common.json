@@ -1,7 +1,9 @@
 {
-  "myNameIs": "Hello, my name is",
-  "iAmA": "And I'm a",
-  "profession": "Web & Mobile Fullstack Developer",
-  "professionShort": "Fullstack Developer",
+  "hero": {
+    "myNameIs": "Hello, my name is",
+    "iAmA": "And I'm a",
+    "profession": "Web & Mobile Fullstack Developer",
+    "professionShort": "Fullstack Developer"
+  },
   "aboutMe": "About me"
 }

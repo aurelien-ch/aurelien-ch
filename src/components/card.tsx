@@ -6,6 +6,7 @@ import gsap from "gsap";
 import Tilt from "react-parallax-tilt";
 
 import theme from "@/utils/theme";
+import { FIRST_NAME, SCHOOL, EMAIL, PHONE, LOCATION } from "@/utils/globals";
 
 const Card = () => {
   const { t } = useTranslation();
@@ -63,32 +64,32 @@ const Card = () => {
                 <Line>
                   <Emoji>🧑🏻</Emoji>
                   <DotsSeparator />
-                  <Label>Aurélien</Label>
+                  <Label>{FIRST_NAME}</Label>
                 </Line>
                 <Line>
                   <Emoji>💻</Emoji>
                   <DotsSeparator />
-                  <Label>{t("professionShort")}</Label>
+                  <Label>{t("hero.professionShort")}</Label>
                 </Line>
                 <Line>
                   <Emoji>🎓</Emoji>
                   <DotsSeparator />
-                  <Label>EPITECH</Label>
-                </Line>
-                <Line>
-                  <Emoji>📞</Emoji>
-                  <DotsSeparator />
-                  <Label>+33 6 41 95 10 40</Label>
+                  <Label>{SCHOOL}</Label>
                 </Line>
                 <Line>
                   <Emoji>✉️</Emoji>
                   <DotsSeparator />
-                  <Label>aurelien.charpilienne@gmail.com</Label>
+                  <Label>{EMAIL}</Label>
+                </Line>
+                <Line>
+                  <Emoji>📞</Emoji>
+                  <DotsSeparator />
+                  <Label>{PHONE}</Label>
                 </Line>
                 <Line>
                   <Emoji>📍</Emoji>
                   <DotsSeparator />
-                  <Label>Paris, France</Label>
+                  <Label>{LOCATION}</Label>
                 </Line>
               </Lines>
             </Container>

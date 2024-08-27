@@ -7,6 +7,7 @@ const AboutMe = () => {
     <Container>
       <Column>
         <Title>À propos de moi</Title>
+        <Content></Content>
       </Column>
       <Column></Column>
     </Container>
@@ -31,3 +32,5 @@ const Title = styled(GradientText)`
   font-weight: bold;
   font-size: 5rem;
 `;
+
+const Content = styled.div``;
