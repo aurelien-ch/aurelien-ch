@@ -36,23 +36,24 @@ export default Headlines;
 const Container = styled.div``;
 
 const Context = styled.div`
+  color: rgba(255, 255, 255, 0.5);
   font-size: 1.6rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.5);
   margin-left: 1rem;
   margin-bottom: 1.4rem;
 `;
 
 const FirstName = styled.div`
+  color: white;
   font-size: 10rem;
   font-weight: 700;
   line-height: 95%;
 `;
 
 const LastName = styled.div`
+  color: rgba(255, 255, 255, 0.4);
   font-size: 10rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.4);
   transform: translateY(-1rem);
   margin-top: 1rem;
   margin-bottom: 3rem;

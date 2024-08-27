@@ -187,7 +187,7 @@ const DotsSeparator = styled.div`
 `;
 
 const Label = styled.div`
-  font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
   transform: translateZ(1rem);
 `;

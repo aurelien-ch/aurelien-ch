@@ -5,5 +5,13 @@
     "profession": "Web & Mobile Fullstack Developer",
     "professionShort": "Fullstack Developer"
   },
-  "aboutMe": "About me"
+  "aboutMe": {
+    "title": "About me",
+    "line1": "I specialize in <span>Front-end and Back-end Web</span> development, as well as <span>Mobile</span> development.",
+    "line2": "In these fields, I can intervene on all types of missions: from simple maintenance to the complete creation of your <span>web and/or mobile application</span>, right through to their deployment.",
+    "line3": "Thanks to my professional experience, my many personal projects and my training at Epitech, I'm now autonomous and productive enough to meet all your development needs.",
+    "line4": "I'm used to working on small projects as well as more complex ones, implementing small functionalities as well as larger ones.",
+    "line5": "<span>To bring your project to life</span>, I'll work with you to find the best technical and ergonomic solutions.",
+    "line6": "Looking forward to working with you, <span>please don't hesitate to contact me!</span>"
+  }
 }
