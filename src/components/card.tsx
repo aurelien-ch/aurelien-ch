@@ -59,7 +59,11 @@ const Card = () => {
             <Container ref={containerRef}>
               {!isSafari ? <BackgroundShape /> : null}
               <ProfileImageShadow />
-              <ProfileImage src={"/images/photo.jpeg"} alt={"Profile picture"} $3d={tiltEnabled} />
+              <ProfileImage
+                src={"/images/profile-photo.webp"}
+                alt={"Profile picture"}
+                $3d={tiltEnabled}
+              />
               <Lines>
                 <Line>
                   <Emoji>🧑🏻</Emoji>

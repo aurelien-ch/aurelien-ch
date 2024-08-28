@@ -52,7 +52,7 @@ const Projects = () => {
     if (activeIndex !== null) {
       const projectGroup = getProjectGroup(activeIndex);
       const flex =
-        projectGroup === ProjectGroup.First ? 2 : projectGroup === ProjectGroup.Second ? 1.5 : 3;
+        projectGroup === ProjectGroup.First ? 2 : projectGroup === ProjectGroup.Second ? 2.5 : 1.75;
 
       gsap.to(projectsRefs.current, {
         flex: 1,
@@ -91,7 +91,7 @@ const Projects = () => {
               $active={activeIndex === projectIndex}
               onClick={() => setActiveIndex(projectIndex)}
             >
-              {project.name}
+              <Logo src={project.logo} alt={project.name} />
             </Project>
           );
         })}
@@ -104,13 +104,20 @@ const Projects = () => {
       <Fade triggerOnce direction={"up"}>
         <Title>{t("projects.title")}</Title>
       </Fade>
-      {renderProjectGroup(ProjectGroup.First, {
-        width: "80%",
-        alignSelf: "flex-end",
-        marginRight: "5%",
-      })}
-      {renderProjectGroup(ProjectGroup.Second, { width: "70%" })}
-      {renderProjectGroup(ProjectGroup.Third, { width: "90%", alignSelf: "flex-end" })}
+      <Content>
+        {renderProjectGroup(ProjectGroup.First, {
+          height: "20rem",
+          width: "80%",
+          alignSelf: "flex-end",
+          marginRight: "5%",
+        })}
+        {renderProjectGroup(ProjectGroup.Second, { height: "25rem", width: "70%" })}
+        {renderProjectGroup(ProjectGroup.Third, {
+          height: "17rem",
+          width: "90%",
+          alignSelf: "flex-end",
+        })}
+      </Content>
     </Container>
   );
 };
@@ -121,12 +128,18 @@ const Container = styled.div`
   flex: 2.5;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 `;
 
 const Title = styled(GradientText)`
   font-weight: 700;
   font-size: 5rem;
+`;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 `;
 
 const Row = styled.div`
@@ -136,10 +149,17 @@ const Row = styled.div`
 `;
 
 const Project = styled.div<{ $active: boolean }>`
-  height: 20rem;
+  height: 100%;
   aspect-ratio: 1;
   background-color: lightblue;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 2rem;
+  cursor: pointer;
+`;
+
+const Logo = styled.img`
+  width: auto;
+  height: 5rem;
 `;

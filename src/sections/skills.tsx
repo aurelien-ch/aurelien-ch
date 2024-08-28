@@ -86,11 +86,6 @@ const Badge = styled.div`
   padding: 0.8rem 1.6rem;
   border-radius: 2rem;
   cursor: default;
-  transition: 0.3s;
-
-  &:hover {
-    transform: scale(1.05);
-  }
 `;
 
 const Icon = styled.img`
