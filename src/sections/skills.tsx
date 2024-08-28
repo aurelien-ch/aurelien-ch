@@ -16,7 +16,7 @@ const Skills = () => {
       </Fade>
       {skills.map((category: ISkillCategory, index: number) => (
         <Category key={index}>
-          <CategoryLabel>{category.name}</CategoryLabel>
+          <CategoryLabel>{t(category.nameKey)}</CategoryLabel>
           <Badges>
             <Fade triggerOnce cascade damping={0.1} delay={index * 400} direction={"right"}>
               {category.skills.map((skill: ISkill, index: number) => (

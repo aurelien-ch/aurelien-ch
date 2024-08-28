@@ -1,6 +1,6 @@
 export default [
   {
-    name: "Front-End",
+    nameKey: "skills.frontEnd",
     skills: [
       {
         icon: "/icons/skills/next-js.webp",
@@ -17,7 +17,7 @@ export default [
     ],
   },
   {
-    name: "Back-End",
+    nameKey: "skills.backEnd",
     skills: [
       {
         icon: "/icons/skills/firebase.webp",
@@ -38,7 +38,7 @@ export default [
     ],
   },
   {
-    name: "Tools",
+    nameKey: "skills.tools",
     skills: [
       {
         icon: "/icons/skills/git.webp",

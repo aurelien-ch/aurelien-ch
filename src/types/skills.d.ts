@@ -1,5 +1,5 @@
 export interface ISkillCategory {
-  name: string;
+  nameKey: string;
   skills: ISkill[];
 }
 
