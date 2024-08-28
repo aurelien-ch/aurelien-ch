@@ -5,6 +5,7 @@ import { useScroll } from "@/providers/scroll-context";
 import Hero from "@/sections/hero";
 import AboutMe from "@/sections/about-me";
 import Skills from "@/sections/skills";
+import Projects from "@/sections/projects";
 
 const Home = () => {
   const scrollY = useScroll();
@@ -16,6 +17,7 @@ const Home = () => {
         <AboutMe />
         <Skills />
       </Flex>
+      <Projects />
     </Container>
   );
 };

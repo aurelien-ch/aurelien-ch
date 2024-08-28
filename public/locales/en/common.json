@@ -19,5 +19,8 @@
     "frontEnd": "Front-End",
     "backEnd": "Back-End",
     "tools": "Tools"
+  },
+  "projects": {
+    "title": "Some projects"
   }
 }
