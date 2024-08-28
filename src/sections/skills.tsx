@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import { Fade } from "react-awesome-reveal";
 
 import skills from "@/data/skills";
 import { ISkill, ISkillCategory } from "@/types/skills";
@@ -11,21 +10,17 @@ const Skills = () => {
 
   return (
     <Container>
-      <Fade triggerOnce direction={"right"}>
-        <Title>{t("skills.title")}</Title>
-      </Fade>
+      <Title>{t("skills.title")}</Title>
       {skills.map((category: ISkillCategory, index: number) => (
         <Category key={index}>
           <CategoryLabel>{t(category.nameKey)}</CategoryLabel>
           <Badges>
-            <Fade triggerOnce cascade damping={0.1} delay={index * 400} direction={"right"}>
-              {category.skills.map((skill: ISkill, index: number) => (
-                <Badge key={index}>
-                  <Icon src={skill.icon} alt={skill.name} />
-                  <BadgeLabel>{skill.name}</BadgeLabel>
-                </Badge>
-              ))}
-            </Fade>
+            {category.skills.map((skill: ISkill, index: number) => (
+              <Badge key={index}>
+                <Icon src={skill.icon} alt={skill.name} />
+                <BadgeLabel>{skill.name}</BadgeLabel>
+              </Badge>
+            ))}
           </Badges>
         </Category>
       ))}

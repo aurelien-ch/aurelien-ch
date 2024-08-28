@@ -19,19 +19,19 @@ const AboutMe = (p: Props) => {
         <ParallaxBackground src={"/shapes/atom.svg"} alt={"Atom"} $rotate={p.scrollY / 40} />
       </Background>
       <Container>
-        <Fade triggerOnce direction={"up"}>
+        <Fade triggerOnce direction={"left"}>
           <Title>{t("aboutMe.title")}</Title>
         </Fade>
-        <Fade triggerOnce direction={"up"}>
-          <Content>
+        <Content>
+          <Fade triggerOnce cascade damping={0.1} direction={"left"}>
             <Line>{HTMLReactParser(t("aboutMe.line1"))}</Line>
             <Line>{HTMLReactParser(t("aboutMe.line2"))}</Line>
             <Line>{HTMLReactParser(t("aboutMe.line3"))}</Line>
             <Line>{HTMLReactParser(t("aboutMe.line4"))}</Line>
             <Line>{HTMLReactParser(t("aboutMe.line5"))}</Line>
             <Line>{HTMLReactParser(t("aboutMe.line6"))}</Line>
-          </Content>
-        </Fade>
+          </Fade>
+        </Content>
       </Container>
     </Parallax>
   );
