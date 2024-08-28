@@ -48,10 +48,6 @@ export default [
         icon: "/icons/skills/stripe.webp",
         name: "Stripe",
       },
-      {
-        icon: "/icons/skills/mongodb.webp",
-        name: "MongoDB Atlas",
-      },
     ],
   },
 ];

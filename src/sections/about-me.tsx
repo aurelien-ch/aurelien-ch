@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import { Fade } from "react-awesome-reveal";
 import HTMLReactParser from "html-react-parser";
 
 import { GradientText } from "@/utils/styles";
@@ -9,15 +10,19 @@ const AboutMe = () => {
 
   return (
     <Container>
-      <Title>{t("aboutMe.title")}</Title>
-      <Content>
-        <Line>{HTMLReactParser(t("aboutMe.line1"))}</Line>
-        <Line>{HTMLReactParser(t("aboutMe.line2"))}</Line>
-        <Line>{HTMLReactParser(t("aboutMe.line3"))}</Line>
-        <Line>{HTMLReactParser(t("aboutMe.line4"))}</Line>
-        <Line>{HTMLReactParser(t("aboutMe.line5"))}</Line>
-        <Line>{HTMLReactParser(t("aboutMe.line6"))}</Line>
-      </Content>
+      <Fade triggerOnce direction={"up"}>
+        <Title>{t("aboutMe.title")}</Title>
+      </Fade>
+      <Fade triggerOnce direction={"up"}>
+        <Content>
+          <Line>{HTMLReactParser(t("aboutMe.line1"))}</Line>
+          <Line>{HTMLReactParser(t("aboutMe.line2"))}</Line>
+          <Line>{HTMLReactParser(t("aboutMe.line3"))}</Line>
+          <Line>{HTMLReactParser(t("aboutMe.line4"))}</Line>
+          <Line>{HTMLReactParser(t("aboutMe.line5"))}</Line>
+          <Line>{HTMLReactParser(t("aboutMe.line6"))}</Line>
+        </Content>
+      </Fade>
     </Container>
   );
 };
