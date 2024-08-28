@@ -11,19 +11,21 @@ const Skills = () => {
   return (
     <Container>
       <Title>{t("skills.title")}</Title>
-      {skills.map((category: ISkillCategory, index: number) => (
-        <Category key={index}>
-          <CategoryLabel>{t(category.nameKey)}</CategoryLabel>
-          <Badges>
-            {category.skills.map((skill: ISkill, index: number) => (
-              <Badge key={index}>
-                <Icon src={skill.icon} alt={skill.name} />
-                <BadgeLabel>{skill.name}</BadgeLabel>
-              </Badge>
-            ))}
-          </Badges>
-        </Category>
-      ))}
+      <Categories>
+        {skills.map((category: ISkillCategory, index: number) => (
+          <Category key={index} $inverted={index % 2 !== 0}>
+            <CategoryLabel>{t(category.nameKey)}</CategoryLabel>
+            <Badges>
+              {category.skills.map((skill: ISkill, index: number) => (
+                <Badge key={index}>
+                  <Icon src={skill.icon} alt={skill.name} />
+                  <BadgeLabel>{skill.name}</BadgeLabel>
+                </Badge>
+              ))}
+            </Badges>
+          </Category>
+        ))}
+      </Categories>
     </Container>
   );
 };
@@ -36,42 +38,52 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   background: ${theme.gradient2};
   border-radius: 2rem;
-  padding: 4rem;
+  padding: 4rem 10% 6rem;
+  margin: 0 4rem;
 `;
 
 const Title = styled.div`
   color: white;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 5rem;
 `;
 
-const Category = styled.div`
+const Categories = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.6rem;
+`;
+
+const Category = styled.div<{ $inverted: boolean }>`
+  display: flex;
+  flex-direction: ${(p) => (p.$inverted ? "row-reverse" : "row")};
+  align-self: ${(p) => (p.$inverted ? "flex-end" : "flex-start")};
+  align-items: center;
+  gap: 1.6rem;
 `;
 
 const CategoryLabel = styled.div`
-  font-size: 1.4rem;
-  font-weight: bold;
-  margin-left: 0.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 2.6rem;
+  font-weight: 600;
+  white-space: nowrap;
 `;
 
 const Badges = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.6rem;
 `;
 
 const Badge = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  background-color: rgba(177, 123, 205, 0.2);
-  padding: 0.6rem 1.2rem;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.8rem 1.6rem;
   border-radius: 2rem;
   cursor: default;
   transition: 0.3s;
@@ -82,11 +94,12 @@ const Badge = styled.div`
 `;
 
 const Icon = styled.img`
-  height: auto;
-  width: 2.4rem;
+  width: auto;
+  height: 3.8rem;
 `;
 
 const BadgeLabel = styled.div`
-  font-size: 1.4rem;
+  color: white;
+  font-size: 2rem;
   font-weight: 600;
 `;
