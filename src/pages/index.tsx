@@ -13,11 +13,11 @@ const Home = () => {
   return (
     <Container>
       <Hero scrollY={scrollY} />
-      <Flex style={{ padding: "8rem" }}>
-        <AboutMe />
+      <Content>
+        <AboutMe scrollY={scrollY} />
         <Skills />
-      </Flex>
-      <Projects />
+        <Projects />
+      </Content>
     </Container>
   );
 };
@@ -36,7 +36,9 @@ const Container = styled.div`
   height: 300vh;
 `;
 
-const Flex = styled.div`
+const Content = styled.div`
   display: flex;
-  gap: 5rem;
+  flex-direction: column;
+  gap: 8rem;
+  padding: 8rem;
 `;

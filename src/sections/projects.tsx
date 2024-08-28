@@ -122,7 +122,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 0 8rem;
 `;
 
 const Title = styled(GradientText)`
