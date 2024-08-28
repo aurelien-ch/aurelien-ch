@@ -125,7 +125,7 @@ const Container = styled.div`
   border-radius: 1.5rem;
   box-shadow: 0.4rem 0.4rem 2rem 0.2rem ${theme.cardShadow};
   user-select: none;
-  background: ${theme.cardGradient};
+  background: ${theme.gradient2};
 `;
 
 const BackgroundShape = styled.div`

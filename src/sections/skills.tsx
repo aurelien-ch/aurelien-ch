@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 
+import theme from "@/utils/theme";
 import skills from "@/data/skills";
 import { ISkill, ISkillCategory } from "@/types/skills";
-import { GradientText } from "@/utils/styles";
 
 const Skills = () => {
   const { t } = useTranslation();
@@ -31,13 +31,19 @@ const Skills = () => {
 export default Skills;
 
 const Container = styled.div`
+  z-index: 1;
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
+  background: ${theme.gradient2};
+  border-radius: 2rem;
+  padding: 4rem;
 `;
 
-const Title = styled(GradientText)`
+const Title = styled.div`
+  color: white;
   font-weight: bold;
   font-size: 5rem;
 `;

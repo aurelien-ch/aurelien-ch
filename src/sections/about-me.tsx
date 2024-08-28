@@ -14,9 +14,9 @@ const AboutMe = (p: Props) => {
   const { t } = useTranslation();
 
   return (
-    <Parallax strength={300} style={{ overflow: "visible" }}>
+    <Parallax strength={200} style={{ overflow: "visible" }}>
       <Background>
-        <ParallaxBackground src={"/shapes/atom.svg"} alt={"Atom"} $rotate={p.scrollY / 40} />
+        <ParallaxBackground src={"/shapes/atom.svg"} alt={"Atom"} $rotate={p.scrollY / 30} />
       </Background>
       <Container>
         <Fade triggerOnce direction={"left"}>
@@ -41,11 +41,11 @@ export default AboutMe;
 
 const ParallaxBackground = styled.img<{ $rotate: number }>`
   position: absolute;
-  top: 10rem;
+  top: 5rem;
   left: 20rem;
   height: auto;
   width: 40rem;
-  transform: rotate(${(p) => p.$rotate}deg);
+  transform: rotate(${(p) => 0 + p.$rotate}deg);
   opacity: 0.2;
 `;
 

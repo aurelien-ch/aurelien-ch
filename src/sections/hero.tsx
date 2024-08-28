@@ -36,7 +36,7 @@ const Container = styled.div<{ $scrollY: number }>`
     left: 0;
     right: 0;
     bottom: 0;
-    background: ${theme.backgroundGradient};
+    background: ${theme.gradient1};
     transform: scale(
       ${(p) => Math.max(1.01 - p.$scrollY / 2000, 0.96)},
       ${(p) => Math.max(1.01 - p.$scrollY / 3000, 0.98)}

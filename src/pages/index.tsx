@@ -33,7 +33,6 @@ export const getStaticProps = async ({ locale = "en" }) => ({
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  height: 300vh;
 `;
 
 const Content = styled.div`
