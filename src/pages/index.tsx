@@ -1,14 +1,21 @@
 import styled from "styled-components";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
+import { useScroll } from "@/providers/scroll-context";
 import Hero from "@/sections/hero";
 import AboutMe from "@/sections/about-me";
+import Skills from "@/sections/skills";
 
 const Home = () => {
+  const scrollY = useScroll();
+
   return (
     <Container>
-      <Hero />
-      <AboutMe />
+      <Hero scrollY={scrollY} />
+      <Flex style={{ padding: "8rem" }}>
+        <AboutMe />
+        <Skills />
+      </Flex>
     </Container>
   );
 };
@@ -25,4 +32,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 300vh;
+`;
+
+const Flex = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5rem;
 `;

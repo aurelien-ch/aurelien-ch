@@ -9,18 +9,15 @@ const AboutMe = () => {
 
   return (
     <Container>
-      <Column>
-        <Title>{t("aboutMe.title")}</Title>
-        <Content>
-          <Line>{HTMLReactParser(t("aboutMe.line1"))}</Line>
-          <Line>{HTMLReactParser(t("aboutMe.line2"))}</Line>
-          <Line>{HTMLReactParser(t("aboutMe.line3"))}</Line>
-          <Line>{HTMLReactParser(t("aboutMe.line4"))}</Line>
-          <Line>{HTMLReactParser(t("aboutMe.line5"))}</Line>
-          <Line>{HTMLReactParser(t("aboutMe.line6"))}</Line>
-        </Content>
-      </Column>
-      <Column></Column>
+      <Title>{t("aboutMe.title")}</Title>
+      <Content>
+        <Line>{HTMLReactParser(t("aboutMe.line1"))}</Line>
+        <Line>{HTMLReactParser(t("aboutMe.line2"))}</Line>
+        <Line>{HTMLReactParser(t("aboutMe.line3"))}</Line>
+        <Line>{HTMLReactParser(t("aboutMe.line4"))}</Line>
+        <Line>{HTMLReactParser(t("aboutMe.line5"))}</Line>
+        <Line>{HTMLReactParser(t("aboutMe.line6"))}</Line>
+      </Content>
     </Container>
   );
 };
@@ -28,12 +25,7 @@ const AboutMe = () => {
 export default AboutMe;
 
 const Container = styled.div`
-  display: flex;
-  gap: 5rem;
-  padding: 8rem;
-`;
-
-const Column = styled.div`
+  flex: 2.5;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -47,7 +39,7 @@ const Title = styled(GradientText)`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.6rem;
 `;
 
 const Line = styled.div`

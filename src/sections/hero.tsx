@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 import theme from "@/utils/theme";
-import { useScroll } from "@/providers/scroll-context";
 import Headlines from "@/components/headlines";
 import Card from "@/components/card";
 import ScrollDown from "@/components/scroll-down";
 
-const Hero = () => {
-  const scrollY = useScroll();
+interface Props {
+  scrollY: number;
+}
 
+const Hero = (p: Props) => {
   return (
-    <Container $scrollY={scrollY}>
+    <Container $scrollY={p.scrollY}>
       <Headlines />
       <Card />
       <ScrollDown />
@@ -21,6 +22,7 @@ const Hero = () => {
 export default Hero;
 
 const Container = styled.div<{ $scrollY: number }>`
+  z-index: 1;
   height: 100vh;
   display: flex;
   justify-content: space-between;

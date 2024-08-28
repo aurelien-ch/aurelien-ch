@@ -13,5 +13,11 @@
     "line4": "J'ai acquis l'habitude de travailler sur des petits projets et d'autres d'une plus grande complexité, d'implémenter des petites fonctionnalités, comme de plus importantes.",
     "line5": "<span>Afin de donner vie à votre projet</span>, je vous accompagnerai pour trouver avec vous les meilleures réponses techniques et ergonomiques.",
     "line6": "Impatient de travailler avec vous, <span>n'hésitez pas à me contacter !</span>"
+  },
+  "skills": {
+    "title": "Skills",
+    "frontEnd": "Front-End",
+    "backEnd": "Back-End",
+    "tools": "Outils"
   }
 }
