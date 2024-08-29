@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import theme from "@/utils/theme";
 import Headlines from "@/components/headlines";
 import Card from "@/components/card";
 import ScrollDown from "@/components/scroll-down";
@@ -39,7 +38,7 @@ const Container = styled.div<{ $scale: string }>`
     left: 0;
     right: 0;
     bottom: 0;
-    background: ${theme.gradient1};
+    background: rgba(255, 255, 255, 0.1);
     transform: scale(${(p) => p.$scale});
     border-radius: 2rem;
   }

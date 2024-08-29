@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 
-import theme from "@/utils/theme";
 import skills from "@/data/skills";
 import { ISkill, ISkillCategory } from "@/types/skills";
 
@@ -39,7 +38,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  background: ${theme.gradient2};
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 2rem;
   padding: 4rem 10% 6rem;
   margin: 0 4rem;

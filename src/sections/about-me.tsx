@@ -4,8 +4,6 @@ import { Fade } from "react-awesome-reveal";
 import HTMLReactParser from "html-react-parser";
 import { Parallax, Background } from "react-parallax";
 
-import { GradientText } from "@/utils/styles";
-
 interface Props {
   scrollY: number;
 }
@@ -56,7 +54,8 @@ const Container = styled.div`
   gap: 2rem;
 `;
 
-const Title = styled(GradientText)`
+const Title = styled.div`
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 700;
   font-size: 5rem;
 `;
@@ -68,9 +67,11 @@ const Content = styled.div`
 `;
 
 const Line = styled.div`
+  color: rgba(255, 255, 255, 0.7);
   font-size: 2rem;
 
   span {
+    color: white;
     font-weight: 600;
   }
 `;

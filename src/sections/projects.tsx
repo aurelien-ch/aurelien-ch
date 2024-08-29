@@ -102,7 +102,11 @@ const Projects = (p: Props) => {
               $active={activeIndex === projectIndex}
               onClick={() => setActiveIndex(projectIndex)}
             >
-              <Logo src={project.logo} alt={project.name} />
+              {activeIndex === projectIndex ? (
+                <Mockup src={project.mockup} alt={project.name} />
+              ) : (
+                <Logo src={project.logo} alt={project.name} />
+              )}
             </Project>
           );
         })}
@@ -160,7 +164,7 @@ const Container = styled.div<{ $scale: string }>`
 `;
 
 const Title = styled.div`
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 700;
   font-size: 5rem;
 `;
@@ -187,6 +191,18 @@ const Project = styled.div<{ $active: boolean }>`
   align-items: center;
   border-radius: 2rem;
   cursor: pointer;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: ${(p) => (p.$active ? 1 : 0.7)};
+  }
+`;
+
+const Mockup = styled.img`
+  width: auto;
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 2rem;
 `;
 
 const Logo = styled.img`

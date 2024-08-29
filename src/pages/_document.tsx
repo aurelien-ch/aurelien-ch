@@ -10,7 +10,6 @@ import { ServerStyleSheet } from "styled-components";
 import { AppProps, AppType } from "next/app";
 
 import { APP_DESCRIPTION, APP_NAME } from "@/utils/globals";
-import theme from "@/utils/theme";
 
 const MyDocument = (props: DocumentInitialProps) => {
   return (
@@ -32,7 +31,7 @@ const MyDocument = (props: DocumentInitialProps) => {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" /> */}
-        <meta name="msapplication-TileColor" content={theme.primary} />
+        <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <body>
