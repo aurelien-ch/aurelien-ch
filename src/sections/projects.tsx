@@ -6,11 +6,17 @@ import gsap from "gsap";
 
 import projects from "@/data/projects";
 import { IProject, ProjectGroup } from "@/types/projects";
-import { GradientText } from "@/utils/styles";
+import theme from "@/utils/theme";
 
-const Projects = () => {
+interface Props {
+  scrollY: number;
+}
+
+const Projects = (p: Props) => {
   const { t } = useTranslation();
 
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [containerOffset, setContainerOffset] = useState<number>(0);
   const projectsRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -45,8 +51,13 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    projectsRefs.current = projectsRefs.current.slice(0, projects.length);
-  }, []);
+    const _containerOffset = Math.max(
+      window.scrollY + window.innerHeight - (containerRef.current?.offsetTop ?? 0),
+      0,
+    );
+
+    setContainerOffset(_containerOffset);
+  }, [p.scrollY]);
 
   useEffect(() => {
     if (activeIndex !== null) {
@@ -100,7 +111,10 @@ const Projects = () => {
   };
 
   return (
-    <Container>
+    <Container
+      ref={containerRef}
+      $scale={`${Math.min(Math.max(0.96 + (containerOffset - 200) / 4000, 0.96), 1.044)}, ${Math.min(Math.max(0.98 + (containerOffset - 200) / 4000, 0.98), 1.064)}`}
+    >
       <Fade triggerOnce direction={"up"}>
         <Title>{t("projects.title")}</Title>
       </Fade>
@@ -124,19 +138,35 @@ const Projects = () => {
 
 export default Projects;
 
-const Container = styled.div`
+const Container = styled.div<{ $scale: string }>`
+  position: relative;
   flex: 2.5;
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  padding: 8rem;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: ${theme.gradient1};
+    transform: scale(${(p) => p.$scale});
+    border-radius: 2rem;
+  }
 `;
 
-const Title = styled(GradientText)`
+const Title = styled.div`
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 700;
   font-size: 5rem;
 `;
 
 const Content = styled.div`
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -151,7 +181,7 @@ const Row = styled.div`
 const Project = styled.div<{ $active: boolean }>`
   height: 100%;
   aspect-ratio: 1;
-  background-color: lightblue;
+  background-color: rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;

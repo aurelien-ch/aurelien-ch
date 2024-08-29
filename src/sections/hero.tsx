@@ -11,7 +11,9 @@ interface Props {
 
 const Hero = (p: Props) => {
   return (
-    <Container $scrollY={p.scrollY}>
+    <Container
+      $scale={`${Math.max(1.01 - scrollY / 2000, 0.96)}, ${Math.max(1.01 - p.scrollY / 3000, 0.98)}`}
+    >
       <Headlines />
       <Card />
       <ScrollDown />
@@ -21,7 +23,8 @@ const Hero = (p: Props) => {
 
 export default Hero;
 
-const Container = styled.div<{ $scrollY: number }>`
+const Container = styled.div<{ $scale: string }>`
+  position: relative;
   z-index: 1;
   height: 100vh;
   display: flex;
@@ -37,10 +40,7 @@ const Container = styled.div<{ $scrollY: number }>`
     right: 0;
     bottom: 0;
     background: ${theme.gradient1};
-    transform: scale(
-      ${(p) => Math.max(1.01 - p.$scrollY / 2000, 0.96)},
-      ${(p) => Math.max(1.01 - p.$scrollY / 3000, 0.98)}
-    );
+    transform: scale(${(p) => p.$scale});
     border-radius: 2rem;
   }
 `;

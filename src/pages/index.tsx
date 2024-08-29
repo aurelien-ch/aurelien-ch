@@ -16,8 +16,8 @@ const Home = () => {
       <Content>
         <AboutMe scrollY={scrollY} />
         <Skills />
-        <Projects />
       </Content>
+      <Projects scrollY={scrollY} />
     </Container>
   );
 };
@@ -33,6 +33,7 @@ export const getStaticProps = async ({ locale = "en" }) => ({
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  padding-bottom: 20rem;
 `;
 
 const Content = styled.div`
