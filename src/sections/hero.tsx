@@ -23,8 +23,6 @@ const Hero = (p: Props) => {
 export default Hero;
 
 const Container = styled.div<{ $scale: string }>`
-  position: relative;
-  z-index: 1;
   height: 100vh;
   display: flex;
   justify-content: space-between;

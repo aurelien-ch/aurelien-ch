@@ -170,7 +170,6 @@ const Title = styled.div`
 `;
 
 const Content = styled.div`
-  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 2rem;

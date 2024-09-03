@@ -14,7 +14,7 @@ const Home = () => {
     <Container>
       <Hero scrollY={scrollY} />
       <Content>
-        <AboutMe scrollY={scrollY} />
+        <AboutMe />
         <Skills />
       </Content>
       <Projects scrollY={scrollY} />
@@ -38,7 +38,6 @@ const Container = styled.div`
 
 const Content = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 8rem;
+  gap: 5rem;
   padding: 8rem;
 `;

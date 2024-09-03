@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Fade } from "react-awesome-reveal";
 import { useTranslation } from "react-i18next";
 
 import skills from "@/data/skills";
@@ -8,46 +9,46 @@ const Skills = () => {
   const { t } = useTranslation();
 
   return (
-    <Container>
-      <Title>{t("skills.title")}</Title>
-      <Categories>
-        {skills.map((category: ISkillCategory, index: number) => (
-          <Category key={index} $inverted={index % 2 !== 0}>
-            <CategoryLabel>{t(category.nameKey)}</CategoryLabel>
-            <Badges>
-              {category.skills.map((skill: ISkill, index: number) => (
-                <Badge key={index}>
-                  <Icon src={skill.icon} alt={skill.name} />
-                  <BadgeLabel>{skill.name}</BadgeLabel>
-                </Badge>
-              ))}
-            </Badges>
-          </Category>
-        ))}
-      </Categories>
-    </Container>
+    <Fade triggerOnce direction={"right"} style={{ flex: 1 }}>
+      <Container>
+        <Title>{t("skills.title")}</Title>
+        <Categories>
+          {skills.map((category: ISkillCategory, index: number) => (
+            <Category key={index}>
+              <CategoryLabel>{t(category.nameKey)}</CategoryLabel>
+              <Badges>
+                <Fade triggerOnce cascade damping={0.1} delay={index * 400} direction={"right"}>
+                  {category.skills.map((skill: ISkill, index: number) => (
+                    <Badge key={index}>
+                      <Icon src={skill.icon} alt={skill.name} />
+                      <BadgeLabel>{skill.name}</BadgeLabel>
+                    </Badge>
+                  ))}
+                </Fade>
+              </Badges>
+            </Category>
+          ))}
+        </Categories>
+      </Container>
+    </Fade>
   );
 };
 
 export default Skills;
 
 const Container = styled.div`
-  z-index: 1;
-  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 3rem;
+  gap: 2rem;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 2rem;
-  padding: 4rem 10% 6rem;
-  margin: 0 4rem;
+  padding: 2rem 3rem;
 `;
 
 const Title = styled.div`
-  color: white;
-  font-weight: 700;
-  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  font-size: 3rem;
 `;
 
 const Categories = styled.div`
@@ -57,24 +58,22 @@ const Categories = styled.div`
   gap: 1.6rem;
 `;
 
-const Category = styled.div<{ $inverted: boolean }>`
+const Category = styled.div`
   display: flex;
-  flex-direction: ${(p) => (p.$inverted ? "row-reverse" : "row")};
-  align-self: ${(p) => (p.$inverted ? "flex-end" : "flex-start")};
-  align-items: center;
-  gap: 1.6rem;
+  flex-direction: column;
+  gap: 1rem;
 `;
 
 const CategoryLabel = styled.div`
   color: rgba(255, 255, 255, 0.8);
-  font-size: 2.6rem;
-  font-weight: 600;
-  white-space: nowrap;
+  font-size: 1.2rem;
+  font-weight: 500;
 `;
 
 const Badges = styled.div`
   display: flex;
-  gap: 1.6rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 `;
 
 const Badge = styled.div`
@@ -82,18 +81,18 @@ const Badge = styled.div`
   align-items: center;
   gap: 1rem;
   background-color: rgba(255, 255, 255, 0.2);
-  padding: 0.8rem 1.6rem;
-  border-radius: 2rem;
+  padding: 0.6rem 1rem;
+  border-radius: 1.2rem;
   cursor: default;
 `;
 
 const Icon = styled.img`
   width: auto;
-  height: 3.8rem;
+  height: 2.2rem;
 `;
 
 const BadgeLabel = styled.div`
   color: white;
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 500;
 `;
