@@ -92,7 +92,6 @@ const Icon = styled.img`
 `;
 
 const BadgeLabel = styled.div`
-  color: white;
   font-size: 1.4rem;
   font-weight: 500;
 `;

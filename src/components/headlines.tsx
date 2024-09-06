@@ -44,7 +44,6 @@ const Context = styled.div`
 `;
 
 const FirstName = styled.div`
-  color: white;
   font-size: 10rem;
   font-weight: 700;
   line-height: 95%;
