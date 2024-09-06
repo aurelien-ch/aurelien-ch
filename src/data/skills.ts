@@ -3,15 +3,19 @@ export default [
     nameKey: "skills.frontEnd",
     skills: [
       {
-        icon: "/icons/skills/next-js.webp",
+        icon: "/skills/next-js.webp",
         name: "NextJS",
       },
       {
-        icon: "/icons/skills/react.webp",
+        icon: "/skills/react.webp",
         name: "React",
       },
       {
-        icon: "/icons/skills/flutter.webp",
+        icon: "/skills/react-native.webp",
+        name: "React Native",
+      },
+      {
+        icon: "/skills/flutter.webp",
         name: "Flutter",
       },
     ],
@@ -20,19 +24,19 @@ export default [
     nameKey: "skills.backEnd",
     skills: [
       {
-        icon: "/icons/skills/firebase.webp",
+        icon: "/skills/firebase.webp",
         name: "Firebase",
       },
       {
-        icon: "/icons/skills/node.webp",
+        icon: "/skills/node.webp",
         name: "Node",
       },
       {
-        icon: "/icons/skills/mongodb.webp",
+        icon: "/skills/mongodb.webp",
         name: "MongoDB",
       },
       {
-        icon: "/icons/skills/sql.webp",
+        icon: "/skills/sql.webp",
         name: "SQL",
       },
     ],
@@ -41,11 +45,11 @@ export default [
     nameKey: "skills.tools",
     skills: [
       {
-        icon: "/icons/skills/git.webp",
+        icon: "/skills/git.webp",
         name: "Git",
       },
       {
-        icon: "/icons/skills/stripe.webp",
+        icon: "/skills/stripe.webp",
         name: "Stripe",
       },
     ],

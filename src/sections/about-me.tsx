@@ -30,7 +30,7 @@ const AboutMe = () => {
 export default AboutMe;
 
 const Container = styled.div`
-  flex: 2;
+  flex: 2.1;
   display: flex;
   flex-direction: column;
   gap: 2rem;
