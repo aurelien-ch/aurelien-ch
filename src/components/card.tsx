@@ -59,11 +59,7 @@ const Card = () => {
             <Container ref={containerRef}>
               {!isSafari ? <BackgroundShape /> : null}
               <ProfileImageShadow />
-              <ProfileImage
-                src={"/images/profile-photo.webp"}
-                alt={"Profile picture"}
-                $3d={tiltEnabled}
-              />
+              <ProfileImage src={"/images/profile-photo.webp"} alt={"Profile picture"} />
               <Lines>
                 <Line>
                   <Emoji>🧑🏻</Emoji>
@@ -144,21 +140,20 @@ const BackgroundShape = styled.div`
 
 const ProfileImageShadow = styled.div`
   position: absolute;
-  top: 1.6rem;
+  top: 0.4rem;
   width: 80%;
   aspect-ratio: 1;
   background: radial-gradient(circle, black 0%, transparent 60%);
   transform: translate3d(0, 0, 0.1rem);
 `;
 
-const ProfileImage = styled.img<{ $3d: boolean }>`
+const ProfileImage = styled.img`
   background-color: ${theme.cardShadow};
   display: block;
   width: 60%;
   aspect-ratio: 1;
   border-radius: 50rem;
-  transform: translateZ(${(p) => (p.$3d ? 2 : 0.1)}rem);
-  transition: transform 0.5s ease-in-out;
+  transform: translateZ(2rem);
 `;
 
 const Lines = styled.div`
@@ -180,7 +175,7 @@ const Line = styled.div`
 
 const Emoji = styled.div`
   font-size: 1.8rem;
-  transform: translateY(0.2rem) translateZ(1rem);
+  transform: translateY(0.2rem) translateZ(2rem);
 `;
 
 const DotsSeparator = styled.div`
@@ -193,5 +188,5 @@ const DotsSeparator = styled.div`
 const Label = styled.div`
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
-  transform: translateZ(1rem);
+  transform: translateZ(2rem);
 `;
