@@ -1,12 +1,6 @@
 import styled from "styled-components";
 
-interface Props {
-  scrollY: number;
-}
-
-const Projects = (p: Props) => {
-  void p.scrollY;
-
+const Projects = () => {
   return <Container></Container>;
 };
 

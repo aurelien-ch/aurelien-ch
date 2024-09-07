@@ -17,7 +17,7 @@ const Home = () => {
         <AboutMe />
         <Skills />
       </Content>
-      <Projects scrollY={scrollY} />
+      <Projects />
     </Container>
   );
 };

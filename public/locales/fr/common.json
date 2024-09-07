@@ -21,6 +21,16 @@
     "tools": "Outils"
   },
   "projects": {
-    "title": "Quelques projets"
+    "title": "Quelques projets",
+    "descriptions": {
+      "leequid": "description",
+      "soci3ty": "description",
+      "appunto": "description"
+    },
+    "reviews": {
+      "leequid": "review",
+      "soci3ty": "review",
+      "appunto": "review"
+    }
   }
 }
