@@ -4,6 +4,7 @@ import "@/styles/fonts.scss";
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import { appWithTranslation } from "next-i18next";
+import { Fade } from "react-awesome-reveal";
 import { SnackbarProvider } from "notistack";
 import { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
@@ -46,16 +47,18 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="description" content={APP_DESCRIPTION} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <RespProvider>
-        <ScrollProvider>
-          <SnackbarProvider
-            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-            style={snackbarStyle}
-          >
-            <Component {...pageProps} />
-          </SnackbarProvider>
-        </ScrollProvider>
-      </RespProvider>
+      <Fade triggerOnce>
+        <RespProvider>
+          <ScrollProvider>
+            <SnackbarProvider
+              anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+              style={snackbarStyle}
+            >
+              <Component {...pageProps} />
+            </SnackbarProvider>
+          </ScrollProvider>
+        </RespProvider>
+      </Fade>
     </>
   ) : null;
 };
