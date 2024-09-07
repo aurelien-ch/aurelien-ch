@@ -29,17 +29,15 @@ const Card = () => {
       const timeline = gsap.timeline();
 
       timeline
-        .to(containerRef.current, {
-          duration: 0.7,
-          rotationX: 20,
-          rotationY: 180,
-          ease: "sine.in",
+        .from(containerRef.current, {
+          duration: revealDuration / 1000,
+          rotationX: 10,
+          rotationY: -50,
+          ease: "ease.out",
         })
         .to(containerRef.current, {
-          duration: 1.3,
           rotationX: 0,
-          rotationY: 360,
-          ease: "sine.out",
+          rotationY: 0,
         });
     }, revealDelay);
   }, [containerRef]);
