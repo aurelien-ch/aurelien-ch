@@ -50,12 +50,13 @@ const FirstName = styled.div`
 `;
 
 const LastName = styled.div`
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.3);
   font-size: 10rem;
   font-weight: 700;
   transform: translateY(-1rem);
   margin-top: 1rem;
   margin-bottom: 3rem;
+  line-height: 100%;
 `;
 
 const ProfessionContainer = styled.div`
