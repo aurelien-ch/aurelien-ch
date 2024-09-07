@@ -11,7 +11,6 @@ const Skills = () => {
   return (
     <Fade triggerOnce direction={"right"} style={{ flex: 1 }}>
       <Container>
-        <Title>{t("skills.title")}</Title>
         <Categories>
           {skills.map((category: ISkillCategory, index: number) => (
             <Category key={index}>
@@ -29,6 +28,7 @@ const Skills = () => {
             </Category>
           ))}
         </Categories>
+        <Title>{t("skills.title")}</Title>
       </Container>
     </Fade>
   );
@@ -37,18 +37,22 @@ const Skills = () => {
 export default Skills;
 
 const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 2rem;
-  padding: 2rem 3rem;
+  padding: 2rem 3rem 6rem;
 `;
 
 const Title = styled.div`
-  color: rgba(255, 255, 255, 0.3);
-  font-weight: 600;
-  font-size: 3rem;
+  position: absolute;
+  bottom: -1.5rem;
+  right: 2rem;
+  color: rgba(255, 255, 255, 0.075);
+  font-weight: 700;
+  font-size: 7rem;
 `;
 
 const Categories = styled.div`
