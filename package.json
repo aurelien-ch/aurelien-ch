@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tsparticles/engine": "^3.5.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.5.0",
     "gsap": "^3.12.5",
     "html-react-parser": "^5.1.13",
     "i18next": "^23.14.0",

@@ -1,18 +1,28 @@
+import React, { useMemo } from "react";
 import styled from "styled-components";
+import Particles from "@tsparticles/react";
 
+import { useScroll } from "@/providers/scroll-context";
+import particlesOptions from "@/utils/particles-options";
 import Headlines from "@/components/headlines";
 import Card from "@/components/card";
 import ScrollDown from "@/components/scroll-down";
 
-interface Props {
-  scrollY: number;
-}
+const MemoizedParticles = React.memo(() => <Particles options={particlesOptions} />);
+MemoizedParticles.displayName = "Particles";
 
-const Hero = (p: Props) => {
+const Hero = () => {
+  const scrollY = useScroll();
+
+  const scale = useMemo(() => {
+    return `${Math.max(1.01 - scrollY / 2000, 0.96)}, ${Math.max(1.01 - scrollY / 3000, 0.98)}`;
+  }, [scrollY]);
+
   return (
-    <Container
-      $scale={`${Math.max(1.01 - scrollY / 2000, 0.96)}, ${Math.max(1.01 - p.scrollY / 3000, 0.98)}`}
-    >
+    <Container>
+      <AnimContainer $scale={scale}>
+        <MemoizedParticles />
+      </AnimContainer>
       <Headlines />
       <Card />
       <ScrollDown />
@@ -22,22 +32,21 @@ const Hero = (p: Props) => {
 
 export default Hero;
 
-const Container = styled.div<{ $scale: string }>`
+const Container = styled.div`
   height: 100vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 13rem;
+`;
 
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(${(p) => p.$scale});
-    border-radius: 2rem;
-  }
+const AnimContainer = styled.div<{ $scale: string }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(${(p) => p.$scale});
+  border-radius: 2rem;
 `;

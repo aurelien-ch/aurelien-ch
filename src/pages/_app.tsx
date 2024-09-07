@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import { appWithTranslation } from "next-i18next";
 import { SnackbarProvider } from "notistack";
+import { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 import { APP_NAME, APP_DESCRIPTION } from "@/utils/globals";
 import { RespProvider } from "@/providers/resp-context";
@@ -14,6 +16,15 @@ import type { AppProps } from "next/app";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
+  const [particlesInit, setParticlesInit] = useState<boolean>(false);
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setParticlesInit(true);
+    });
+  }, []);
 
   const snackbarStyle = {
     fontSize: "1.6rem",
@@ -28,7 +39,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     window.history.scrollRestoration = "manual";
   }, []);
 
-  return isMounted ? (
+  return isMounted && particlesInit ? (
     <>
       <Head>
         <title>{APP_NAME}</title>

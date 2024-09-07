@@ -1,18 +1,15 @@
 import styled from "styled-components";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-import { useScroll } from "@/providers/scroll-context";
 import Hero from "@/sections/hero";
 import AboutMe from "@/sections/about-me";
 import Skills from "@/sections/skills";
 import Projects from "@/sections/projects";
 
 const Home = () => {
-  const scrollY = useScroll();
-
   return (
     <Container>
-      <Hero scrollY={scrollY} />
+      <Hero />
       <Content>
         <AboutMe />
         <Skills />
