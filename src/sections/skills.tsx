@@ -40,13 +40,13 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 2rem;
   padding: 2rem 3rem;
 `;
 
 const Title = styled.div`
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.3);
   font-weight: 600;
   font-size: 3rem;
 `;
