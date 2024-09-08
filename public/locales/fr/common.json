@@ -23,13 +23,13 @@
   "projects": {
     "title": "Quelques projets",
     "descriptions": {
-      "leequid": "description",
-      "soci3ty": "description",
-      "appunto": "description"
+      "soci3ty": "Développement de la landing page et de la dApp de <span>The Soci3ty</span>, plateforme de mise en relation entre professionnels du Web3, leur permettant d'offrir leurs services et d'étendre leur réseau.<br/><br/>➔ Développement Front-End <span>[Next.js + TypeScript]</span>",
+      "leequid": "Développement de la landing page et de la dApp de <span>Leequid</span>, plateforme de <span>liquid staking</span> sur la blockchain Lukso.<br/><br/>➔ Développement Front-End <span>[Next.js + TypeScript]</span><ul><li>Connexions avec différents wallets et interactions avec les Smart Contracts</li><li>Pages : Stake | Unstake | Swap | Add & Remove liquidity</li><li>Claim / Auto-compound rewards</li><li>Statistiques / Analyse des rewards</li><li>Page de metrics Leequid / Lukso</li></ul>",
+      "appunto": "<span>WeDoData</span><br/><br/>Développement du site « Une histoire du Conflit Politique », projet subventionné par le Conseil Européen de la Recherche (ERC), pour le compte de l’agence WeDoData. Visualisation et comparaison de données politiques et socio-démographiques françaises.<br/><br/>➔ Développement Front-End <span>[Next.js + TypeScript]</span><br/>➔ Développement de Scripts <span>[Node.js + TypeScript]</span><br/><br/><span>Usense</span><br/><br/>Développement de l'application mobile du système utilisé par <span>Usense</span>, medtech développant un <span>dispositif médical</span> combiné à une intelligence artificielle d'analyse urinaire, et de son panel administrateur.<br/><br/>➔ Développement Mobile <span>[React Native + TypeScript]</span><br/>➔ Développement Mobile <span>[Flutter]</span><br/>➔ Développement Front-End <span>[React.js + TypeScript]</span><br/><br/><span>Monuma</span><br/><br/>Refonte complète d'un panel administrateur. Monuma opère dans l'expertise, la valorisation et la traçabilité d'objets d'arts, en s'appuyant sur la technologie de la Blockchain.<br/><br/>➔ Développement Front-End <span>[React.js + TypeScript]</span>"
     },
     "reviews": {
-      "leequid": "review",
       "soci3ty": "review",
+      "leequid": "review",
       "appunto": "review"
     }
   }

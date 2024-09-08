@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import HTMLReactParser from "html-react-parser";
 
 import projects from "@/data/projects";
 import theme from "@/utils/theme";
 import { IProject } from "@/types/projects";
+import { GradientText } from "@/utils/styles";
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -20,7 +22,7 @@ const Projects = () => {
       </TitleContainer>
       <ProjectsContainer>
         {projects.map((project: IProject, index: number) => (
-          <Project key={index} style={{ alignSelf: index % 2 === 0 ? "flex-start" : "flex-end" }}>
+          <Project key={index} style={{ flexDirection: index % 2 === 0 ? "row" : "row-reverse" }}>
             <Mockups>
               {project.mockups.map((mockup: string, mockupIndex: number) => (
                 <MockupContainer
@@ -33,6 +35,18 @@ const Projects = () => {
                 </MockupContainer>
               ))}
             </Mockups>
+            <Content>
+              <Name>{project.name}</Name>
+              <Description>{HTMLReactParser(t(project.descriptionKey))}</Description>
+              <Review>
+                <Quote>“</Quote>
+                <ReviewText>{t(project.reviewKey)}</ReviewText>
+                <Quote>”</Quote>
+                <Reviewer>
+                  {project.reviewerName}, {project.reviewerRole}
+                </Reviewer>
+              </Review>
+            </Content>
           </Project>
         ))}
       </ProjectsContainer>
@@ -64,7 +78,7 @@ const TitleContainer = styled.div`
 
 const TitleBackground = styled.div`
   position: absolute;
-  top: -1rem;
+  top: 0;
   width: 100%;
 `;
 
@@ -98,7 +112,9 @@ const Title = styled.div`
 `;
 
 const Project = styled.div`
+  width: 100%;
   display: flex;
+  gap: 8rem;
   padding: 10rem 4rem;
 `;
 
@@ -119,3 +135,40 @@ const Mockup = styled.img`
   height: auto;
   width: 50rem;
 `;
+
+const Content = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
+const Name = styled(GradientText)`
+  font-size: 5rem;
+  font-weight: 700;
+`;
+
+const Description = styled.div`
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.6rem;
+
+  span {
+    color: white;
+    font-weight: 600;
+  }
+
+  ul {
+    padding-top: 0.4rem;
+    padding-left: 3rem;
+  }
+`;
+
+const Review = styled.div`
+  display: flex;
+`;
+
+const Quote = styled.div``;
+
+const ReviewText = styled.div``;
+
+const Reviewer = styled.div``;

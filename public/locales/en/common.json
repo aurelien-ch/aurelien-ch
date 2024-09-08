@@ -23,13 +23,13 @@
   "projects": {
     "title": "Some projects",
     "descriptions": {
-      "leequid": "description",
-      "soci3ty": "description",
-      "appunto": "description"
+      "soci3ty": "Development of the landing page and dApp for <span>The Soci3ty</span>, a networking platform for Web3 professionals, enabling them to offer their services and expand their network.<br/><br/>➔ Front-End Development <span>[Next.js + TypeScript]</span>",
+      "leequid": "Development of the landing page and dApp for <span>Leequid</span>, a <span>liquid staking</span> platform on the Lukso blockchain.<br/><br/>➔ Front-End development <span>[Next.js + TypeScript]</span><ul><li>Connections with various wallets and interactions with Smart Contracts</li><li>Pages: Stake | Unstake | Swap | Add & Remove liquidity</li><li>Claim / Auto-compound rewards</li><li>Statistics / Rewards analysis</li><li>Leequid / Lukso metrics page</li></ul>",
+      "appunto": "<span>WeDoData</span><br/><br/>Development of the “A story of Political Conflict” website, a project funded by the European Research Council (ERC), on behalf of the WeDoData agency. Visualization and comparison of French political and socio-demographic data.<br/><br/>➔ Front-End Development <span>[Next.js + TypeScript]</span><br/>➔ Scripts Development <span>[Node.js + TypeScript]</span><br/><br/><span>Usense</span><br/><br/>Development of the mobile application for the system used by Usense, a medtech developing a medical device combined with artificial intelligence for urinary analysis, and its administrator panel.<br/><br/>➔ Mobile Development <span>[React Native + TypeScript]</span><br/>➔ Mobile development <span>[Flutter]</span><br/>➔ Front-End development <span>[React.js + TypeScript]</span><br/><br/><span>Monuma</span><br/><br/>Complete redesign of an administrator panel. Monuma operates in the expertise, valuation and traceability of art objects, based on Blockchain technology.<br/><br/>➔ Front-End Development <span>[React.js + TypeScript]</span>"
     },
     "reviews": {
-      "leequid": "review",
       "soci3ty": "review",
+      "leequid": "review",
       "appunto": "review"
     }
   }
