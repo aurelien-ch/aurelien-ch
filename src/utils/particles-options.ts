@@ -5,7 +5,6 @@ export default {
     events: {
       onHover: {
         enable: true,
-        mode: "bubble",
         parallax: { enable: true, force: 80, smooth: 10 },
       },
     },
