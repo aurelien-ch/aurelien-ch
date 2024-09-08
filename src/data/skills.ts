@@ -1,3 +1,5 @@
+import { ISkillCategory } from "@/types/skills";
+
 export default [
   {
     nameKey: "skills.frontEnd",
@@ -54,4 +56,4 @@ export default [
       },
     ],
   },
-];
+] as ISkillCategory[];
