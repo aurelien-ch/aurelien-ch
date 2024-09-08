@@ -11,24 +11,21 @@ const Skills = () => {
   return (
     <Fade triggerOnce direction={"right"} style={{ flex: 1 }}>
       <Container>
-        <Categories>
-          {skills.map((category: ISkillCategory, index: number) => (
-            <Category key={index}>
-              <CategoryLabel>{t(category.nameKey)}</CategoryLabel>
-              <Badges>
-                <Fade triggerOnce cascade damping={0.1} delay={index * 400} direction={"right"}>
-                  {category.skills.map((skill: ISkill, index: number) => (
-                    <Badge key={index}>
-                      <Icon src={skill.icon} alt={skill.name} />
-                      <BadgeLabel>{skill.name}</BadgeLabel>
-                    </Badge>
-                  ))}
-                </Fade>
-              </Badges>
-            </Category>
-          ))}
-        </Categories>
-        <Title>{t("skills.title")}</Title>
+        {skills.map((category: ISkillCategory, index: number) => (
+          <Category key={index}>
+            <CategoryLabel>{t(category.nameKey)}</CategoryLabel>
+            <Badges>
+              <Fade triggerOnce cascade damping={0.1} delay={index * 400} direction={"right"}>
+                {category.skills.map((skill: ISkill, index: number) => (
+                  <Badge key={index}>
+                    <Icon src={skill.icon} alt={skill.name} />
+                    <BadgeLabel>{skill.name}</BadgeLabel>
+                  </Badge>
+                ))}
+              </Fade>
+            </Badges>
+          </Category>
+        ))}
       </Container>
     </Fade>
   );
@@ -37,29 +34,12 @@ const Skills = () => {
 export default Skills;
 
 const Container = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 2rem;
-  padding: 2rem 3rem 6rem;
-`;
-
-const Title = styled.div`
-  position: absolute;
-  bottom: -1.5rem;
-  right: 2rem;
-  color: rgba(255, 255, 255, 0.075);
-  font-weight: 700;
-  font-size: 7rem;
-`;
-
-const Categories = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 2rem;
+  padding: 2rem 3rem;
 `;
 
 const Category = styled.div`
