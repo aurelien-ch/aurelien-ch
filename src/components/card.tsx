@@ -119,7 +119,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.4rem;
+  gap: 1.2rem;
   border-radius: 1.5rem;
   box-shadow: 0.4rem 0.4rem 2rem 0.2rem ${theme.cardShadow};
   user-select: none;
@@ -148,7 +148,7 @@ const ProfileImageShadow = styled.div`
 const ProfileImage = styled.img`
   background-color: ${theme.cardShadow};
   display: block;
-  width: 60%;
+  width: 58%;
   aspect-ratio: 1;
   border-radius: 50rem;
   transform: translateZ(2rem);

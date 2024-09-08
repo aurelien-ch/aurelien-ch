@@ -37,7 +37,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 13rem;
+  padding: 0 14rem;
 `;
 
 const AnimContainer = styled.div<{ $scale: string }>`
