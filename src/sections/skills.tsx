@@ -37,9 +37,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 2rem;
-  padding: 2rem 3rem;
 `;
 
 const Category = styled.div`
@@ -64,7 +61,7 @@ const Badge = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
   padding: 0.6rem 1rem;
   border-radius: 1.2rem;
   cursor: default;
