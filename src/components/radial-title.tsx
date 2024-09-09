@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Fade } from "react-awesome-reveal";
 
 import theme from "@/utils/theme";
 
@@ -8,24 +9,23 @@ interface Props {
 
 const RadialTitle = (p: Props) => {
   return (
-    <Container>
-      <Background>
-        <Radial1 />
-        <Radial2 />
-        <Radial3 />
-      </Background>
-      <Title>{p.title}</Title>
-    </Container>
+    <Fade triggerOnce style={{ alignSelf: "center" }}>
+      <Container>
+        <Background>
+          <Radial1 />
+          <Radial2 />
+          <Radial3 />
+        </Background>
+        <Title>{p.title}</Title>
+      </Container>
+    </Fade>
   );
 };
 
 export default RadialTitle;
 
 const Container = styled.div`
-  width: fit-content;
   position: relative;
-  align-self: center;
-  overflow: visible;
   padding: 4rem;
 `;
 
