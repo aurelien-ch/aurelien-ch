@@ -5,13 +5,17 @@ import { Fade } from "react-awesome-reveal";
 import HTMLReactParser from "html-react-parser";
 
 import projects from "@/data/projects";
+import { media } from "@/utils/responsive";
 import { GradientText } from "@/utils/styles";
 import { IProject } from "@/types/projects";
+import { useResp } from "@/providers/resp-context";
 import ImageViewer from "@/components/image-viewer";
 import RadialTitle from "@/components/radial-title";
 
 const Projects = () => {
   const { t } = useTranslation();
+  const isMobile = useResp();
+
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
 
   return (
@@ -21,7 +25,16 @@ const Projects = () => {
         <RadialTitle title={t("projects.title")} />
         <ProjectsContainer>
           {projects.map((project: IProject, index: number) => (
-            <Project key={index} style={{ flexDirection: index % 2 === 0 ? "row" : "row-reverse" }}>
+            <Project
+              key={index}
+              style={{
+                flexDirection: isMobile
+                  ? "column-reverse"
+                  : index % 2 === 0
+                    ? "row"
+                    : "row-reverse",
+              }}
+            >
               <Mockups>
                 {project.mockups.map((mockup: string, mockupIndex: number) => (
                   <Fade
@@ -33,6 +46,8 @@ const Projects = () => {
                       $expandLabel={t("projects.expand")}
                       style={{
                         transform: `translateX(${mockupIndex % 2 === 0 ? 0 : index % 2 === 0 ? 2 : -2}rem)`,
+                        ...(isMobile &&
+                          (index % 2 === 0 ? { marginRight: "1.6rem" } : { marginLeft: "1.6rem" })),
                       }}
                       onClick={() => setExpandedImage(mockup)}
                     >
@@ -49,7 +64,7 @@ const Projects = () => {
                       href={project.visitLink}
                       target={"_blank"}
                       rel={"noreferrer"}
-                      style={{ transform: "translateY(0.5rem)" }}
+                      style={{ transform: `translateY(${isMobile ? 0.4 : 0.5}rem)` }}
                     >
                       <OpenLinkButton>
                         <OpenLinkLabel>{t("projects.visit")}</OpenLinkLabel>
@@ -92,6 +107,11 @@ const Container = styled.div`
   flex-direction: column;
   gap: 6rem;
   padding: 8rem;
+
+  @media ${media.mobile} {
+    gap: 0;
+    padding: 8rem 3rem;
+  }
 `;
 
 const ProjectsContainer = styled.div`
@@ -105,6 +125,11 @@ const Project = styled.div`
   display: flex;
   gap: 8rem;
   padding: 10rem 4rem;
+
+  @media ${media.mobile} {
+    gap: 6rem;
+    padding: 6rem 0;
+  }
 `;
 
 const Mockups = styled.div`
@@ -161,6 +186,10 @@ const MockupContainer = styled.div<{ $expandLabel: string }>`
 const Mockup = styled.img`
   height: auto;
   width: 50rem;
+
+  @media ${media.mobile} {
+    width: 100%;
+  }
 `;
 
 const Content = styled.div`
@@ -180,6 +209,10 @@ const NameContainer = styled.div`
 const Name = styled(GradientText)`
   font-size: 5rem;
   font-weight: 800;
+
+  @media ${media.mobile} {
+    font-size: 4rem;
+  }
 `;
 
 const OpenLinkButton = styled.div`
@@ -193,6 +226,10 @@ const OpenLinkButton = styled.div`
 
   &:hover {
     opacity: 0.7;
+  }
+
+  @media ${media.mobile} {
+    padding: 0.5rem 0.8rem;
   }
 `;
 
@@ -259,12 +296,20 @@ const StartQuote = styled.span`
   position: absolute;
   top: -3rem;
   left: -3rem;
+
+  @media ${media.mobile} {
+    left: -2.6rem;
+  }
 `;
 
 const EndQuote = styled.span`
   position: absolute;
   bottom: -7rem;
   right: 2rem;
+
+  @media ${media.mobile} {
+    right: 1.6rem;
+  }
 `;
 
 const Reviewer = styled.div`
