@@ -2,7 +2,6 @@ import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { useTranslation } from "react-i18next";
 
-import theme from "@/utils/theme";
 import { EMAIL } from "@/utils/globals";
 import RadialTitle from "@/components/radial-title";
 
@@ -59,11 +58,12 @@ const ContentContainer = styled.div`
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
   padding: 4rem 5rem;
-  box-shadow: 0 0 5rem rgba(90, 30, 103, 0.2);
+  box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, 0.1);
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
+  border-left: 0.1rem solid rgba(255, 255, 255, 0.2);
 `;
 
 const ProfileImage = styled.img`
-  background-color: ${theme.cardShadow};
   display: block;
   height: 10rem;
   aspect-ratio: 1;
