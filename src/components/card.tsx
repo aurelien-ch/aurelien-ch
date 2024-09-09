@@ -53,6 +53,8 @@ const Card = () => {
             glareMaxOpacity={0.6}
             glareColor={"lightblue"}
             glarePosition={"all"}
+            tiltAngleXInitial={2}
+            tiltAngleYInitial={7}
           >
             <Container ref={containerRef}>
               {!isSafari ? <BackgroundShape /> : null}
@@ -121,7 +123,7 @@ const Container = styled.div`
   align-items: center;
   gap: 1.2rem;
   border-radius: 1.5rem;
-  box-shadow: 0.4rem 0.4rem 2rem 0.2rem ${theme.cardShadow};
+  box-shadow: 0.4rem 0.4rem 2rem rgba(0, 0, 0, 0.1);
   user-select: none;
   background: ${theme.gradient2};
 `;
@@ -146,7 +148,6 @@ const ProfileImageShadow = styled.div`
 `;
 
 const ProfileImage = styled.img`
-  background-color: ${theme.cardShadow};
   display: block;
   width: 58%;
   aspect-ratio: 1;
