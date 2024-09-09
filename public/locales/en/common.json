@@ -21,7 +21,8 @@
     "tools": "Tools"
   },
   "projects": {
-    "title": "Some projects",
+    "title": "A few projects",
+    "visit": "Visit",
     "descriptions": {
       "soci3ty": "Development of the landing page and dApp for <span>The Soci3ty</span>, a networking platform for Web3 professionals, enabling them to offer their services and expand their network.<br/><br/>➔ Front-End Development <span>[Next.js + TypeScript]</span>",
       "leequid": "Development of the landing page and dApp for <span>Leequid</span>, a <span>liquid staking</span> platform on the Lukso blockchain.<br/><br/>➔ Front-End development <span>[Next.js + TypeScript]</span><ul><li>Connections with various wallets and interactions with Smart Contracts</li><li>Pages: Stake | Unstake | Swap | Add & Remove liquidity</li><li>Claim / Auto-compound rewards</li><li>Statistics / Rewards analysis</li><li>Leequid / Lukso metrics page</li></ul>",

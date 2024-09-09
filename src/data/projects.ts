@@ -8,6 +8,7 @@ export default [
     reviewerName: "Simon",
     reviewerRole: "CEO",
     reviewKey: "projects.reviews.soci3ty",
+    visitLink: "https://soci3ty-landing.vercel.app/",
   },
   {
     name: "LEEQUID",
@@ -16,6 +17,7 @@ export default [
     reviewerName: "Samuel",
     reviewerRole: "CTO",
     reviewKey: "projects.reviews.leequid",
+    visitLink: "https://leequid.io/",
   },
   {
     name: "Appunto",
@@ -24,5 +26,6 @@ export default [
     reviewerName: "Mattia",
     reviewerRole: "CEO",
     reviewKey: "projects.reviews.appunto",
+    visitLink: "https://unehistoireduconflitpolitique.fr/",
   },
 ] as IProject[];

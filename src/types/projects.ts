@@ -5,4 +5,5 @@ export interface IProject {
   reviewerName: string;
   reviewerRole: string;
   reviewKey: string;
+  visitLink: string;
 }

@@ -36,7 +36,20 @@ const Projects = () => {
               ))}
             </Mockups>
             <Content>
-              <Name>{project.name}</Name>
+              <NameContainer>
+                <Name>{project.name}</Name>
+                <a
+                  href={project.visitLink}
+                  target={"_blank"}
+                  rel={"noreferrer"}
+                  style={{ transform: "translateY(0.5rem)" }}
+                >
+                  <OpenLinkButton>
+                    <OpenLinkLabel>{t("projects.visit")}</OpenLinkLabel>
+                    <OpenLinkIcon src={"/icons/open-link.svg"} alt={"Open"} />
+                  </OpenLinkButton>
+                </a>
+              </NameContainer>
               <Description>{HTMLReactParser(t(project.descriptionKey))}</Description>
               <ReviewContainer>
                 <NoteContainer>
@@ -153,9 +166,41 @@ const Content = styled.div`
   color: rgba(255, 255, 255, 0.7);
 `;
 
+const NameContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
+
 const Name = styled(GradientText)`
   font-size: 5rem;
   font-weight: 800;
+`;
+
+const OpenLinkButton = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 0.6rem 0.8rem;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
+const OpenLinkLabel = styled.div`
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+`;
+
+const OpenLinkIcon = styled.img`
+  height: auto;
+  width: 0.8rem;
+  opacity: 0.5;
+  transform: translateY(0.05rem);
 `;
 
 const Description = styled.div`
@@ -187,7 +232,7 @@ const NoteContainer = styled.div`
 
 const Note = styled.div`
   display: flex;
-  gap: 0.6rem;
+  gap: 0.5rem;
 `;
 
 const StarIcon = styled.img`
