@@ -71,6 +71,7 @@ const LastName = styled.div`
 
   @media ${media.mobile} {
     font-size: 5rem;
+    margin-bottom: 1.6rem;
   }
 `;
 
@@ -102,6 +103,7 @@ const Profession = styled(GradientText)`
   font-weight: 600;
 
   @media ${media.mobile} {
+    width: 20rem;
     font-size: 1.8rem;
     margin-left: 0.4rem;
   }

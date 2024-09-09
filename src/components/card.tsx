@@ -5,6 +5,7 @@ import { Fade } from "react-awesome-reveal";
 import gsap from "gsap";
 import Tilt from "react-parallax-tilt";
 
+import { media } from "@/utils/responsive";
 import theme from "@/utils/theme";
 import { FIRST_NAME, SCHOOL, EMAIL, PHONE, LOCATION } from "@/utils/globals";
 
@@ -127,7 +128,7 @@ const Container = styled.div`
   user-select: none;
   background: ${theme.gradient2};
 
-  @media (max-width: 768px) {
+  @media ${media.mobile} {
     height: 40rem;
     width: 28rem;
   }
@@ -150,6 +151,11 @@ const ProfileImageShadow = styled.div`
   aspect-ratio: 1;
   background: radial-gradient(circle, black 0%, transparent 60%);
   transform: translate3d(0, 0, 0.1rem);
+
+  @media ${media.mobile} {
+    top: -1rem;
+    width: 70%;
+  }
 `;
 
 const ProfileImage = styled.img`
@@ -158,6 +164,10 @@ const ProfileImage = styled.img`
   aspect-ratio: 1;
   border-radius: 50rem;
   transform: translateZ(2rem);
+
+  @media ${media.mobile} {
+    width: 50%;
+  }
 `;
 
 const Lines = styled.div`
@@ -167,6 +177,10 @@ const Lines = styled.div`
   align-items: center;
   gap: 1.4rem;
   padding: 0 3rem;
+
+  @media ${media.mobile} {
+    padding: 0 2rem;
+  }
 `;
 
 const Line = styled.div`
@@ -191,6 +205,11 @@ const DotsSeparator = styled.div`
 
 const Label = styled.div`
   color: rgba(255, 255, 255, 0.8);
+  font-size: 1.4rem;
   font-weight: 500;
   transform: translateZ(2rem);
+
+  @media ${media.mobile} {
+    font-size: 1.2rem;
+  }
 `;
