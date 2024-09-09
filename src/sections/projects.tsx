@@ -139,6 +139,7 @@ const Title = styled.div`
   opacity: 0.5;
   font-weight: 800;
   font-size: 8rem;
+  text-shadow: 0 0 4rem rgba(0, 0, 0, 0.3);
 `;
 
 const Project = styled.div`
