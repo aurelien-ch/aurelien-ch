@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
+import { Bounce } from "react-awesome-reveal";
 
 import { LINKEDIN_URL, MALT_URL } from "@/utils/globals";
 
@@ -8,21 +9,27 @@ const Socials = () => {
 
   return (
     <Container>
-      <a href={LINKEDIN_URL} target={"_blank"} rel={"noreferrer"}>
-        <Circle $index={1}>
-          <LinkedInIcon src={"/logos/linkedin.svg"} alt={"LinkedIn"} />
-        </Circle>
-      </a>
-      <a href={MALT_URL} target={"_blank"} rel={"noreferrer"}>
-        <Circle $index={2}>
-          <MaltIcon src={"/logos/malt.svg"} alt={"Malt"} />
-        </Circle>
-      </a>
-      <a href={`/cv/${i18n.language}.pdf`} target={"_blank"} rel={"noreferrer"}>
-        <Circle $index={3}>
-          <CVIcon src={"/logos/cv.svg"} alt={"CV"} />
-        </Circle>
-      </a>
+      <Bounce triggerOnce>
+        <a href={LINKEDIN_URL} target={"_blank"} rel={"noreferrer"}>
+          <Circle $index={1}>
+            <LinkedInIcon src={"/logos/linkedin.svg"} alt={"LinkedIn"} />
+          </Circle>
+        </a>
+      </Bounce>
+      <Bounce triggerOnce delay={200}>
+        <a href={MALT_URL} target={"_blank"} rel={"noreferrer"}>
+          <Circle $index={2}>
+            <MaltIcon src={"/logos/malt.svg"} alt={"Malt"} />
+          </Circle>
+        </a>
+      </Bounce>
+      <Bounce triggerOnce delay={400}>
+        <a href={`/cv/${i18n.language}.pdf`} target={"_blank"} rel={"noreferrer"}>
+          <Circle $index={3}>
+            <CVIcon src={"/logos/cv.svg"} alt={"CV"} />
+          </Circle>
+        </a>
+      </Bounce>
     </Container>
   );
 };

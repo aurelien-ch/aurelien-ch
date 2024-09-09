@@ -12,11 +12,11 @@ const AboutMe = () => {
   return (
     <Container>
       <Content>
-        <Fade triggerOnce direction={"left"}>
+        <Fade triggerOnce direction={"up"}>
           <Title>{t("aboutMe.title")}</Title>
         </Fade>
         <Description>
-          <Fade triggerOnce cascade damping={0.1} direction={"left"}>
+          <Fade triggerOnce cascade damping={0.1} direction={"up"}>
             <Line>{HTMLReactParser(t("aboutMe.description.line1"))}</Line>
             <Line>{HTMLReactParser(t("aboutMe.description.line2"))}</Line>
             <Line>{HTMLReactParser(t("aboutMe.description.line3"))}</Line>
