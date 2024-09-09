@@ -217,8 +217,7 @@ const Description = styled.div`
   }
 
   ul {
-    padding-top: 0.4rem;
-    padding-left: 3rem;
+    padding-left: 2rem;
   }
 `;
 
