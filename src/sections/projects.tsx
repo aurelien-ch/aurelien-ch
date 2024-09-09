@@ -1,79 +1,86 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import HTMLReactParser from "html-react-parser";
 
 import projects from "@/data/projects";
 import theme from "@/utils/theme";
-import { IProject } from "@/types/projects";
 import { GradientText } from "@/utils/styles";
+import { IProject } from "@/types/projects";
+import ImageViewer from "@/components/image-viewer";
 
 const Projects = () => {
   const { t } = useTranslation();
+  const [expandedImage, setExpandedImage] = useState<string | null>(null);
 
   return (
-    <Container>
-      <TitleContainer>
-        <TitleBackground>
-          <Radial1 />
-          <Radial2 />
-          <Radial3 />
-        </TitleBackground>
-        <Title>{t("projects.title")}</Title>
-      </TitleContainer>
-      <ProjectsContainer>
-        {projects.map((project: IProject, index: number) => (
-          <Project key={index} style={{ flexDirection: index % 2 === 0 ? "row" : "row-reverse" }}>
-            <Mockups>
-              {project.mockups.map((mockup: string, mockupIndex: number) => (
-                <MockupContainer
-                  key={mockupIndex}
-                  expandLabel={t("projects.expand")}
-                  style={{
-                    transform: `translateX(${mockupIndex % 2 === 0 ? 0 : index % 2 === 0 ? 2 : -2}rem)`,
-                  }}
-                >
-                  <Mockup src={mockup} alt={project.name} />
-                </MockupContainer>
-              ))}
-            </Mockups>
-            <Content>
-              <NameContainer>
-                <Name>{project.name}</Name>
-                <a
-                  href={project.visitLink}
-                  target={"_blank"}
-                  rel={"noreferrer"}
-                  style={{ transform: "translateY(0.5rem)" }}
-                >
-                  <OpenLinkButton>
-                    <OpenLinkLabel>{t("projects.visit")}</OpenLinkLabel>
-                    <OpenLinkIcon src={"/icons/open-link.svg"} alt={"Open"} />
-                  </OpenLinkButton>
-                </a>
-              </NameContainer>
-              <Description>{HTMLReactParser(t(project.descriptionKey))}</Description>
-              <ReviewContainer>
-                <NoteContainer>
-                  <Note>
-                    {Array.from({ length: 5 }).map((_, index) => (
-                      <StarIcon key={index} src={"/icons/star.svg"} alt={"Star"} />
-                    ))}
-                  </Note>
-                  <Reviewer>
-                    {project.reviewerName} <span>— {project.reviewerRole}</span>
-                  </Reviewer>
-                </NoteContainer>
-                <Review>
-                  <StartQuote>“</StartQuote>
-                  {HTMLReactParser(t(project.reviewKey))}
-                  <EndQuote>”</EndQuote>
-                </Review>
-              </ReviewContainer>
-            </Content>
-          </Project>
-        ))}
-      </ProjectsContainer>
-    </Container>
+    <>
+      <ImageViewer image={expandedImage} setImage={setExpandedImage} />
+      <Container>
+        <TitleContainer>
+          <TitleBackground>
+            <Radial1 />
+            <Radial2 />
+            <Radial3 />
+          </TitleBackground>
+          <Title>{t("projects.title")}</Title>
+        </TitleContainer>
+        <ProjectsContainer>
+          {projects.map((project: IProject, index: number) => (
+            <Project key={index} style={{ flexDirection: index % 2 === 0 ? "row" : "row-reverse" }}>
+              <Mockups>
+                {project.mockups.map((mockup: string, mockupIndex: number) => (
+                  <MockupContainer
+                    key={mockupIndex}
+                    expandLabel={t("projects.expand")}
+                    style={{
+                      transform: `translateX(${mockupIndex % 2 === 0 ? 0 : index % 2 === 0 ? 2 : -2}rem)`,
+                    }}
+                    onClick={() => setExpandedImage(mockup)}
+                  >
+                    <Mockup src={mockup} alt={project.name} />
+                  </MockupContainer>
+                ))}
+              </Mockups>
+              <Content>
+                <NameContainer>
+                  <Name>{project.name}</Name>
+                  <a
+                    href={project.visitLink}
+                    target={"_blank"}
+                    rel={"noreferrer"}
+                    style={{ transform: "translateY(0.5rem)" }}
+                  >
+                    <OpenLinkButton>
+                      <OpenLinkLabel>{t("projects.visit")}</OpenLinkLabel>
+                      <OpenLinkIcon src={"/icons/open-link.svg"} alt={"Open"} />
+                    </OpenLinkButton>
+                  </a>
+                </NameContainer>
+                <Description>{HTMLReactParser(t(project.descriptionKey))}</Description>
+                <ReviewContainer>
+                  <NoteContainer>
+                    <Note>
+                      {Array.from({ length: 5 }).map((_, index) => (
+                        <StarIcon key={index} src={"/icons/star.svg"} alt={"Star"} />
+                      ))}
+                    </Note>
+                    <Reviewer>
+                      {project.reviewerName} <span>— {project.reviewerRole}</span>
+                    </Reviewer>
+                  </NoteContainer>
+                  <Review>
+                    <StartQuote>“</StartQuote>
+                    {HTMLReactParser(t(project.reviewKey))}
+                    <EndQuote>”</EndQuote>
+                  </Review>
+                </ReviewContainer>
+              </Content>
+            </Project>
+          ))}
+        </ProjectsContainer>
+      </Container>
+    </>
   );
 };
 
