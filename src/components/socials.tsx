@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { Bounce } from "react-awesome-reveal";
 
+import theme from "@/utils/theme";
 import { LINKEDIN_URL, MALT_URL } from "@/utils/globals";
 
 const Socials = () => {
@@ -9,6 +10,11 @@ const Socials = () => {
 
   return (
     <Container>
+      <Background>
+        <Radial1 />
+        <Radial2 />
+        <Radial3 />
+      </Background>
       <Bounce triggerOnce>
         <a href={LINKEDIN_URL} target={"_blank"} rel={"noreferrer"}>
           <Circle $index={1}>
@@ -41,6 +47,35 @@ const Container = styled.div`
   width: 26rem;
   height: 10rem;
   transform: translateY(3.6rem);
+`;
+
+const Background = styled.div`
+  position: absolute;
+  top: -2rem;
+  width: 100%;
+`;
+
+const Radial = styled.div`
+  position: absolute;
+  height: 20rem;
+  width: 100%;
+  filter: blur(5rem);
+  opacity: 0.5;
+`;
+
+const Radial1 = styled(Radial)`
+  background: radial-gradient(50% 50% at 50% 50%, ${theme.radial1} 50%, transparent);
+  transform: translateX(-8rem);
+`;
+
+const Radial2 = styled(Radial)`
+  background: radial-gradient(50% 50% at 50% 50%, ${theme.radial2} 50%, transparent);
+  transform: translateY(-11rem);
+`;
+
+const Radial3 = styled(Radial)`
+  background: radial-gradient(50% 50% at 50% 50%, ${theme.radial3} 50%, transparent);
+  transform: translateX(8rem);
 `;
 
 const Circle = styled.div<{ $index: number }>`
