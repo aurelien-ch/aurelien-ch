@@ -27,6 +27,7 @@ const Projects = () => {
               {project.mockups.map((mockup: string, mockupIndex: number) => (
                 <MockupContainer
                   key={mockupIndex}
+                  expandLabel={t("projects.expand")}
                   style={{
                     transform: `translateX(${mockupIndex % 2 === 0 ? 0 : index % 2 === 0 ? 2 : -2}rem)`,
                   }}
@@ -145,12 +146,48 @@ const Mockups = styled.div`
   flex-direction: column;
 `;
 
-const MockupContainer = styled.div`
+const MockupContainer = styled.div<{ expandLabel: string }>`
+  position: relative;
+  overflow: hidden;
   background-color: #293649;
   border: 0.1rem solid #747474;
   border-radius: 1rem;
   padding: 1rem;
   margin: -1.4rem 0;
+  cursor: pointer;
+  transition: filter 0.3s;
+
+  &:hover {
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &::after {
+    content: "${(p) => p.expandLabel}";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-shadow: 0 0 0.4rem black;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
 `;
 
 const Mockup = styled.img`
@@ -246,7 +283,7 @@ const Review = styled.div`
 
   span {
     font-size: 10rem;
-    opacity: 0.1;
+    opacity: 0.2;
     font-weight: 600;
   }
 `;
