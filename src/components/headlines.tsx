@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { Fade } from "react-awesome-reveal";
 
+import { media } from "@/utils/responsive";
 import { GradientText } from "@/utils/styles";
 import { FIRST_NAME, LAST_NAME } from "@/utils/globals";
 
@@ -41,12 +42,22 @@ const Context = styled.div`
   font-weight: 500;
   margin-left: 1rem;
   margin-bottom: 1.4rem;
+
+  @media ${media.mobile} {
+    margin-left: 0.6rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
 `;
 
 const FirstName = styled.div`
   font-size: 10rem;
   font-weight: 800;
   line-height: 95%;
+
+  @media ${media.mobile} {
+    font-size: 5rem;
+  }
 `;
 
 const LastName = styled.div`
@@ -57,6 +68,10 @@ const LastName = styled.div`
   margin-top: 1rem;
   margin-bottom: 3rem;
   line-height: 100%;
+
+  @media ${media.mobile} {
+    font-size: 5rem;
+  }
 `;
 
 const ProfessionContainer = styled.div`
@@ -75,10 +90,19 @@ const ProfessionContainer = styled.div`
       color: #9c388e;
       margin-left: 0.6rem;
     }
+
+    @media ${media.mobile} {
+      display: none;
+    }
   }
 `;
 
 const Profession = styled(GradientText)`
   font-size: 3.2rem;
   font-weight: 600;
+
+  @media ${media.mobile} {
+    font-size: 1.8rem;
+    margin-left: 0.4rem;
+  }
 `;

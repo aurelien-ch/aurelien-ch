@@ -126,6 +126,11 @@ const Container = styled.div`
   box-shadow: 0.4rem 0.4rem 2rem rgba(0, 0, 0, 0.1);
   user-select: none;
   background: ${theme.gradient2};
+
+  @media (max-width: 768px) {
+    height: 40rem;
+    width: 28rem;
+  }
 `;
 
 const BackgroundShape = styled.div`

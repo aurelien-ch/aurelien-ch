@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import styled from "styled-components";
 import Particles from "@tsparticles/react";
 
+import { media } from "@/utils/responsive";
 import { useScroll } from "@/providers/scroll-context";
 import particlesOptions from "@/utils/particles-options";
 import Headlines from "@/components/headlines";
@@ -38,6 +39,12 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 14rem;
+
+  @media ${media.mobile} {
+    gap: 8rem;
+    flex-direction: column;
+    padding: 8rem 6rem;
+  }
 `;
 
 const AnimContainer = styled.div<{ $scale: string }>`
