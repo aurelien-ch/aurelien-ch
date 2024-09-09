@@ -2,8 +2,8 @@
   "hero": {
     "myNameIs": "Hello, my name is",
     "iAmA": "And I'm a",
-    "profession": "Web & Mobile Fullstack Developer",
-    "professionShort": "Fullstack Developer"
+    "profession": "Front-End Web & Mobile Developer",
+    "professionShort": "Front-End Developer"
   },
   "aboutMe": {
     "title": "About me",
