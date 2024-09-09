@@ -38,14 +38,23 @@ const Projects = () => {
             <Content>
               <Name>{project.name}</Name>
               <Description>{HTMLReactParser(t(project.descriptionKey))}</Description>
-              <Review>
-                <Quote>“</Quote>
-                <ReviewText>{t(project.reviewKey)}</ReviewText>
-                <Quote>”</Quote>
-                <Reviewer>
-                  {project.reviewerName}, {project.reviewerRole}
-                </Reviewer>
-              </Review>
+              <ReviewContainer>
+                <NoteContainer>
+                  <Note>
+                    {Array.from({ length: 5 }).map((_, index) => (
+                      <StarIcon key={index} src={"/icons/star.svg"} alt={"Star"} />
+                    ))}
+                  </Note>
+                  <Reviewer>
+                    {project.reviewerName} <span>— {project.reviewerRole}</span>
+                  </Reviewer>
+                </NoteContainer>
+                <Review>
+                  <StartQuote>“</StartQuote>
+                  {HTMLReactParser(t(project.reviewKey))}
+                  <EndQuote>”</EndQuote>
+                </Review>
+              </ReviewContainer>
             </Content>
           </Project>
         ))}
@@ -141,6 +150,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  color: rgba(255, 255, 255, 0.7);
 `;
 
 const Name = styled(GradientText)`
@@ -149,7 +159,6 @@ const Name = styled(GradientText)`
 `;
 
 const Description = styled.div`
-  color: rgba(255, 255, 255, 0.7);
   font-size: 1.6rem;
 
   span {
@@ -163,12 +172,59 @@ const Description = styled.div`
   }
 `;
 
-const Review = styled.div`
+const ReviewContainer = styled.div`
   display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 2rem;
 `;
 
-const Quote = styled.div``;
+const NoteContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
 
-const ReviewText = styled.div``;
+const Note = styled.div`
+  display: flex;
+  gap: 0.6rem;
+`;
 
-const Reviewer = styled.div``;
+const StarIcon = styled.img`
+  height: auto;
+  width: 1.8rem;
+`;
+
+const Review = styled.div`
+  position: relative;
+  font-size: 1.6rem;
+
+  span {
+    font-size: 10rem;
+    opacity: 0.1;
+    font-weight: 600;
+  }
+`;
+
+const StartQuote = styled.span`
+  position: absolute;
+  top: -3rem;
+  left: -3rem;
+`;
+
+const EndQuote = styled.span`
+  position: absolute;
+  bottom: -7rem;
+  right: 2rem;
+`;
+
+const Reviewer = styled.div`
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+  transform: translateY(0.1rem);
+
+  span {
+    color: rgba(255, 255, 255, 0.7);
+  }
+`;
