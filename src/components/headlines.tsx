@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import { Fade } from "react-awesome-reveal";
 
 import { media } from "@/utils/responsive";
-import { GradientText } from "@/utils/styles";
 import { FIRST_NAME, LAST_NAME } from "@/utils/globals";
+import { GradientText } from "@/utils/styles";
 
 const Headlines = () => {
   const { t } = useTranslation();

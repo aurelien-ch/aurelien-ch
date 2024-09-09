@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import { useTranslation } from "react-i18next";
 import { Fade } from "react-awesome-reveal";
 
+import { media } from "@/utils/responsive";
 import { EMAIL } from "@/utils/globals";
 import RadialTitle from "@/components/radial-title";
 
@@ -52,6 +53,10 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 6rem;
+
+  @media ${media.mobile} {
+    gap: 4rem;
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -64,6 +69,11 @@ const ContentContainer = styled.div`
   box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, 0.1);
   border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
   border-left: 0.1rem solid rgba(255, 255, 255, 0.2);
+
+  @media ${media.mobile} {
+    flex-direction: column;
+    padding: 2rem;
+  }
 `;
 
 const ProfileImage = styled.img`
@@ -71,6 +81,10 @@ const ProfileImage = styled.img`
   height: 10rem;
   aspect-ratio: 1;
   border-radius: 50rem;
+
+  @media ${media.mobile} {
+    display: none;
+  }
 `;
 
 const Content = styled.div`
@@ -85,6 +99,11 @@ const Label = styled.div`
   color: rgba(255, 255, 255, 0.8);
   font-size: 3rem;
   font-weight: 700;
+
+  @media ${media.mobile} {
+    width: 26rem;
+    font-size: 2.4rem;
+  }
 `;
 
 const Email = styled.div<{ $copied: boolean }>`
@@ -106,6 +125,10 @@ const Email = styled.div<{ $copied: boolean }>`
   }
 
   ${(p) => p.$copied && `pointer-events: none;`}
+
+  @media ${media.mobile} {
+    font-size: 1.8rem;
+  }
 `;
 
 const FadeInCopy = keyframes`
@@ -130,10 +153,19 @@ const EmailContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.8rem;
+
+  @media ${media.mobile} {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const ContactLabel = styled.div`
   color: rgba(255, 255, 255, 0.6);
   font-size: 2rem;
   font-weight: 500;
+
+  @media ${media.mobile} {
+    font-size: 1.6rem;
+  }
 `;
