@@ -44,7 +44,7 @@ export default Socials;
 
 const Container = styled.div`
   position: relative;
-  width: 26rem;
+  width: 21.5rem;
   height: 10rem;
   transform: translateY(3.6rem);
 `;

@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Fade } from "react-awesome-reveal";
 import HTMLReactParser from "html-react-parser";
 
+import { media } from "@/utils/responsive";
 import { GradientText } from "@/utils/styles";
 import Socials from "@/components/socials";
 
@@ -39,6 +40,13 @@ const Container = styled.div`
   align-items: center;
   gap: 8rem;
   padding: 8rem;
+  padding-right: 12rem;
+
+  @media ${media.mobile} {
+    flex-direction: column;
+    gap: 10rem;
+    padding: 10rem 3rem;
+  }
 `;
 
 const Content = styled.div`
@@ -46,11 +54,19 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @media ${media.mobile} {
+    width: 100%;
+  }
 `;
 
 const Title = styled(GradientText)`
   font-weight: 800;
   font-size: 5rem;
+
+  @media ${media.mobile} {
+    font-size: 4rem;
+  }
 `;
 
 const Description = styled.div`
@@ -66,5 +82,9 @@ const Line = styled.div`
   span {
     color: white;
     font-weight: 600;
+  }
+
+  @media ${media.mobile} {
+    font-size: 1.6rem;
   }
 `;
