@@ -35,13 +35,14 @@ export default AboutMe;
 
 const Container = styled.div`
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 8rem;
   padding: 8rem;
-  padding-right: 12rem;
 `;
 
 const Content = styled.div`
+  width: 90rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;

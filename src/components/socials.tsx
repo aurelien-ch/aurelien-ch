@@ -40,7 +40,7 @@ const Container = styled.div`
   position: relative;
   width: 26rem;
   height: 10rem;
-  transform: translateY(3rem);
+  transform: translateY(3.6rem);
 `;
 
 const Circle = styled.div<{ $index: number }>`
