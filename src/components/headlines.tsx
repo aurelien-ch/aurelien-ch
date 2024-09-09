@@ -103,7 +103,7 @@ const Profession = styled(GradientText)`
   font-weight: 600;
 
   @media ${media.mobile} {
-    width: 20rem;
+    width: 22rem;
     font-size: 1.8rem;
     margin-left: 0.4rem;
   }
