@@ -108,7 +108,9 @@ const MockupContainer = styled.div<{ $expandLabel: string }>`
   position: relative;
   overflow: hidden;
   background-color: #293649;
-  border: 0.1rem solid #747474;
+  box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, 0.1);
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
+  border-left: 0.1rem solid rgba(255, 255, 255, 0.2);
   border-radius: 1rem;
   padding: 1rem;
   margin: -1.4rem 0;
