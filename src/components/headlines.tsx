@@ -45,14 +45,14 @@ const Context = styled.div`
 
 const FirstName = styled.div`
   font-size: 10rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 95%;
 `;
 
 const LastName = styled.div`
   color: rgba(255, 255, 255, 0.3);
   font-size: 10rem;
-  font-weight: 700;
+  font-weight: 800;
   transform: translateY(-1rem);
   margin-top: 1rem;
   margin-bottom: 3rem;

@@ -116,7 +116,7 @@ const Radial3 = styled(Radial)`
 const Title = styled.div`
   mix-blend-mode: overlay;
   opacity: 0.5;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 8rem;
 `;
 
@@ -155,7 +155,7 @@ const Content = styled.div`
 
 const Name = styled(GradientText)`
   font-size: 5rem;
-  font-weight: 700;
+  font-weight: 800;
 `;
 
 const Description = styled.div`

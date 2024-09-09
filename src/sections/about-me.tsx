@@ -37,7 +37,7 @@ const Container = styled.div`
 `;
 
 const Title = styled(GradientText)`
-  font-weight: 700;
+  font-weight: 800;
   font-size: 5rem;
 `;
 
