@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";
 
+import { media } from "@/utils/responsive";
 import theme from "@/utils/theme";
 
 interface Props {
@@ -41,6 +42,10 @@ const Radial = styled.div`
   width: 100%;
   filter: blur(5rem);
   opacity: 0.5;
+
+  @media ${media.mobile} {
+    height: 14rem;
+  }
 `;
 
 const Radial1 = styled(Radial)`
@@ -59,8 +64,13 @@ const Radial3 = styled(Radial)`
 
 const Title = styled.div`
   mix-blend-mode: overlay;
+  white-space: nowrap;
   opacity: 0.5;
   font-weight: 800;
   font-size: 8rem;
   text-shadow: 0 0 4rem rgba(0, 0, 0, 0.3);
+
+  @media ${media.mobile} {
+    font-size: 4.4rem;
+  }
 `;
