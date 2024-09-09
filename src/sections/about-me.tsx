@@ -4,6 +4,7 @@ import { Fade } from "react-awesome-reveal";
 import HTMLReactParser from "html-react-parser";
 
 import { GradientText } from "@/utils/styles";
+import Socials from "@/components/socials";
 
 const AboutMe = () => {
   const { t } = useTranslation();
@@ -25,6 +26,7 @@ const AboutMe = () => {
           </Fade>
         </Description>
       </Content>
+      <Socials />
     </Container>
   );
 };
@@ -33,7 +35,10 @@ export default AboutMe;
 
 const Container = styled.div`
   display: flex;
+  align-items: center;
+  gap: 8rem;
   padding: 8rem;
+  padding-right: 12rem;
 `;
 
 const Content = styled.div`

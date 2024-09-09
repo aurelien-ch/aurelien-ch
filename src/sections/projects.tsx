@@ -25,7 +25,7 @@ const Projects = () => {
                 {project.mockups.map((mockup: string, mockupIndex: number) => (
                   <MockupContainer
                     key={mockupIndex}
-                    expandLabel={t("projects.expand")}
+                    $expandLabel={t("projects.expand")}
                     style={{
                       transform: `translateX(${mockupIndex % 2 === 0 ? 0 : index % 2 === 0 ? 2 : -2}rem)`,
                     }}
@@ -104,7 +104,7 @@ const Mockups = styled.div`
   flex-direction: column;
 `;
 
-const MockupContainer = styled.div<{ expandLabel: string }>`
+const MockupContainer = styled.div<{ $expandLabel: string }>`
   position: relative;
   overflow: hidden;
   background-color: #293649;
@@ -135,7 +135,7 @@ const MockupContainer = styled.div<{ expandLabel: string }>`
   }
 
   &::after {
-    content: "${(p) => p.expandLabel}";
+    content: "${(p) => p.$expandLabel}";
     position: absolute;
     top: 50%;
     left: 50%;
