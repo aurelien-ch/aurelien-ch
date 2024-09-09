@@ -5,6 +5,7 @@ import Hero from "@/sections/hero";
 import AboutMe from "@/sections/about-me";
 import Skills from "@/sections/skills";
 import Projects from "@/sections/projects";
+import Contact from "@/sections/contact";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         <Skills />
       </Content>
       <Projects />
+      <Contact />
     </Container>
   );
 };
