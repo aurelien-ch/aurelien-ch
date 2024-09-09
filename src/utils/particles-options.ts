@@ -26,7 +26,7 @@ export default {
       speed: 0.6,
       straight: false,
     },
-    number: { density: { enable: true }, value: 50 },
+    number: { density: { enable: true }, value: 60 },
     opacity: {
       value: 0.3,
     },
