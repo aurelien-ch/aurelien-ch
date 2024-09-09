@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import { Fade } from "react-awesome-reveal";
 import HTMLReactParser from "html-react-parser";
 
 import projects from "@/data/projects";
@@ -23,51 +24,58 @@ const Projects = () => {
             <Project key={index} style={{ flexDirection: index % 2 === 0 ? "row" : "row-reverse" }}>
               <Mockups>
                 {project.mockups.map((mockup: string, mockupIndex: number) => (
-                  <MockupContainer
+                  <Fade
                     key={mockupIndex}
-                    $expandLabel={t("projects.expand")}
-                    style={{
-                      transform: `translateX(${mockupIndex % 2 === 0 ? 0 : index % 2 === 0 ? 2 : -2}rem)`,
-                    }}
-                    onClick={() => setExpandedImage(mockup)}
+                    triggerOnce
+                    direction={index % 2 === 0 ? "left" : "right"}
                   >
-                    <Mockup src={mockup} alt={project.name} />
-                  </MockupContainer>
+                    <MockupContainer
+                      $expandLabel={t("projects.expand")}
+                      style={{
+                        transform: `translateX(${mockupIndex % 2 === 0 ? 0 : index % 2 === 0 ? 2 : -2}rem)`,
+                      }}
+                      onClick={() => setExpandedImage(mockup)}
+                    >
+                      <Mockup src={mockup} alt={project.name} />
+                    </MockupContainer>
+                  </Fade>
                 ))}
               </Mockups>
               <Content>
-                <NameContainer>
-                  <Name>{project.name}</Name>
-                  <a
-                    href={project.visitLink}
-                    target={"_blank"}
-                    rel={"noreferrer"}
-                    style={{ transform: "translateY(0.5rem)" }}
-                  >
-                    <OpenLinkButton>
-                      <OpenLinkLabel>{t("projects.visit")}</OpenLinkLabel>
-                      <OpenLinkIcon src={"/icons/open-link.svg"} alt={"Open"} />
-                    </OpenLinkButton>
-                  </a>
-                </NameContainer>
-                <Description>{HTMLReactParser(t(project.descriptionKey))}</Description>
-                <ReviewContainer>
-                  <NoteContainer>
-                    <Note>
-                      {Array.from({ length: 5 }).map((_, index) => (
-                        <StarIcon key={index} src={"/icons/star.svg"} alt={"Star"} />
-                      ))}
-                    </Note>
-                    <Reviewer>
-                      {project.reviewerName} <span>— {project.reviewerRole}</span>
-                    </Reviewer>
-                  </NoteContainer>
-                  <Review>
-                    <StartQuote>“</StartQuote>
-                    {HTMLReactParser(t(project.reviewKey))}
-                    <EndQuote>”</EndQuote>
-                  </Review>
-                </ReviewContainer>
+                <Fade triggerOnce cascade damping={0.1} direction={"up"}>
+                  <NameContainer>
+                    <Name>{project.name}</Name>
+                    <a
+                      href={project.visitLink}
+                      target={"_blank"}
+                      rel={"noreferrer"}
+                      style={{ transform: "translateY(0.5rem)" }}
+                    >
+                      <OpenLinkButton>
+                        <OpenLinkLabel>{t("projects.visit")}</OpenLinkLabel>
+                        <OpenLinkIcon src={"/icons/open-link.svg"} alt={"Open"} />
+                      </OpenLinkButton>
+                    </a>
+                  </NameContainer>
+                  <Description>{HTMLReactParser(t(project.descriptionKey))}</Description>
+                  <ReviewContainer>
+                    <NoteContainer>
+                      <Note>
+                        {Array.from({ length: 5 }).map((_, index) => (
+                          <StarIcon key={index} src={"/icons/star.svg"} alt={"Star"} />
+                        ))}
+                      </Note>
+                      <Reviewer>
+                        {project.reviewerName} <span>— {project.reviewerRole}</span>
+                      </Reviewer>
+                    </NoteContainer>
+                    <Review>
+                      <StartQuote>“</StartQuote>
+                      {HTMLReactParser(t(project.reviewKey))}
+                      <EndQuote>”</EndQuote>
+                    </Review>
+                  </ReviewContainer>
+                </Fade>
               </Content>
             </Project>
           ))}

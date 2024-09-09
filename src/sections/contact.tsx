@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { useTranslation } from "react-i18next";
+import { Fade } from "react-awesome-reveal";
 
 import { EMAIL } from "@/utils/globals";
 import RadialTitle from "@/components/radial-title";
@@ -20,24 +21,26 @@ const Contact = () => {
   return (
     <Container>
       <RadialTitle title={t("contact.title")} />
-      <ContentContainer>
-        <ProfileImage src={"/images/profile-photo.webp"} alt={"Profile picture"} />
-        <Content>
-          <Label>{t("contact.label")}</Label>
-          <EmailContainer>
-            <ContactLabel>{t("contact.contactLabel")}</ContactLabel>
-            <Email $copied={copied} onClick={handleCopy}>
-              {EMAIL}
-              <CopyIcon
-                key={`${copied}`}
-                $copied={copied}
-                src={`/icons/${copied ? "done" : "copy"}.svg`}
-                alt={"Copy"}
-              />
-            </Email>
-          </EmailContainer>
-        </Content>
-      </ContentContainer>
+      <Fade triggerOnce direction={"up"}>
+        <ContentContainer>
+          <ProfileImage src={"/images/profile-photo.webp"} alt={"Profile picture"} />
+          <Content>
+            <Label>{t("contact.label")}</Label>
+            <EmailContainer>
+              <ContactLabel>{t("contact.contactLabel")}</ContactLabel>
+              <Email $copied={copied} onClick={handleCopy}>
+                {EMAIL}
+                <CopyIcon
+                  key={`${copied}`}
+                  $copied={copied}
+                  src={`/icons/${copied ? "done" : "copy"}.svg`}
+                  alt={"Copy"}
+                />
+              </Email>
+            </EmailContainer>
+          </Content>
+        </ContentContainer>
+      </Fade>
     </Container>
   );
 };
