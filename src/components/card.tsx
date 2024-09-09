@@ -153,7 +153,6 @@ const ProfileImageShadow = styled.div`
   transform: translate3d(0, 0, 0.1rem);
 
   @media ${media.mobile} {
-    top: -1rem;
     width: 70%;
   }
 `;
@@ -179,7 +178,8 @@ const Lines = styled.div`
   padding: 0 3rem;
 
   @media ${media.mobile} {
-    padding: 0 2rem;
+    gap: 0.6rem;
+    padding: 0 2.4rem;
   }
 `;
 
