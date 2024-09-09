@@ -3,7 +3,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import Hero from "@/sections/hero";
 import AboutMe from "@/sections/about-me";
-import Skills from "@/sections/skills";
+// import Skills from "@/sections/skills";
 import Projects from "@/sections/projects";
 import Contact from "@/sections/contact";
 
@@ -11,10 +11,8 @@ const Home = () => {
   return (
     <Container>
       <Hero />
-      <Content>
-        <AboutMe />
-        <Skills />
-      </Content>
+      <AboutMe />
+      {/* <Skills /> */}
       <Projects />
       <Contact />
     </Container>
@@ -33,11 +31,4 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding-bottom: 20rem;
-`;
-
-const Content = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 5rem;
-  padding: 8rem;
 `;

@@ -10,18 +10,20 @@ const AboutMe = () => {
 
   return (
     <Container>
-      <Fade triggerOnce direction={"left"}>
-        <Title>{t("aboutMe.title")}</Title>
-      </Fade>
       <Content>
-        <Fade triggerOnce cascade damping={0.1} direction={"left"}>
-          <Line>{HTMLReactParser(t("aboutMe.line1"))}</Line>
-          <Line>{HTMLReactParser(t("aboutMe.line2"))}</Line>
-          <Line>{HTMLReactParser(t("aboutMe.line3"))}</Line>
-          <Line>{HTMLReactParser(t("aboutMe.line4"))}</Line>
-          <Line>{HTMLReactParser(t("aboutMe.line5"))}</Line>
-          <Line>{HTMLReactParser(t("aboutMe.line6"))}</Line>
+        <Fade triggerOnce direction={"left"}>
+          <Title>{t("aboutMe.title")}</Title>
         </Fade>
+        <Description>
+          <Fade triggerOnce cascade damping={0.1} direction={"left"}>
+            <Line>{HTMLReactParser(t("aboutMe.description.line1"))}</Line>
+            <Line>{HTMLReactParser(t("aboutMe.description.line2"))}</Line>
+            <Line>{HTMLReactParser(t("aboutMe.description.line3"))}</Line>
+            <Line>{HTMLReactParser(t("aboutMe.description.line4"))}</Line>
+            <Line>{HTMLReactParser(t("aboutMe.description.line5"))}</Line>
+            <Line>{HTMLReactParser(t("aboutMe.description.line6"))}</Line>
+          </Fade>
+        </Description>
       </Content>
     </Container>
   );
@@ -30,7 +32,11 @@ const AboutMe = () => {
 export default AboutMe;
 
 const Container = styled.div`
-  flex: 2.7;
+  display: flex;
+  padding: 8rem;
+`;
+
+const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -41,7 +47,7 @@ const Title = styled(GradientText)`
   font-size: 5rem;
 `;
 
-const Content = styled.div`
+const Description = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;

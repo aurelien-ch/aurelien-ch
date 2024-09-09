@@ -3,14 +3,18 @@ import { Fade } from "react-awesome-reveal";
 import { useTranslation } from "react-i18next";
 
 import skills from "@/data/skills";
+import { GradientText } from "@/utils/styles";
 import { ISkill, ISkillCategory } from "@/types/skills";
 
 const Skills = () => {
   const { t } = useTranslation();
 
   return (
-    <Fade triggerOnce direction={"right"} style={{ flex: 1 }}>
+    <Fade triggerOnce direction={"right"}>
       <Container>
+        <Fade triggerOnce direction={"left"}>
+          <Title>{t("skills.title")}</Title>
+        </Fade>
         {skills.map((category: ISkillCategory, index: number) => (
           <Category key={index}>
             <CategoryLabel>{t(category.nameKey)}</CategoryLabel>
@@ -36,7 +40,15 @@ export default Skills;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 1.6rem;
+  padding: 8rem;
+  padding-top: 0;
+`;
+
+const Title = styled(GradientText)`
+  font-weight: 800;
+  font-size: 5rem;
 `;
 
 const Category = styled.div`

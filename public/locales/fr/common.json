@@ -7,12 +7,14 @@
   },
   "aboutMe": {
     "title": "À propos de moi",
-    "line1": "Je suis spécialisé dans le développement <span>Web Front-end et Back-end</span> ainsi que dans le développement <span>Mobile</span>.",
-    "line2": "Dans ces domaines, je peux intervenir sur tous types de missions : de la simple maintenance à la création complète de votre <span>application web et/ou mobile</span>, jusqu'à leur déploiement.",
-    "line3": "Grâce à mon expérience professionnelle, mes multiples projets personnels et ma formation à l'école Epitech, je fais aujourd'hui preuve d'une autonomie et d'une productivité me permettant de répondre à tous vos besoins en développement.",
-    "line4": "J'ai acquis l'habitude de travailler sur des petits projets et d'autres d'une plus grande complexité, d'implémenter des petites fonctionnalités, comme de plus importantes.",
-    "line5": "<span>Afin de donner vie à votre projet</span>, je vous accompagnerai pour trouver avec vous les meilleures réponses techniques et ergonomiques.",
-    "line6": "Impatient de travailler avec vous, <span>n'hésitez pas à me contacter !</span>"
+    "description": {
+      "line1": "Je suis spécialisé dans le développement <span>Web Front-end et Back-end</span> ainsi que dans le développement <span>Mobile</span>.",
+      "line2": "Dans ces domaines, je peux intervenir sur tous types de missions : de la simple maintenance à la création complète de votre <span>application web et/ou mobile</span>, jusqu'à leur déploiement.",
+      "line3": "Grâce à mon expérience professionnelle, mes multiples projets personnels et ma formation à l'école Epitech, je fais aujourd'hui preuve d'une autonomie et d'une productivité me permettant de répondre à tous vos besoins en développement.",
+      "line4": "J'ai acquis l'habitude de travailler sur des petits projets et d'autres d'une plus grande complexité, d'implémenter des petites fonctionnalités, comme de plus importantes.",
+      "line5": "<span>Afin de donner vie à votre projet</span>, je vous accompagnerai pour trouver avec vous les meilleures réponses techniques et ergonomiques.",
+      "line6": "Impatient de travailler avec vous, <span>n'hésitez pas à me contacter !</span>"
+    }
   },
   "skills": {
     "title": "Skills",
