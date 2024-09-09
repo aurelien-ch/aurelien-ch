@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Fade } from "react-awesome-reveal";
 import { useTranslation } from "react-i18next";
 
 import skills from "@/data/skills";
@@ -10,28 +9,24 @@ const Skills = () => {
   const { t } = useTranslation();
 
   return (
-    <Fade triggerOnce direction={"right"}>
-      <Container>
-        <Fade triggerOnce direction={"left"}>
-          <Title>{t("skills.title")}</Title>
-        </Fade>
+    <Container>
+      <Title>{t("skills.title")}</Title>
+      <Content>
         {skills.map((category: ISkillCategory, index: number) => (
           <Category key={index}>
             <CategoryLabel>{t(category.nameKey)}</CategoryLabel>
             <Badges>
-              <Fade triggerOnce cascade damping={0.1} delay={index * 400} direction={"right"}>
-                {category.skills.map((skill: ISkill, index: number) => (
-                  <Badge key={index}>
-                    <Icon src={skill.icon} alt={skill.name} />
-                    <BadgeLabel>{skill.name}</BadgeLabel>
-                  </Badge>
-                ))}
-              </Fade>
+              {category.skills.map((skill: ISkill, index: number) => (
+                <Badge key={index}>
+                  <Icon src={skill.icon} alt={skill.name} />
+                  <BadgeLabel>{skill.name}</BadgeLabel>
+                </Badge>
+              ))}
             </Badges>
           </Category>
         ))}
-      </Container>
-    </Fade>
+      </Content>
+    </Container>
   );
 };
 
@@ -40,10 +35,15 @@ export default Skills;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 1.6rem;
+  gap: 2rem;
   padding: 8rem;
-  padding-top: 0;
+`;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.8rem;
 `;
 
 const Title = styled(GradientText)`
@@ -59,7 +59,7 @@ const Category = styled.div`
 
 const CategoryLabel = styled.div`
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 500;
 `;
 
@@ -77,6 +77,9 @@ const Badge = styled.div`
   padding: 0.6rem 1rem;
   border-radius: 1.2rem;
   cursor: default;
+  box-shadow: 0.4rem 0.4rem 2rem rgba(0, 0, 0, 0.1);
+  border-top: 0.05rem solid rgba(255, 255, 255, 0.2);
+  border-left: 0.05rem solid rgba(255, 255, 255, 0.2);
 `;
 
 const Icon = styled.img`

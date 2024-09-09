@@ -19,7 +19,7 @@
   "skills": {
     "title": "Skills",
     "frontEnd": "Front-End",
-    "backEnd": "Back-End",
+    "sideSkills": "Side Skills",
     "tools": "Outils"
   },
   "projects": {

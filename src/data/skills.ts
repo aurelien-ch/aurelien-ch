@@ -23,7 +23,7 @@ export default [
     ],
   },
   {
-    nameKey: "skills.backEnd",
+    nameKey: "skills.sideSkills",
     skills: [
       {
         icon: "/skills/firebase.webp",
