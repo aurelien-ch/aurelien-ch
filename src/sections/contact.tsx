@@ -72,6 +72,7 @@ const ContentContainer = styled.div`
 
   @media ${media.mobile} {
     flex-direction: column;
+    gap: 1.6rem;
     padding: 2rem;
   }
 `;
@@ -81,16 +82,17 @@ const ProfileImage = styled.img`
   height: 10rem;
   aspect-ratio: 1;
   border-radius: 50rem;
-
-  @media ${media.mobile} {
-    display: none;
-  }
 `;
 
 const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+
+  @media ${media.mobile} {
+    align-items: center;
+    gap: 1.8rem;
+  }
 `;
 
 const Label = styled.div`
@@ -102,7 +104,28 @@ const Label = styled.div`
 
   @media ${media.mobile} {
     width: 26rem;
+    text-align: center;
     font-size: 2.4rem;
+  }
+`;
+
+const EmailContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  @media ${media.mobile} {
+    flex-direction: column;
+  }
+`;
+
+const ContactLabel = styled.div`
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 2rem;
+  font-weight: 500;
+
+  @media ${media.mobile} {
+    font-size: 1.6rem;
   }
 `;
 
@@ -147,25 +170,4 @@ const CopyIcon = styled.img<{ $copied: boolean }>`
   transition: opacity 0.3s;
   animation: ${FadeInCopy} 0.5s;
   transform: translateY(${(p) => (p.$copied ? "0.15rem" : "0.1rem")});
-`;
-
-const EmailContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-
-  @media ${media.mobile} {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-`;
-
-const ContactLabel = styled.div`
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 2rem;
-  font-weight: 500;
-
-  @media ${media.mobile} {
-    font-size: 1.6rem;
-  }
 `;
