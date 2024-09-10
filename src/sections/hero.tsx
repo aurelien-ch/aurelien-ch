@@ -4,6 +4,7 @@ import Particles from "@tsparticles/react";
 
 import { media } from "@/utils/responsive";
 import { useScroll } from "@/providers/scroll-context";
+import { useResp } from "@/providers/resp-context";
 import particlesOptions from "@/utils/particles-options";
 import Headlines from "@/components/headlines";
 import Card from "@/components/card";
@@ -14,10 +15,11 @@ MemoizedParticles.displayName = "Particles";
 
 const Hero = () => {
   const scrollY = useScroll();
+  const isMobile = useResp();
 
   const scale = useMemo(() => {
-    return `${Math.max(1.01 - scrollY / 2000, 0.96)}, ${Math.max(1.01 - scrollY / 3000, 0.98)}`;
-  }, [scrollY]);
+    return `${Math.max(1.01 - scrollY / 2000, isMobile ? 0.92 : 0.96)}, ${Math.max(1.01 - scrollY / 3000, isMobile ? 0.94 : 0.98)}`;
+  }, [scrollY, isMobile]);
 
   return (
     <Container>
@@ -41,7 +43,7 @@ const Container = styled.div`
   padding: 0 14rem;
 
   @media ${media.mobile} {
-    gap: 4rem;
+    gap: 2rem;
     flex-direction: column;
     padding: 8rem 2rem;
   }
