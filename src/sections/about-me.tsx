@@ -22,8 +22,6 @@ const AboutMe = () => {
             <Line>{HTMLReactParser(t("aboutMe.description.line2"))}</Line>
             <Line>{HTMLReactParser(t("aboutMe.description.line3"))}</Line>
             <Line>{HTMLReactParser(t("aboutMe.description.line4"))}</Line>
-            <Line>{HTMLReactParser(t("aboutMe.description.line5"))}</Line>
-            <Line>{HTMLReactParser(t("aboutMe.description.line6"))}</Line>
           </Fade>
         </Description>
       </Content>
@@ -40,7 +38,7 @@ const Container = styled.div`
   align-items: center;
   gap: 8rem;
   padding: 8rem;
-  padding-right: 12rem;
+  padding-right: 14rem;
 
   @media ${media.mobile} {
     flex-direction: column;
@@ -50,7 +48,7 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  width: 90rem;
+  width: 85rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;

@@ -8,12 +8,10 @@
   "aboutMe": {
     "title": "About me",
     "description": {
-      "line1": "I specialize in <span>Front-end and Back-end Web</span> development, as well as <span>Mobile</span> development.",
-      "line2": "In these fields, I can intervene on all types of missions: from simple maintenance to the complete creation of your <span>web and/or mobile application</span>, right through to their deployment.",
-      "line3": "Thanks to my professional experience, my many personal projects and my training at Epitech, I'm now autonomous and productive enough to meet all your development needs.",
-      "line4": "I'm used to working on small projects as well as more complex ones, implementing small functionalities as well as larger ones.",
-      "line5": "<span>To bring your project to life</span>, I'll work with you to find the best technical and ergonomic solutions.",
-      "line6": "Looking forward to working with you, <span>don't hesitate to contact me!</span>"
+      "line1": "As a passionate Front-end Web and Mobile developer, I stand out for my perfectionist approach to user interface creation. I systematically aim for pixel-perfect fidelity in every design, while keeping a critical and constructive eye. This approach enables me to be proactive, identifying and suggesting relevant UI and UX improvements.",
+      "line2": "My mastery of the latest front-end technologies enables me to develop modern, high-performance solutions that are perfectly adapted to users' needs. I integrate quickly into teams and adapt easily to different development methodologies.",
+      "line3": "Able to faithfully translate mock-ups into functional interfaces, I'm ready to make a significant contribution to raising the quality of your web and mobile projects. If you're looking for a front-end developer who combines technical expertise and creativity, I'd be delighted to bring my added value to your company.",
+      "line4": "Looking forward to working with you, please contact me to discuss your projects!"
     }
   },
   "skills": {
