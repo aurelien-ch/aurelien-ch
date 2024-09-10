@@ -179,7 +179,7 @@ const Lines = styled.div`
   padding: 0 3rem;
 
   @media ${media.mobile} {
-    gap: 0.6rem;
+    gap: 1rem;
     padding: 0 2.4rem;
   }
 `;
@@ -195,6 +195,10 @@ const Line = styled.div`
 const Emoji = styled.div`
   font-size: 1.8rem;
   transform: translateY(0.2rem) translateZ(2rem);
+
+  @media ${media.mobile} {
+    font-size: 1.6rem;
+  }
 `;
 
 const DotsSeparator = styled.div`
