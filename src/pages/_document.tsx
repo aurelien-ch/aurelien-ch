@@ -27,10 +27,10 @@ const MyDocument = (props: DocumentInitialProps) => {
         <meta name="twitter:image:alt" content="" />
         <link rel="preload" href="/fonts/Poppins.otf" as="font" crossOrigin="" type="font/otf" />
         <link rel="canonical" href="" />
-        {/* <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" /> */}
+        <link rel="manifest" href="/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
