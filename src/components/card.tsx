@@ -153,7 +153,8 @@ const ProfileImageShadow = styled.div`
   transform: translate3d(0, 0, 0.1rem);
 
   @media ${media.mobile} {
-    width: 70%;
+    width: 68%;
+    top: 1.2rem;
   }
 `;
 
