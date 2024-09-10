@@ -43,7 +43,8 @@ const Container = styled.div`
   @media ${media.mobile} {
     flex-direction: column;
     gap: 10rem;
-    padding: 8rem 3rem;
+    padding: 10rem 3rem;
+    padding-top: 6rem;
   }
 `;
 
