@@ -154,20 +154,18 @@ const Email = styled.div<{ $copied: boolean }>`
   }
 `;
 
-const FadeInCopy = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 0.7;
-  }
-`;
-
 const CopyIcon = styled.img<{ $copied: boolean }>`
   height: auto;
   width: 2.2rem;
   opacity: 0.7;
   transition: opacity 0.3s;
-  animation: ${FadeInCopy} 0.5s;
+  animation: ${keyframes`
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 0.7;
+    }
+  `} 0.5s;
   transform: translateY(${(p) => (p.$copied ? "0.15rem" : "0.1rem")});
 `;

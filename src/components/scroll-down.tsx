@@ -13,22 +13,6 @@ const ScrollDown = () => {
 
 export default ScrollDown;
 
-const MoveArrow = keyframes`
-  0%, 100% {
-    transform: rotate(45deg);
-    opacity: 0; 
-  }
-
-  35%  {
-    opacity: 1;
-  }
-
-  60% { 
-    transform: rotate(45deg) translate(1.2rem, 1.2rem);
-    opacity: 0; 
-  }
-`;
-
 const Container = styled.div`
   position: absolute;
   bottom: 8rem;
@@ -45,5 +29,19 @@ const Arrow = styled.div`
   border-right: 0.2rem solid rgba(255, 255, 255, 0.5);
   border-bottom: 0.2rem solid rgba(255, 255, 255, 0.5);
   opacity: 0;
-  animation: ${MoveArrow} 2.5s 2.8s ease-in-out infinite;
+  animation: ${keyframes`
+    0%, 100% {
+      transform: rotate(45deg);
+      opacity: 0; 
+    }
+
+    35%  {
+      opacity: 1;
+    }
+
+    60% { 
+      transform: rotate(45deg) translate(1.2rem, 1.2rem);
+      opacity: 0; 
+    }
+  `} 2.5s 2.8s ease-in-out infinite;
 `;
