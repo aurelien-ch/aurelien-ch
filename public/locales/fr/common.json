@@ -35,6 +35,19 @@
       "appunto": "J’ai collaboré avec Aurélien dans le cadre de plusieurs projets pour mes clients.<br/><br/>Travailler avec Aurélien est un réel plaisir. Rapide et efficace, il sait combiner une bonne maitrise des outils techniques à un réel gout pour les aspects visuels et l’ergonomie des produits.<br/><br/>Toujours force de proposition, il sait chercher et trouver les bonnes solutions pour résoudre les problématiques les plus différentes. La communication est toujours fluide, Aurélien est attentif à mes requêtes et soucieux de bien comprendre le sens du projet.<br/><br/>Au plaisir de travailler à nouveau ensemble !"
     }
   },
+  "moreReviews": {
+    "title": "Plus d'avis",
+    "descriptions": {
+      "sophrauto": "Application web et mobile de sophrologie",
+      "kolo": "Réseau social mobile axé sur la culture balkanique",
+      "mytv": "Application mobile regroupant télévision, radio, VOD, news"
+    },
+    "reviews": {
+      "sophrauto": "Très bonne expérience de travail avec Aurélien. La réalisation de cette application mobile de sophrologie a été un réel plaisir grâce à ses compétences. En effet, Aurélien est un développeur agréable et efficace proposant des idées pertinentes. C'est un professionnel réactif qui va naturellement à la source des informations.<br/><br/>Il accompagne et explique les démarches les plus techniques. Dans le cadre de cette mission, nous avons bénéficié de conseils et d'idées formulées toujours avec beaucoup de professionnalisme. Il respecte le projet, ses exigences et honore les délais impartis en montrant le plus grand intérêt.<br/><br/>Je recommande vivement !",
+      "kolo": "Très réactif et ponctuel, Aurélien saura vous suivre dans vos projets avec grande attention. Le développement Front-End était crucial pour la présentation d’un MVP aux investisseurs.<br/><br/>Un plaisir d’avoir travaillé ensemble.",
+      "mytv": "Aurélien a été très à l’écoute de nos besoins et a été force de proposition. Sérieux et expérimenté, ça a été très agréable de travailler avec lui aussi bien sur un plan technique que humain. Aurélien est passionné et cela se ressent dans son travail.<br/><br/>Je vous le recommande fortement, vous ne serez pas déçus, et ça sera avec plaisir pour une nouvelle collaboration ! Encore merci."
+    }
+  },
   "contact": {
     "title": "Contact",
     "label": "Donnons vie à votre projet ! ⚡️",

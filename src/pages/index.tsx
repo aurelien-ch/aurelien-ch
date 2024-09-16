@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
+import { media } from "@/utils/responsive";
 import Hero from "@/sections/hero";
 import AboutMe from "@/sections/about-me";
 import Projects from "@/sections/projects";
+import MoreReviews from "@/sections/more-reviews";
 import Contact from "@/sections/contact";
 
 const Home = () => {
@@ -12,6 +14,7 @@ const Home = () => {
       <Hero />
       <AboutMe />
       <Projects />
+      <MoreReviews />
       <Contact />
     </Container>
   );
@@ -28,5 +31,9 @@ export const getStaticProps = async ({ locale = "en" }) => ({
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 20rem;
+  padding-bottom: 16rem;
+
+  @media ${media.mobile} {
+    padding-bottom: 12rem;
+  }
 `;

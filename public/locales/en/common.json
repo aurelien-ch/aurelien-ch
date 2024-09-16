@@ -35,6 +35,19 @@
       "appunto": "I've worked with Aurélien on several projects for my clients.<br/><br/>Working with Aurélien is a real pleasure. Fast and efficient, he knows how to combine a good command of technical tools with a real taste for visual aspects and product ergonomics.<br/><br/>He's always ready to make suggestions, and knows how to find the right solutions to the most diverse problems. Communication is always fluid, with Aurélien attentive to my requests and keen to understand the meaning of the project.<br/><br/>I look forward to working together again!"
     }
   },
+  "moreReviews": {
+    "title": "More reviews",
+    "descriptions": {
+      "sophrauto": "Sophrology web and mobile application",
+      "kolo": "Mobile social network focusing on Balkan culture",
+      "mytv": "Mobile application for TV, radio, VOD and news"
+    },
+    "reviews": {
+      "sophrauto": "Very good experience working with Aurélien. The creation of this sophrology mobile application was a real pleasure thanks to his skills. Indeed, Aurélien is a pleasant and efficient developer who comes up with relevant ideas. He's a responsive professional who naturally goes to the source of information.<br/><br/>He accompanies and explains the most technical steps. In the course of this mission, we benefited from advice and ideas that were always formulated with great professionalism. He respects the project and its requirements, and honors deadlines with the utmost interest.<br/><br/>I highly recommend him!",
+      "kolo": "Very responsive and punctual, Aurélien will be able to follow your projects with great attention. Front-End development was crucial for presenting an MVP to investors.<br/><br/>A pleasure to have worked together.",
+      "mytv": "Aurélien listened carefully to our needs and was always ready to make suggestions. Serious and experienced, he was a pleasure to work with on both a technical and human level. Aurélien is passionate about what he does, and you can feel it in his work.<br/><br/>I highly recommend him, you won't be disappointed, and I look forward to working with him again! Many thanks again."
+    }
+  },
   "contact": {
     "title": "Contact",
     "label": "Let's bring your project to life! ⚡️",

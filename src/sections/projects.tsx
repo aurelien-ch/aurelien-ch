@@ -11,6 +11,7 @@ import { IProject } from "@/types/projects";
 import { useResp } from "@/providers/resp-context";
 import ImageViewer from "@/components/image-viewer";
 import RadialTitle from "@/components/radial-title";
+import Review from "@/components/review";
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -51,7 +52,7 @@ const Projects = () => {
                       }}
                       onClick={() => setExpandedImage(mockup)}
                     >
-                      <Mockup src={mockup} alt={project.name} />
+                      <Mockup src={mockup} alt={project.projectName} />
                     </MockupContainer>
                   </Fade>
                 ))}
@@ -59,7 +60,7 @@ const Projects = () => {
               <Content>
                 <Fade triggerOnce cascade damping={0.1} direction={"up"}>
                   <NameContainer>
-                    <Name>{project.name}</Name>
+                    <Name>{project.projectName}</Name>
                     <a
                       href={project.visitLink}
                       target={"_blank"}
@@ -72,24 +73,8 @@ const Projects = () => {
                       </OpenLinkButton>
                     </a>
                   </NameContainer>
-                  <Description>{HTMLReactParser(t(project.descriptionKey))}</Description>
-                  <ReviewContainer>
-                    <NoteContainer>
-                      <Note>
-                        {Array.from({ length: 5 }).map((_, index) => (
-                          <StarIcon key={index} src={"/icons/star.svg"} alt={"Star"} />
-                        ))}
-                      </Note>
-                      <Reviewer>
-                        {project.reviewerName} <span>— {project.reviewerRole}</span>
-                      </Reviewer>
-                    </NoteContainer>
-                    <Review>
-                      <StartQuote>“</StartQuote>
-                      {HTMLReactParser(t(project.reviewKey))}
-                      <EndQuote>”</EndQuote>
-                    </Review>
-                  </ReviewContainer>
+                  <Description>{HTMLReactParser(t(project.projectDescriptionKey))}</Description>
+                  <Review review={project} />
                 </Fade>
               </Content>
             </Project>
@@ -255,70 +240,5 @@ const Description = styled.div`
 
   ul {
     padding-left: 2rem;
-  }
-`;
-
-const ReviewContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  margin-top: 2rem;
-`;
-
-const NoteContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-`;
-
-const Note = styled.div`
-  display: flex;
-  gap: 0.5rem;
-`;
-
-const StarIcon = styled.img`
-  height: auto;
-  width: 1.8rem;
-`;
-
-const Review = styled.div`
-  position: relative;
-  font-size: 1.6rem;
-
-  span {
-    font-size: 10rem;
-    opacity: 0.2;
-    font-weight: 600;
-  }
-`;
-
-const StartQuote = styled.span`
-  position: absolute;
-  top: -3rem;
-  left: -3rem;
-
-  @media ${media.mobile} {
-    left: -2.6rem;
-  }
-`;
-
-const EndQuote = styled.span`
-  position: absolute;
-  bottom: -7rem;
-  right: 2rem;
-
-  @media ${media.mobile} {
-    right: 1.6rem;
-  }
-`;
-
-const Reviewer = styled.div`
-  color: white;
-  font-size: 1.6rem;
-  font-weight: 600;
-  transform: translateY(0.1rem);
-
-  span {
-    color: rgba(255, 255, 255, 0.7);
   }
 `;
