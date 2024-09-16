@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import { media } from "@/utils/responsive";
+import LanguageSwitcher from "@/components/language-switcher";
 import Hero from "@/sections/hero";
 import AboutMe from "@/sections/about-me";
 import Projects from "@/sections/projects";
@@ -11,6 +12,7 @@ import Contact from "@/sections/contact";
 const Home = () => {
   return (
     <Container>
+      <LanguageSwitcher />
       <Hero />
       <AboutMe />
       <Projects />

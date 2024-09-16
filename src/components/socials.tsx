@@ -104,13 +104,13 @@ const Circle = styled.div<{ $index: number }>`
     left: 4rem;
   `
       : (p) =>
-        p.$index === 3
-          ? `
+          p.$index === 3
+            ? `
     transform: scale(0.8);
     top: -3.2rem;
     left: 10.6rem;
   `
-          : ""};
+            : ""};
 `;
 
 const Icon = styled.img`
