@@ -64,7 +64,7 @@ const Projects = () => {
                     <a
                       href={project.visitLink}
                       target={"_blank"}
-                      rel={"noreferrer"}
+                      rel={"noopener noreferrer"}
                       style={{ transform: `translateY(${isMobile ? 0.4 : 0.5}rem)` }}
                     >
                       <OpenLinkButton>

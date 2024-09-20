@@ -16,21 +16,21 @@ const Socials = () => {
         <Radial3 />
       </Background>
       <Bounce triggerOnce>
-        <a href={LINKEDIN_URL} target={"_blank"} rel={"noreferrer"}>
+        <a href={LINKEDIN_URL} target={"_blank"} rel={"noopener noreferrer"}>
           <Circle $index={1}>
             <LinkedInIcon src={"/logos/linkedin.svg"} alt={"LinkedIn"} />
           </Circle>
         </a>
       </Bounce>
       <Bounce triggerOnce delay={200}>
-        <a href={MALT_URL} target={"_blank"} rel={"noreferrer"}>
+        <a href={MALT_URL} target={"_blank"} rel={"noopener noreferrer"}>
           <Circle $index={2}>
             <MaltIcon src={"/logos/malt.svg"} alt={"Malt"} />
           </Circle>
         </a>
       </Bounce>
       <Bounce triggerOnce delay={400}>
-        <a href={`/cv/${i18n.language}.pdf`} target={"_blank"} rel={"noreferrer"}>
+        <a href={`/cv/${i18n.language}.pdf`} target={"_blank"} rel={"noopener noreferrer"}>
           <Circle $index={3}>
             <CVIcon src={"/logos/cv.svg"} alt={"CV"} />
           </Circle>
