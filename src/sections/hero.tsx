@@ -15,7 +15,7 @@ MemoizedParticles.displayName = "Particles";
 
 const Hero = () => {
   const scrollY = useScroll();
-  const isMobile = useResize();
+  const { isMobile } = useResize();
 
   const scale = useMemo(() => {
     return `${Math.max(1.01 - scrollY / 2000, isMobile ? 0.92 : 0.96)}, ${Math.max(1.01 - scrollY / 3000, isMobile ? 0.94 : 0.98)}`;

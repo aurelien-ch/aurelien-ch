@@ -15,7 +15,7 @@ import Review from "@/components/review";
 
 const Projects = () => {
   const { t } = useTranslation();
-  const isMobile = useResize();
+  const { isMobile } = useResize();
 
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
 
