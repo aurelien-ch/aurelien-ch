@@ -10,7 +10,7 @@ import { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
 import { APP_NAME, APP_DESCRIPTION } from "@/utils/globals";
-import { RespProvider } from "@/providers/resp-context";
+import { ResizeProvider } from "@/providers/resize-context";
 import { ScrollProvider } from "@/providers/scroll-context";
 
 import type { AppProps } from "next/app";
@@ -48,7 +48,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Fade triggerOnce>
-        <RespProvider>
+        <ResizeProvider>
           <ScrollProvider>
             <SnackbarProvider
               anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
@@ -57,7 +57,7 @@ const App = ({ Component, pageProps }: AppProps) => {
               <Component {...pageProps} />
             </SnackbarProvider>
           </ScrollProvider>
-        </RespProvider>
+        </ResizeProvider>
       </Fade>
     </>
   ) : null;

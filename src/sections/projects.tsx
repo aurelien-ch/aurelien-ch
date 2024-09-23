@@ -8,14 +8,14 @@ import projects from "@/data/projects";
 import { media } from "@/utils/responsive";
 import { GradientText } from "@/utils/styles";
 import { IProject } from "@/types/projects";
-import { useResp } from "@/providers/resp-context";
+import { useResize } from "@/providers/resize-context";
 import ImageViewer from "@/components/image-viewer";
 import RadialTitle from "@/components/radial-title";
 import Review from "@/components/review";
 
 const Projects = () => {
   const { t } = useTranslation();
-  const isMobile = useResp();
+  const isMobile = useResize();
 
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
 

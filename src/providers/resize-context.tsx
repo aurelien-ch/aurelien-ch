@@ -2,9 +2,9 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 import { sizes } from "@/utils/responsive";
 
-const RespContext = createContext<boolean>(false);
+const ResizeContext = createContext<{ isMobile: boolean }>({ isMobile: false });
 
-export const RespProvider = ({ children }: { children: React.ReactNode }) => {
+export const ResizeProvider = ({ children }: { children: React.ReactNode }) => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export const RespProvider = ({ children }: { children: React.ReactNode }) => {
     };
   }, []);
 
-  return <RespContext.Provider value={isMobile}>{children}</RespContext.Provider>;
+  return <ResizeContext.Provider value={{ isMobile }}>{children}</ResizeContext.Provider>;
 };
 
-export const useResp = () => useContext(RespContext);
+export const useResize = () => useContext(ResizeContext);
