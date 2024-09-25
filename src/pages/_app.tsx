@@ -47,7 +47,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="description" content={APP_DESCRIPTION} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Fade triggerOnce>
+      <Fade triggerOnce duration={2000}>
         <ResizeProvider>
           <ScrollProvider>
             <SnackbarProvider
