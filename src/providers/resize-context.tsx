@@ -2,7 +2,11 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 import { sizes } from "@/utils/responsive";
 
-const ResizeContext = createContext<{ isMobile: boolean }>({ isMobile: false });
+type ResizeContextType = {
+  isMobile: boolean;
+};
+
+const ResizeContext = createContext<ResizeContextType | null>(null);
 
 export const ResizeProvider = ({ children }: { children: React.ReactNode }) => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -23,4 +27,12 @@ export const ResizeProvider = ({ children }: { children: React.ReactNode }) => {
   return <ResizeContext.Provider value={{ isMobile }}>{children}</ResizeContext.Provider>;
 };
 
-export const useResize = () => useContext(ResizeContext);
+export const useResize = (): ResizeContextType => {
+  const context = useContext(ResizeContext);
+
+  if (context === null) {
+    throw new Error("useResize must be used within a ResizeProvider");
+  } else {
+    return context;
+  }
+};
