@@ -2,30 +2,41 @@ import { IProject } from "@/types/projects";
 
 export default [
   {
-    projectName: "The Soci3ty",
+    name: "The Soci3ty",
+    descriptionKey: "projects.descriptions.soci3ty",
     mockups: ["/mockups/soci3ty-landing.webp", "/mockups/soci3ty-dapp.webp"],
-    projectDescriptionKey: "projects.descriptions.soci3ty",
-    reviewerName: "Simon",
-    reviewerRole: "CEO",
-    reviewKey: "projects.reviews.soci3ty",
     visitLink: "https://soci3ty-landing.vercel.app/",
+    review: {
+      reviewerName: "Simon",
+      reviewerRole: "CEO",
+      reviewKey: "projects.reviews.soci3ty",
+    },
   },
   {
-    projectName: "LEEQUID",
+    name: "LEEQUID",
+    descriptionKey: "projects.descriptions.leequid",
     mockups: ["/mockups/leequid-landing.webp", "/mockups/leequid-dapp.webp"],
-    projectDescriptionKey: "projects.descriptions.leequid",
-    reviewerName: "Samuel",
-    reviewerRole: "CTO",
-    reviewKey: "projects.reviews.leequid",
     visitLink: "https://leequid.io/",
+    review: {
+      reviewerName: "Carlos",
+      reviewerRole: "CEO",
+      reviewKey: "projects.reviews.leequid",
+    },
+    secondReview: {
+      reviewerName: "Samuel",
+      reviewerRole: "CTO",
+      reviewKey: "projects.secondReviews.leequid",
+    },
   },
   {
-    projectName: "Appunto",
+    name: "Appunto",
+    descriptionKey: "projects.descriptions.appunto",
     mockups: ["/mockups/wedodata.webp", "/mockups/usense.webp", "/mockups/monuma.webp"],
-    projectDescriptionKey: "projects.descriptions.appunto",
-    reviewerName: "Mattia",
-    reviewerRole: "CEO",
-    reviewKey: "projects.reviews.appunto",
     visitLink: "https://unehistoireduconflitpolitique.fr/",
+    review: {
+      reviewerName: "Mattia",
+      reviewerRole: "CEO",
+      reviewKey: "projects.reviews.appunto",
+    },
   },
 ] as IProject[];

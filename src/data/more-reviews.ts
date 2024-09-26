@@ -1,25 +1,31 @@
-import { IReview } from "@/types/projects";
+import { IProject } from "@/types/projects";
 
 export default [
   {
-    projectName: "Sophrauto",
-    projectDescriptionKey: "moreReviews.descriptions.sophrauto",
-    reviewerName: "Manuella",
-    reviewerRole: "CEO",
-    reviewKey: "moreReviews.reviews.sophrauto",
+    name: "Sophrauto",
+    descriptionKey: "moreReviews.descriptions.sophrauto",
+    review: {
+      reviewerName: "Manuella",
+      reviewerRole: "CEO",
+      reviewKey: "moreReviews.reviews.sophrauto",
+    },
   },
   {
-    projectName: "Kolo",
-    projectDescriptionKey: "moreReviews.descriptions.kolo",
-    reviewerName: "Atanas",
-    reviewerRole: "CEO",
-    reviewKey: "moreReviews.reviews.kolo",
+    name: "Kolo",
+    descriptionKey: "moreReviews.descriptions.kolo",
+    review: {
+      reviewerName: "Atanas",
+      reviewerRole: "CEO",
+      reviewKey: "moreReviews.reviews.kolo",
+    },
   },
   {
-    projectName: "MyTelevision",
-    projectDescriptionKey: "moreReviews.descriptions.mytv",
-    reviewerName: "Samba",
-    reviewerRole: "CEO",
-    reviewKey: "moreReviews.reviews.mytv",
+    name: "MyTelevision",
+    descriptionKey: "moreReviews.descriptions.mytv",
+    review: {
+      reviewerName: "Samba",
+      reviewerRole: "CEO",
+      reviewKey: "moreReviews.reviews.mytv",
+    },
   },
-] as IReview[];
+] as IProject[];

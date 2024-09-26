@@ -6,7 +6,7 @@ import HTMLReactParser from "html-react-parser";
 import moreReviews from "@/data/more-reviews";
 import { media } from "@/utils/responsive";
 import { GradientText } from "@/utils/styles";
-import { IReview } from "@/types/projects";
+import { IProject } from "@/types/projects";
 import RadialTitle from "@/components/radial-title";
 import Review from "@/components/review";
 
@@ -18,13 +18,11 @@ const MoreReviews = () => {
       <RadialTitle title={t("moreReviews.title")} />
       <Reviews>
         <Fade triggerOnce cascade damping={0.2} direction={"up"} style={{ flex: 1 }}>
-          {moreReviews.map((review: IReview, index: number) => (
+          {moreReviews.map((project: IProject, index: number) => (
             <ReviewContainer key={index}>
-              <ProjectName>{review.projectName}</ProjectName>
-              <ProjectDescription>
-                {HTMLReactParser(t(review.projectDescriptionKey))}
-              </ProjectDescription>
-              <Review review={review} />
+              <ProjectName>{project.name}</ProjectName>
+              <ProjectDescription>{HTMLReactParser(t(project.descriptionKey))}</ProjectDescription>
+              <Review review={project.review} />
             </ReviewContainer>
           ))}
         </Fade>

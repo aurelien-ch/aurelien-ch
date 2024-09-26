@@ -26,58 +26,66 @@ const Projects = () => {
         <RadialTitle title={t("projects.title")} />
         <ProjectsContainer>
           {projects.map((project: IProject, index: number) => (
-            <Project
-              key={index}
-              style={{
-                flexDirection: isMobile
-                  ? "column-reverse"
-                  : index % 2 === 0
-                    ? "row"
-                    : "row-reverse",
-              }}
-            >
-              <Mockups>
-                {project.mockups.map((mockup: string, mockupIndex: number) => (
-                  <Fade
-                    key={mockupIndex}
-                    triggerOnce
-                    direction={index % 2 === 0 ? "left" : "right"}
-                  >
-                    <MockupContainer
-                      $expandLabel={t("projects.expand")}
-                      style={{
-                        transform: `translateX(${mockupIndex % 2 === 0 ? 0 : index % 2 === 0 ? 2 : -2}rem)`,
-                        ...(isMobile &&
-                          (index % 2 === 0 ? { marginRight: "1.6rem" } : { marginLeft: "1.6rem" })),
-                      }}
-                      onClick={() => setExpandedImage(mockup)}
+            <ProjectContainer key={index}>
+              <Project
+                style={{
+                  flexDirection: isMobile
+                    ? "column-reverse"
+                    : index % 2 === 0
+                      ? "row"
+                      : "row-reverse",
+                }}
+              >
+                <Mockups>
+                  {project.mockups?.map((mockup: string, mockupIndex: number) => (
+                    <Fade
+                      key={mockupIndex}
+                      triggerOnce
+                      direction={index % 2 === 0 ? "left" : "right"}
                     >
-                      <Mockup src={mockup} alt={project.projectName} />
-                    </MockupContainer>
+                      <MockupContainer
+                        $expandLabel={t("projects.expand")}
+                        style={{
+                          transform: `translateX(${mockupIndex % 2 === 0 ? 0 : index % 2 === 0 ? 2 : -2}rem)`,
+                          ...(isMobile &&
+                            (index % 2 === 0
+                              ? { marginRight: "1.6rem" }
+                              : { marginLeft: "1.6rem" })),
+                        }}
+                        onClick={() => setExpandedImage(mockup)}
+                      >
+                        <Mockup src={mockup} alt={project.name} />
+                      </MockupContainer>
+                    </Fade>
+                  ))}
+                </Mockups>
+                <Content>
+                  <Fade triggerOnce cascade damping={0.1} direction={"up"}>
+                    <NameContainer>
+                      <Name>{project.name}</Name>
+                      <a
+                        href={project.visitLink}
+                        target={"_blank"}
+                        rel={"noopener noreferrer"}
+                        style={{ transform: `translateY(${isMobile ? 0.4 : 0.5}rem)` }}
+                      >
+                        <OpenLinkButton>
+                          <OpenLinkLabel>{t("projects.visit")}</OpenLinkLabel>
+                          <OpenLinkIcon src={"/icons/open-link.svg"} alt={"Open"} />
+                        </OpenLinkButton>
+                      </a>
+                    </NameContainer>
+                    <Description>{HTMLReactParser(t(project.descriptionKey))}</Description>
+                    <Review review={project.review} />
                   </Fade>
-                ))}
-              </Mockups>
-              <Content>
-                <Fade triggerOnce cascade damping={0.1} direction={"up"}>
-                  <NameContainer>
-                    <Name>{project.projectName}</Name>
-                    <a
-                      href={project.visitLink}
-                      target={"_blank"}
-                      rel={"noopener noreferrer"}
-                      style={{ transform: `translateY(${isMobile ? 0.4 : 0.5}rem)` }}
-                    >
-                      <OpenLinkButton>
-                        <OpenLinkLabel>{t("projects.visit")}</OpenLinkLabel>
-                        <OpenLinkIcon src={"/icons/open-link.svg"} alt={"Open"} />
-                      </OpenLinkButton>
-                    </a>
-                  </NameContainer>
-                  <Description>{HTMLReactParser(t(project.projectDescriptionKey))}</Description>
-                  <Review review={project} />
+                </Content>
+              </Project>
+              {project.secondReview ? (
+                <Fade triggerOnce direction={"up"} delay={400}>
+                  <Review review={project.secondReview} />
                 </Fade>
-              </Content>
-            </Project>
+              ) : null}
+            </ProjectContainer>
           ))}
         </ProjectsContainer>
       </Container>
@@ -105,15 +113,24 @@ const ProjectsContainer = styled.div`
   justify-content: center;
 `;
 
+const ProjectContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 10rem 4rem;
+
+  @media ${media.mobile} {
+    padding: 6rem 0;
+  }
+`;
+
 const Project = styled.div`
   width: 100%;
   display: flex;
   gap: 8rem;
-  padding: 10rem 4rem;
 
   @media ${media.mobile} {
     gap: 6rem;
-    padding: 6rem 0;
   }
 `;
 
