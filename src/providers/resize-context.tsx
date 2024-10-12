@@ -13,7 +13,7 @@ export const ResizeProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < sizes.tablet);
+      setIsMobile(window.innerWidth <= sizes.tablet);
     };
 
     handleResize();
