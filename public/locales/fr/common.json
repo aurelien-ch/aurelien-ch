@@ -1,4 +1,8 @@
 {
+  "_app": {
+    "title": "Aurélien Charpilienne - Développeur Front-End Web & Mobile",
+    "description": "Bienvenue sur mon portfolio, je suis Aurélien Charpilienne, développeur Front-End Web & Mobile passionné par la création d'interfaces utilisateur modernes et performantes."
+  },
   "hero": {
     "myNameIs": "Bonjour, je m'appelle",
     "iAmA": "Et je suis",

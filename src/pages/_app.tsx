@@ -4,18 +4,19 @@ import "@/styles/fonts.scss";
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import { appWithTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 import { Fade } from "react-awesome-reveal";
 import { SnackbarProvider } from "notistack";
 import { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
-import { APP_NAME, APP_DESCRIPTION } from "@/utils/globals";
 import { ResizeProvider } from "@/providers/resize-context";
 import { ScrollProvider } from "@/providers/scroll-context";
 
 import type { AppProps } from "next/app";
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const { t } = useTranslation();
   const [isMounted, setIsMounted] = useState<boolean>(false);
   const [particlesInit, setParticlesInit] = useState<boolean>(false);
 
@@ -43,8 +44,8 @@ const App = ({ Component, pageProps }: AppProps) => {
   return isMounted && particlesInit ? (
     <>
       <Head>
-        <title>{APP_NAME}</title>
-        <meta name="description" content={APP_DESCRIPTION} />
+        <title>{t("_app.title")}</title>
+        <meta name="description" content={t("_app.description")} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Fade triggerOnce duration={2000}>
