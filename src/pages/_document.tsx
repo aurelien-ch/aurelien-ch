@@ -8,6 +8,7 @@ import Document, {
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 import { AppProps, AppType } from "next/app";
+
 import translations from "../../public/locales/en/common.json";
 
 const MyDocument = (props: DocumentInitialProps) => {

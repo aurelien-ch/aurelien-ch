@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import { appWithTranslation } from "next-i18next";
 import { useTranslation } from "react-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Fade } from "react-awesome-reveal";
 import { SnackbarProvider } from "notistack";
 import { initParticlesEngine } from "@tsparticles/react";
@@ -14,7 +13,7 @@ import { loadSlim } from "@tsparticles/slim";
 import { ResizeProvider } from "@/providers/resize-context";
 import { ScrollProvider } from "@/providers/scroll-context";
 
-import type { AppContext, AppProps } from "next/app";
+import type { AppProps } from "next/app";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const { t } = useTranslation();
@@ -63,20 +62,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Fade>
     </>
   ) : null;
-};
-
-App.getInitialProps = async (appContext: AppContext): Promise<{} & AppProps> => {
-  const { ctx } = appContext;
-  const locale = ctx.locale || "en";
-
-  const translations = await serverSideTranslations(locale, ["common"]);
-
-  const appProps = await App.getInitialProps(appContext);
-
-  return {
-    ...appProps,
-    ...translations,
-  };
 };
 
 export default appWithTranslation(App);
