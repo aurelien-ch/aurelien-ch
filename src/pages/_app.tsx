@@ -3,6 +3,7 @@ import "@/styles/fonts.scss";
 
 import { useEffect, useState } from "react";
 import Head from "next/head";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { appWithTranslation } from "next-i18next";
 import { useTranslation } from "react-i18next";
 import { Fade } from "react-awesome-reveal";
@@ -10,6 +11,7 @@ import { SnackbarProvider } from "notistack";
 import { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
+import { GA_MEASUREMENT_ID } from "@/utils/globals";
 import { ResizeProvider } from "@/providers/resize-context";
 import { ScrollProvider } from "@/providers/scroll-context";
 
@@ -48,6 +50,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="description" content={t("_app.description")} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+      <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
       <Fade triggerOnce duration={2000}>
         <ResizeProvider>
           <ScrollProvider>
