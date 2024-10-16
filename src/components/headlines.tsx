@@ -15,8 +15,10 @@ const Headlines = () => {
         <Context>{t("hero.myNameIs")}</Context>
       </Fade>
       <Fade triggerOnce cascade damping={0.2} direction={"left"} delay={500}>
-        <FirstName>{FIRST_NAME}</FirstName>
-        <LastName>{LAST_NAME}</LastName>
+        <h1>
+          <FirstName>{FIRST_NAME}</FirstName>
+          <LastName>{LAST_NAME}</LastName>
+        </h1>
       </Fade>
       <Fade triggerOnce delay={1250}>
         <Context>{t("hero.iAmA")}</Context>
@@ -24,7 +26,7 @@ const Headlines = () => {
       <Fade triggerOnce delay={1500}>
         <ProfessionContainer>
           <span>&#123;</span>
-          <Profession>{t("hero.profession")}</Profession>
+          <Profession as="h2">{t("hero.profession")}</Profession>
           <span>&#125;</span>
         </ProfessionContainer>
       </Fade>
