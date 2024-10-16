@@ -15,7 +15,7 @@ import { GA_MEASUREMENT_ID } from "@/utils/globals";
 import { ResizeProvider } from "@/providers/resize-context";
 import { ScrollProvider } from "@/providers/scroll-context";
 
-import type { AppProps } from "next/app";
+import type { AppContext, AppProps } from "next/app";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const { t } = useTranslation();
@@ -65,6 +65,27 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Fade>
     </>
   ) : null;
+};
+
+App.getInitialProps = async (appContext: AppContext) => {
+  const { Component, ctx } = appContext;
+  let pageProps = {};
+
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx);
+  }
+
+  if (typeof window === "undefined") {
+    const { serverSideTranslations } = await import("next-i18next/serverSideTranslations");
+    return {
+      pageProps: {
+        ...pageProps,
+        ...(await serverSideTranslations(ctx.locale || "en", ["common"])),
+      },
+    };
+  }
+
+  return { pageProps };
 };
 
 export default appWithTranslation(App);
