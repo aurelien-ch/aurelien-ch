@@ -5,7 +5,7 @@ export default [
     name: "The Soci3ty",
     descriptionKey: "projects.descriptions.soci3ty",
     mockups: ["/mockups/soci3ty-landing.webp", "/mockups/soci3ty-dapp.webp"],
-    visitLink: "https://soci3ty-landing.vercel.app/",
+    visitLink: "https://soci3ty.org/",
     review: {
       reviewerName: "Simon",
       reviewerRole: "CEO",
