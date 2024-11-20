@@ -9,6 +9,7 @@ import Document, {
 import { ServerStyleSheet } from "styled-components";
 import { AppProps, AppType } from "next/app";
 
+import { URL } from "@/utils/globals";
 import translations from "../../public/locales/en/common.json";
 
 const MyDocument = (props: DocumentInitialProps) => {
@@ -18,13 +19,13 @@ const MyDocument = (props: DocumentInitialProps) => {
         {props.styles}
         <meta property="og:title" content={translations._app.title} />
         <meta property="og:description" content={translations._app.description} />
-        <meta property="og:image" content="" />
+        <meta property="og:image" content={`${URL}/opengraph.jpg`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="" />
         <meta name="twitter:title" content={translations._app.title} />
         <meta name="twitter:description" content={translations._app.description} />
-        <meta name="twitter:image" content="" />
-        <meta name="twitter:image:alt" content="" />
+        <meta name="twitter:image" content={`${URL}/opengraph.jpg`} />
+        <meta name="twitter:image:alt" content={translations._app.title} />
         <link rel="preload" href="/fonts/Poppins.otf" as="font" crossOrigin="" type="font/otf" />
         <link rel="canonical" href="" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

@@ -1,5 +1,7 @@
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID as string;
 
+export const URL = "https://aurelien-ch.com/";
+
 export const MODAL_ANIMATION_DURATION = 300;
 
 export const FIRST_NAME = "Aurélien";
